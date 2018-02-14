@@ -1,49 +1,46 @@
 fileFormatVersion: 2
-guid: 5e2a026dff66fba41b19f181d255cb1d
-timeCreated: 1518563142
+guid: 59450937d82506a46b6d37832e8395c2
+timeCreated: 1518636995
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Body
-    100004: Cylinder
-    100006: Cylinder_001
-    100008: Cylinder_002
-    100010: Cylinder_003
-    100012: Engine
-    400000: //RootNode
-    400002: Body
-    400004: Cylinder
-    400006: Cylinder_001
-    400008: Cylinder_002
-    400010: Cylinder_003
-    400012: Engine
-    2100000: Material
-    2100002: unnamed
-    2300000: //RootNode
-    2300002: Body
-    2300004: Cylinder
-    2300006: Cylinder_001
-    2300008: Cylinder_002
-    2300010: Cylinder_003
-    2300012: Engine
-    3300000: //RootNode
-    3300002: Body
-    3300004: Cylinder
-    3300006: Cylinder_001
-    3300008: Cylinder_002
-    3300010: Cylinder_003
-    3300012: Engine
-    4300000: Cube
-    4300002: Engine
-    4300004: Cylinder_003
-    4300006: Cylinder_002
-    4300008: Cylinder_001
-    4300010: Cylinder
-    4300012: Body
-    7400000: Default Take
-    9500000: //RootNode
+    100000: Body
+    100002: Cylinder
+    100004: Cylinder.001
+    100006: Cylinder.002
+    100008: Cylinder.003
+    100010: Engine
+    100012: //RootNode
+    400000: Body
+    400002: Cylinder
+    400004: Cylinder.001
+    400006: Cylinder.002
+    400008: Cylinder.003
+    400010: Engine
+    400012: //RootNode
+    2100000: No Name
+    2100002: Material
+    2300000: Body
+    2300002: Cylinder
+    2300004: Cylinder.001
+    2300006: Cylinder.002
+    2300008: Cylinder.003
+    2300010: Engine
+    2300012: //RootNode
+    3300000: Body
+    3300002: Cylinder
+    3300004: Cylinder.001
+    3300006: Cylinder.002
+    3300008: Cylinder.003
+    3300010: Engine
+    3300012: //RootNode
+    4300000: Engine
+    4300002: Cylinder.003
+    4300004: Cylinder.002
+    4300006: Cylinder.001
+    4300008: Cylinder
+    4300010: Body
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -93,7 +90,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -118,7 +115,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
