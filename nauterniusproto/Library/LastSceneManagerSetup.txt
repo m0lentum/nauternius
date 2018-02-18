@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/eka.unity
+- path: Assets/Scenes/eka.unity
   isLoaded: 1
   isActive: 1

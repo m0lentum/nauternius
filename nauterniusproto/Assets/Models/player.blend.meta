@@ -6,11 +6,42 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Body
+    100004: Cylinder
+    100006: Cylinder_001
+    100008: Cylinder_002
+    100010: Cylinder_003
+    100012: Engine
     400000: //RootNode
+    400002: Body
+    400004: Cylinder
+    400006: Cylinder_001
+    400008: Cylinder_002
+    400010: Cylinder_003
+    400012: Engine
     2100000: Material
+    2100002: unnamed
     2300000: //RootNode
+    2300002: Body
+    2300004: Cylinder
+    2300006: Cylinder_001
+    2300008: Cylinder_002
+    2300010: Cylinder_003
+    2300012: Engine
     3300000: //RootNode
+    3300002: Body
+    3300004: Cylinder
+    3300006: Cylinder_001
+    3300008: Cylinder_002
+    3300010: Cylinder_003
+    3300012: Engine
     4300000: Cube
+    4300002: Engine
+    4300004: Cylinder_003
+    4300006: Cylinder_002
+    4300008: Cylinder_001
+    4300010: Cylinder
+    4300012: Body
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

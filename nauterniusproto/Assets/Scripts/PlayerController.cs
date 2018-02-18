@@ -4,13 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
-
-    //public float acceleration;
-    //public float brake;
-
-    public delegate void MyDelegate();
-    public event MyDelegate onDeath;
-
+    
     public float hoverHeight;
     public float hoverForce;
     
@@ -21,28 +15,35 @@ public class PlayerController : MonoBehaviour {
     public float rotationInput;
     public float speedInput;
 
-    public bool superSpeed;
-    public bool jumpAbility;
-    public bool grounded;
+    public bool hasSuperSpeed;
+    public bool hasJumpAbility;
+    public bool isGrounded;
 
     public Rigidbody rb;
-    public Text uiText;
+    public CheckPointManager checkPointManager;
 
-    public float test;
-
-    public CheckPointManager cpManager;
+    //Käytetään aluksen kääntämisessä
+    public Quaternion fromRotation;
+    public Quaternion toRotation;
+    public Vector3 targetNormal;
+    public RaycastHit rcHit;
+    public float weight;
+    public float adjustSpeed;
 
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
-        cpManager = GameObject.Find("Check Point Manager").GetComponent<CheckPointManager>();
+        checkPointManager = GameObject.Find("Check Point Manager").GetComponent<CheckPointManager>();
+        
+        hoverForce = 50f;
+        hoverHeight = 2f;
 
         maxSpeed = 10000f;
         speed = maxSpeed;
         turnSpeed = 1.5f;
 
-        hoverForce = 50f;
-        hoverHeight = 2f;
+        weight = 1;
+        adjustSpeed = 1;
 	}
 	
 	void Update ()
@@ -51,9 +52,28 @@ public class PlayerController : MonoBehaviour {
        speedInput = Input.GetAxis("Vertical");
 
        transform.Rotate(0, rotationInput * turnSpeed, 0);
-        // transform.Translate(0, 0, speedInput * maxSpeed);
-
-        if (Input.GetButtonDown("Jump") && jumpAbility) Jump();
+        
+       //Kääntää aluksen samaan kulmaan kuin alla oleva maa
+       if (Physics.Raycast(transform.position, -Vector3.up, out rcHit))
+       {
+           fromRotation = transform.rotation;
+           if (rcHit.distance < 3)
+           {
+               if (rcHit.normal == transform.up) return;
+               if (rcHit.normal != targetNormal)
+               {
+                   targetNormal = rcHit.normal;
+                   toRotation = Quaternion.FromToRotation(Vector3.up, rcHit.normal);
+                   weight = 0;
+               }
+               if (weight <= 1)
+               {
+                   weight += Time.deltaTime * adjustSpeed;
+                   toRotation = Quaternion.Euler(toRotation.eulerAngles.x, fromRotation.eulerAngles.y, toRotation.eulerAngles.z);
+                   transform.rotation = Quaternion.Slerp(fromRotation, toRotation, weight);
+               }
+           }
+       }
     }
 
     void FixedUpdate()
@@ -68,17 +88,9 @@ public class PlayerController : MonoBehaviour {
             Vector3 forceUp = Vector3.up * proportionalHeight * hoverForce; //Nostaa lujempaa, mitä lähempänä maata
 
             rb.AddForce(forceUp, ForceMode.Acceleration);
+            if (Input.GetButtonDown("Jump") && hasJumpAbility && hit.distance <= hoverHeight) Jump();
         }
 
-        //Jos pelaajan alapuolella alle sadan metrin päässä ei ole mitään --> kuolema
-        Ray deathRay = new Ray(transform.position, -transform.up);
-        if (!Physics.Raycast(deathRay, 50f)) Die();
-
-        //Yläviiston kääntyminen rampeissa onnistuisi ehkä jos laittaisi raycastit perään ja nokkaan tyyliin
-        //Ray ray2 = new Ray(transform.position + (0,0,1.5f), -transform.up);
-        //rb.AddForceAtPosition(forceUp, transform.position + (0,0,1.5f), ForceMode.Acceleration);
-
-        //rb.AddRelativeTorque(0f, rotationInput * turnSpeed, 0f);
         rb.AddRelativeForce(0f, 0f, speedInput * speed);
     }
 
@@ -90,30 +102,20 @@ public class PlayerController : MonoBehaviour {
         if (colObject.tag == "wall") SuperSpeedOff();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log(other.name);
-        if (other.tag == "jumppowerup")
-        {
-            jumpAbility = true;
-            Destroy(other.gameObject);
-        }
-    }
-
     public void SuperSpeedOn()
     {
-        if (!superSpeed)
+        if (!hasSuperSpeed)
         {
-            superSpeed = true;
+            hasSuperSpeed = true;
             speed = 3 * maxSpeed;
         }
     }
 
     public void SuperSpeedOff()
     {
-        if (superSpeed)
+        if (hasSuperSpeed)
         {
-            superSpeed = false;
+            hasSuperSpeed = false;
             speed = maxSpeed;
         }
     }
@@ -121,14 +123,13 @@ public class PlayerController : MonoBehaviour {
     public void Jump()
     {
         Debug.Log("Hyppy");
-
-        rb.AddForce(0f, 8000f, 0f, ForceMode.Impulse);
+        rb.AddForce(0f, 10000f, 0f, ForceMode.Impulse);
     }
 
     public void Die()
     {
         Debug.Log("Kuoli saatana");
-        transform.position = cpManager.CurCheckPoint.spawnPoint;
+        transform.position = checkPointManager.CurCheckPoint.spawnPoint;
         //transform.position = 
         //onDeath.Invoke();
     }

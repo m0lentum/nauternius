@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoostScript : MonoBehaviour {
+public class JumpPowerUp : MonoBehaviour {
 
     public PlayerController playerController;
 
-	void Start ()
+    void Start ()
     {
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-	}
+    }
 	
 	void Update ()
     {
@@ -19,6 +19,10 @@ public class BoostScript : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("törmäs triggerboxiin");
-        if (other.gameObject.tag == "Player") playerController.SuperSpeedOn();
+        if (other.gameObject.tag == "Player")
+        {
+            playerController.hasJumpAbility = true;
+            Destroy(gameObject);
+        }
     }
 }
