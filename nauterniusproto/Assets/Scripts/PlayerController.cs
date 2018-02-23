@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour {
     public float rotationInput;
     public float speedInput;
 
+    public float jumpTimer;
+    public float jumpWaitTime;
+
     public bool hasSuperSpeed;
     public bool hasJumpAbility;
     public bool isGrounded;
@@ -38,9 +41,11 @@ public class PlayerController : MonoBehaviour {
         hoverForce = 50f;
         hoverHeight = 2f;
 
-        maxSpeed = 10000f;
+        maxSpeed = 12000f;
         speed = maxSpeed;
         turnSpeed = 1.5f;
+
+        jumpWaitTime = 1;
 
         weight = 1;
         adjustSpeed = 1;
@@ -52,12 +57,14 @@ public class PlayerController : MonoBehaviour {
        speedInput = Input.GetAxis("Vertical");
 
        transform.Rotate(0, rotationInput * turnSpeed, 0);
+
+        jumpTimer += Time.deltaTime;
         
        //Kääntää aluksen samaan kulmaan kuin alla oleva maa
        if (Physics.Raycast(transform.position, -Vector3.up, out rcHit))
        {
            fromRotation = transform.rotation;
-           if (rcHit.distance < 3)
+           if (rcHit.distance < hoverHeight * 2)
            {
                if (rcHit.normal == transform.up) return;
                if (rcHit.normal != targetNormal)
@@ -69,6 +76,7 @@ public class PlayerController : MonoBehaviour {
                if (weight <= 1)
                {
                    weight += Time.deltaTime * adjustSpeed;
+                   if (weight > 1) weight = 1;
                    toRotation = Quaternion.Euler(toRotation.eulerAngles.x, fromRotation.eulerAngles.y, toRotation.eulerAngles.z);
                    transform.rotation = Quaternion.Slerp(fromRotation, toRotation, weight);
                }
@@ -88,7 +96,7 @@ public class PlayerController : MonoBehaviour {
             Vector3 forceUp = Vector3.up * proportionalHeight * hoverForce; //Nostaa lujempaa, mitä lähempänä maata
 
             rb.AddForce(forceUp, ForceMode.Acceleration);
-            if (Input.GetButtonDown("Jump") && hasJumpAbility && hit.distance <= hoverHeight) Jump();
+            if (Input.GetButtonDown("Jump") && hasJumpAbility && hit.distance <= hoverHeight && jumpTimer > jumpWaitTime) Jump(); //Kaunis teippiviritelmä
         }
 
         rb.AddRelativeForce(0f, 0f, speedInput * speed);
@@ -124,6 +132,7 @@ public class PlayerController : MonoBehaviour {
     {
         Debug.Log("Hyppy");
         rb.AddForce(0f, 10000f, 0f, ForceMode.Impulse);
+        jumpTimer = 0;
     }
 
     public void Die()
