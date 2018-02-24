@@ -6,15 +6,54 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Body
+    100004: Body.001
+    100006: Cylinder
+    100008: Cylinder.001
+    100010: Cylinder.002
+    100012: Cylinder.003
+    100014: Engine
+    100016: Hemi
     400000: //RootNode
+    400002: Body
+    400004: Body.001
+    400006: Cylinder
+    400008: Cylinder.001
+    400010: Cylinder.002
+    400012: Cylinder.003
+    400014: Engine
+    400016: Hemi
     2100000: Material
+    2100002: Player_mat
+    2100004: No Name
     2300000: //RootNode
+    2300002: Body
+    2300004: Body.001
+    2300006: Cylinder
+    2300008: Cylinder.001
+    2300010: Cylinder.002
+    2300012: Cylinder.003
+    2300014: Engine
     3300000: //RootNode
+    3300002: Body
+    3300004: Body.001
+    3300006: Cylinder
+    3300008: Cylinder.001
+    3300010: Cylinder.002
+    3300012: Cylinder.003
+    3300014: Engine
     4300000: Body
+    4300002: Body.001
+    4300004: Engine
+    4300006: Cylinder.003
+    4300008: Cylinder.002
+    4300010: Cylinder.001
+    4300012: Cylinder
+    10800000: Hemi
   externalObjects: {}
   materials:
-    importMaterials: 1
-    materialName: 0
+    importMaterials: 0
+    materialName: 1
     materialSearch: 1
     materialLocation: 1
   animations:
