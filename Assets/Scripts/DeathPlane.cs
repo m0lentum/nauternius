@@ -17,10 +17,11 @@ public class DeathPlane : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        GameObject otherParent = other.transform.root.gameObject;
+        if (otherParent.tag == "Player")
         {
             //Ei _pitäis_ olla mahdollisuutta erroriin, kunhan vain pelaajalla on Player-tag
-            other.gameObject.GetComponent<PlayerController>().Die();
+            otherParent.GetComponent<PlayerController>().Die();
         }
     }
 }
