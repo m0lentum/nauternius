@@ -5,52 +5,41 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
     
-    public float hoverHeight;
-    public float hoverForce;
-    
-    public float maxSpeed;
-    public float speed;
-    public float turnSpeed;
-    public float handling; //Vaikuttaa kuinka paljon input otetaan huomioon [0,1] //Edessä oleva kommentti ei näytä suomen kielen lauseelta
+    [SerializeField] private float hoverHeight = 2.0f;
+    [SerializeField] private float hoverForce = 50.0f;
 
-    public float rotationInput;
-    public float speedInput;
+    [SerializeField] private float maxSpeed = 13000.0f;
+    private float speed;
+    [SerializeField] private float turnSpeed = 100.0f;
+    [SerializeField] private float handling = 1.0f; //Vaikuttaa kuinka paljon input otetaan huomioon [0,1] //Edessä oleva kommentti ei näytä suomen kielen lauseelta
 
-    public float jumpForce;
-    public float jumpTimer;
-    public float jumpWaitTime;
+    private float rotationInput;
+    private float speedInput;
 
-    public bool hasSuperSpeed;
-    public bool hasJumpAbility;
-    public bool isGrounded;
+    [SerializeField] private float jumpForce = 11000.0f;
+    private float jumpTimer;
+    [SerializeField] private float jumpWaitTime = 1.0f;
 
-    public Rigidbody rb;
-    public CheckPointManager checkPointManager;
+    private bool hasSuperSpeed;
+    private bool hasJumpAbility;
+    private bool isGrounded;
+
+    private Rigidbody rb;
+    [SerializeField] private CheckPointManager checkPointManager;
 
     //Käytetään aluksen kääntämisessä
-    public Quaternion fromRotation;
-    public Quaternion toRotation;
-    public Vector3 targetNormal;
-    public RaycastHit rcHit;
-    public float weight;
-    public float adjustSpeed;
+    private Quaternion fromRotation;
+    private Quaternion toRotation;
+    private Vector3 targetNormal;
+    private RaycastHit rcHit;
+    private float weight;
+    private float adjustSpeed;
 
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
-        checkPointManager = GameObject.Find("Check Point Manager").GetComponent<CheckPointManager>();
         
-        hoverForce = 50f;
-        hoverHeight = 2f;
-
-        maxSpeed = 13000f;
         speed = maxSpeed;
-        turnSpeed = 100f;
-        handling = 1;
-
-        jumpForce = 11000f;
-        jumpWaitTime = 1;
-
         weight = 1;
         adjustSpeed = 1;
 	}
@@ -145,5 +134,11 @@ public class PlayerController : MonoBehaviour {
     {
         Debug.Log("Kuoli saatana");
         transform.position = checkPointManager.CurCheckPoint.spawnPoint;
+    }
+
+    public void EnableJumpAbility()
+    {
+        Debug.Log("Nyt voi hypätä");
+        hasJumpAbility = true;
     }
 }

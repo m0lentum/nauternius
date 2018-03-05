@@ -21,7 +21,7 @@ public class JumpPowerUp : MonoBehaviour {
         Debug.Log("törmäs triggerboxiin");
         if (other.gameObject.tag == "Player")
         {
-            playerController.hasJumpAbility = true;
+            playerController.EnableJumpAbility();
             Destroy(gameObject);
         }
     }
