@@ -144,6 +144,6 @@ public class PlayerController : MonoBehaviour {
     public void Die()
     {
         Debug.Log("Kuoli saatana");
-        transform.position = checkPointManager.CurCheckPoint.spawnPoint;
+        transform.position = checkPointManager.CurCheckPoint.SpawnPoint;
     }
 }

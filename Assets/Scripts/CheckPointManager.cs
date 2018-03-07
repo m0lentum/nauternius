@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//---------------------------------------------------------------------------------------
+// Copyright © Janne Isoaho, Aarne Manneri, Mikael Myyrä, Lauri Niskanen, Saska Sinkkonen
+//---------------------------------------------------------------------------------------
+
 public class CheckPointManager : MonoBehaviour {
 
-    public List<CheckPoint> checkPoints;
-    public CheckPoint CurCheckPoint { get { return checkPoints[curIndex]; } }
-    public int curIndex;
+    public List<CheckPoint> checkPoints; //
+    private int curIndex;
 
-    // Use this for initialization
+    public CheckPoint CurCheckPoint { get { return checkPoints[curIndex]; } }
+
     void Start ()
     {
         curIndex = 0;
@@ -22,7 +26,6 @@ public class CheckPointManager : MonoBehaviour {
         }
     }
 	
-	// Update is called once per frame
 	void Update ()
     {
 		

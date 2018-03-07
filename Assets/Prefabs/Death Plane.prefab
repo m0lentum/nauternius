@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33258253665504632}
   - component: {fileID: 64318968252587286}
   - component: {fileID: 114901718019905294}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Death Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

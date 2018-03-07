@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//---------------------------------------------------------------------------------------
+// Copyright © Janne Isoaho, Aarne Manneri, Mikael Myyrä, Lauri Niskanen, Saska Sinkkonen
+//---------------------------------------------------------------------------------------
+
 public class CheckPoint : MonoBehaviour {
 
     public delegate void MyDelegate(CheckPoint cp);
     public event MyDelegate onTrigger;
 
-    public bool triggered;
-    public Vector3 spawnPoint;
-    //public Vector3 
+    private bool triggered;
 
-	// Use this for initialization
-	void Start ()
+    private Vector3 spawnPoint;
+    public Vector3 SpawnPoint { get { return spawnPoint; } }
+    
+    void Start ()
     {
         spawnPoint = transform.position;
     }
 	
-	// Update is called once per frame
 	void Update ()
     {
 		
@@ -25,15 +28,7 @@ public class CheckPoint : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (!triggered)
-        {
-            if (other.tag == "Player")
-            {
-                //cPos = transform.position;
-                Debug.Log("Triggered");
-                Trigger();
-            }
-        }
+        if (!triggered && other.tag == "Player") Trigger();
     }
 
     void Trigger()

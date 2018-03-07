@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//---------------------------------------------------------------------------------------
+// Copyright © Janne Isoaho, Aarne Manneri, Mikael Myyrä, Lauri Niskanen, Saska Sinkkonen
+//---------------------------------------------------------------------------------------
+
 public class JumpPowerUp : MonoBehaviour {
 
-    public PlayerController playerController;
+    //Tätä ei oiekastaan tarvita, koska OnTriggerEnterissä tarkistetaan että collider on pelaaja
+    private PlayerController playerController;
 
     void Start ()
     {
@@ -18,7 +23,6 @@ public class JumpPowerUp : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("törmäs triggerboxiin");
         if (other.gameObject.tag == "Player")
         {
             playerController.hasJumpAbility = true;

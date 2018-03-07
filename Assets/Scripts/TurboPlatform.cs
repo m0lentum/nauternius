@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//---------------------------------------------------------------------------------------
+// Copyright © Janne Isoaho, Aarne Manneri, Mikael Myyrä, Lauri Niskanen, Saska Sinkkonen
+//---------------------------------------------------------------------------------------
+
 public class TurboPlatform : MonoBehaviour {
 
     public PlayerController playerController;

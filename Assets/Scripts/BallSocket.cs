@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//---------------------------------------------------------------------------------------
+// Copyright © Janne Isoaho, Aarne Manneri, Mikael Myyrä, Lauri Niskanen, Saska Sinkkonen
+//---------------------------------------------------------------------------------------
+
 //Täysin keskeneräinen scripti ja error handling tässä on Jeesuksen käsissä.
 public class BallSocket : MonoBehaviour {
 
-    public float pullForce;
-    public float stillSpeed;
-    
-    public GameObject targetObj;
+    [SerializeField] private float pullForce;
+    [SerializeField] private float stillSpeed;
+    [SerializeField] private GameObject targetObj;
 
     private bool isOn;
     public bool IsOn
@@ -18,7 +21,6 @@ public class BallSocket : MonoBehaviour {
         {
             if (isOn != value)
             {
-                Debug.Log("BallSocketista vaihdettu bool: " + isOn);
                 isOn = value;
                 TriggerTargetObject();
             }
@@ -28,8 +30,8 @@ public class BallSocket : MonoBehaviour {
     void Start ()
     {
         //targetObj = editorissa asetettu
-        stillSpeed = 0.2f;
-        pullForce = 15f;
+        //stillSpeed = 0.2f;
+        //pullForce = 15f;
 	}
 
 	void Update ()
@@ -39,8 +41,6 @@ public class BallSocket : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        //Debug.Log("BallSocket trigger: " + other.name);
-
         GameObject otherObj = other.gameObject;
         if (otherObj.tag == "ball")
         {
