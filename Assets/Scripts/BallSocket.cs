@@ -13,6 +13,9 @@ public class BallSocket : MonoBehaviour {
     [SerializeField] private float stillSpeed;
     [SerializeField] private GameObject targetObj;
 
+    private Quaternion fromRotation;
+    private Quaternion toRotation;
+
     private bool isOn;
     public bool IsOn
     {
@@ -44,11 +47,18 @@ public class BallSocket : MonoBehaviour {
         GameObject otherObj = other.gameObject;
         if (otherObj.tag == "ball")
         {
-            otherObj.transform.position = Vector3.MoveTowards(otherObj.transform.position, transform.position, pullForce * Time.deltaTime);
+            fromRotation = otherObj.transform.rotation;
+            toRotation = Quaternion.Euler(0, 0, 0);
+            
+            otherObj.transform.rotation = Quaternion.Slerp(fromRotation, toRotation, 1);
+            otherObj.GetComponent<Rigidbody>().AddForce((transform.position - otherObj.transform.position) * pullForce);
+            //otherObj.transform.position = Vector3.MoveTowards(otherObj.transform.position, transform.position, pullForce * Time.deltaTime);
+
+            Debug.Log(otherObj.GetComponent<Rigidbody>().velocity.magnitude);
+            if (otherObj.GetComponent<Rigidbody>().velocity.magnitude < stillSpeed) IsOn = true;
         }
 
         //GetComponent pois jatkuvasti toistettavasta funktiosta, vois esim. hallinnoida ontriggerenterissä/exitissä?
-        if (otherObj.GetComponent<Rigidbody>().velocity.magnitude < stillSpeed) IsOn = true;
         
     }
 
