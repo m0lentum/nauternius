@@ -6,7 +6,7 @@ using UnityEngine;
 // Copyright © Janne Isoaho, Aarne Manneri, Mikael Myyrä, Lauri Niskanen, Saska Sinkkonen
 //---------------------------------------------------------------------------------------
 
-public class BallTriggerTest : MonoBehaviour {
+public class BallTriggerObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +21,6 @@ public class BallTriggerTest : MonoBehaviour {
     public void BallTrigger()
     {
         Debug.Log("BallTriggerTestistä kutsuttu BallTrigger");
-        transform.position = transform.position - new Vector3(transform.position.x, transform.position.y - 5, transform.position.z);
+        transform.position = transform.position - new Vector3(0,-50, 0);
     }
 }

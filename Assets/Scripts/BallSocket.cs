@@ -8,13 +8,16 @@ using UnityEngine;
 
 //Täysin keskeneräinen scripti ja error handling tässä on Jeesuksen käsissä.
 public class BallSocket : MonoBehaviour {
-
-    [SerializeField] private float pullForce;
-    [SerializeField] private float stillSpeed;
+    
     [SerializeField] private GameObject targetObj;
+    [SerializeField] private float maxPullForce;
+    [SerializeField] private float minPullForce;
+    [SerializeField] private float maxSocketTimer;
+    [SerializeField] private float socketedDistance;
 
-    private Quaternion fromRotation;
-    private Quaternion toRotation;
+    public float curPullForce;
+    public float socketTimer;
+    private Rigidbody ballRb;
 
     private bool isOn;
     public bool IsOn
@@ -29,43 +32,50 @@ public class BallSocket : MonoBehaviour {
             }
         }
     }
-
-    void Start ()
+    private void OnTriggerEnter(Collider other)
     {
-        //targetObj = editorissa asetettu
-        //stillSpeed = 0.2f;
-        //pullForce = 15f;
-	}
-
-	void Update ()
-    {
-
-	}
-
+        if (other.tag == "ball")
+        {
+            curPullForce = maxPullForce;
+            ballRb = other.GetComponent<Rigidbody>();
+        }
+    }
     void OnTriggerStay(Collider other)
     {
-        GameObject otherObj = other.gameObject;
-        if (otherObj.tag == "ball")
+        if (other.tag == "ball")
         {
-            fromRotation = otherObj.transform.rotation;
-            toRotation = Quaternion.Euler(0, 0, 0);
+            curPullForce -= 0.2f;
+            if (curPullForce < minPullForce) curPullForce = minPullForce;
+
+            if (CheckSocketStatus(other.transform)) IsOn = true;
             
-            otherObj.transform.rotation = Quaternion.Slerp(fromRotation, toRotation, 1);
-            otherObj.GetComponent<Rigidbody>().AddForce((transform.position - otherObj.transform.position) * pullForce);
-            //otherObj.transform.position = Vector3.MoveTowards(otherObj.transform.position, transform.position, pullForce * Time.deltaTime);
+            ballRb.AddForce(ReverseVectorMagnitude(transform.position - other.transform.position) * curPullForce);
 
-            Debug.Log(otherObj.GetComponent<Rigidbody>().velocity.magnitude);
-            if (otherObj.GetComponent<Rigidbody>().velocity.magnitude < stillSpeed) IsOn = true;
+            //Debug.Log(Vector3.Distance(otherObj.transform.position, transform.position));
         }
-
-        //GetComponent pois jatkuvasti toistettavasta funktiosta, vois esim. hallinnoida ontriggerenterissä/exitissä?
-        
     }
+
 
     void TriggerTargetObject()
     {
-        Debug.Log("BallSocketista kutsuttu TriggerTargetObject");
-        targetObj.GetComponent<BallTriggerTest>().BallTrigger();
+        targetObj.GetComponent<BallTriggerObject>().BallTrigger();
+    }
+
+    //Katsoo onko objekti paikallaan socketissa ja jos on ollut tarpeeksi kauan paikallaan, palauttaa True.
+    bool CheckSocketStatus(Transform obj)
+    {
+        if (socketTimer > maxSocketTimer) return true;
+
+        if (Vector3.Distance(obj.position, transform.position) < socketedDistance) socketTimer += Time.deltaTime;
+        else socketTimer = 0;
+
+        return false;
+    }
+
+    //Tekee pienistä vektoreista isoja ja päinvastoin.
+    Vector3 ReverseVectorMagnitude(Vector3 vect)
+    {
+        return (1 / vect.magnitude * vect);
     }
 
 }
