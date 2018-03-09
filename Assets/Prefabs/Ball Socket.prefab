@@ -147,9 +147,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f9d1fc3814ea4478005a75894db03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pullForce: 15
-  stillSpeed: 0.2
   targetObj: {fileID: 0}
+  maxPullForce: 50
+  minPullForce: 10
+  maxSocketTimer: 2.5
+  socketedDistance: 4
+  activatedMaterial: {fileID: 2100000, guid: 699416f229bbb474583149eff6242464, type: 2}
+  curPullForce: 0
+  socketTimer: 0
+  isForceFieldActive: 0
 --- !u!135 &135323988233107504
 SphereCollider:
   m_ObjectHideFlags: 1

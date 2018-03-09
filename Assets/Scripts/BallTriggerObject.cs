@@ -20,7 +20,6 @@ public class BallTriggerObject : MonoBehaviour {
 
     public void BallTrigger()
     {
-        Debug.Log("BallTriggerTestistä kutsuttu BallTrigger");
         transform.position = transform.position - new Vector3(0,-50, 0);
     }
 }

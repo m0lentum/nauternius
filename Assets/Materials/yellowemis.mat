@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: yellow
+  m_Name: yellowemis
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -72,5 +72,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9485294, g: 0.88503754, b: 0.02789795, a: 1}
-    - _EmissionColor: {r: 0.86764705, g: 0.8528635, b: 0.3317474, a: 1}
+    - _Color: {r: 0.9490196, g: 0.8862745, b: 0.02745098, a: 1}
+    - _EmissionColor: {r: 0.4668655, g: 0.4705882, b: 0.20069203, a: 1}

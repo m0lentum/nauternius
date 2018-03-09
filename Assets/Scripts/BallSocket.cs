@@ -6,7 +6,7 @@ using UnityEngine;
 // Copyright © Janne Isoaho, Aarne Manneri, Mikael Myyrä, Lauri Niskanen, Saska Sinkkonen
 //---------------------------------------------------------------------------------------
 
-//Täysin keskeneräinen scripti ja error handling tässä on Jeesuksen käsissä.
+//Keskeneräinen, kokeileva, eloisa, hieman hapettunut skripti. Vahva hapan jälkimaku.
 public class BallSocket : MonoBehaviour {
     
     [SerializeField] private GameObject targetObj;
@@ -14,48 +14,49 @@ public class BallSocket : MonoBehaviour {
     [SerializeField] private float minPullForce;
     [SerializeField] private float maxSocketTimer;
     [SerializeField] private float socketedDistance;
+    [SerializeField] private float forceFieldPower;
+    [SerializeField] private Material activatedMaterial;
 
     public float curPullForce;
     public float socketTimer;
-    private Rigidbody ballRb;
+    public bool isForceFieldActive;
+    public Rigidbody ballRb;
+    public Rigidbody collRb;
 
     private bool isOn;
-    public bool IsOn
-    {
-        get { return isOn; }
-        set
-        {
-            if (isOn != value)
-            {
-                isOn = value;
-                TriggerTargetObject();
-            }
-        }
-    }
+
+    //Ottaa lähelle tulevan objektin rigidbodyn talteen
+    //Bugaa helposti, jos forcefield päällä ja 2 objektia tulee sisään samaan aikaan, koska ottaa uuden RBn talteen ennen kuin vanha on käsitelty. Onko paha?
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "ball")
+        if (other.tag == "ball" && !isForceFieldActive)
         {
             curPullForce = maxPullForce;
             ballRb = other.GetComponent<Rigidbody>();
         }
+        else collRb = other.transform.root.GetComponent<Rigidbody>();
     }
+
     void OnTriggerStay(Collider other)
     {
+        //Työntää pelaajan pois jos force field on päällä eli socket on aktiivinen
+        if (isForceFieldActive && other.tag != "ball")
+        {
+            Vector3 awayDirection = (other.transform.position - transform.position).normalized;
+            awayDirection = awayDirection - new Vector3(0, awayDirection.y, 0);
+            if(collRb != null) collRb.AddForce(awayDirection * (collRb.velocity.magnitude + 10) * forceFieldPower);
+        }
+
+        //Imee palloa sisään päin
         if (other.tag == "ball")
         {
             curPullForce -= 0.2f;
             if (curPullForce < minPullForce) curPullForce = minPullForce;
-
-            if (CheckSocketStatus(other.transform)) IsOn = true;
-            
-            ballRb.AddForce(ReverseVectorMagnitude(transform.position - other.transform.position) * curPullForce);
-
-            //Debug.Log(Vector3.Distance(otherObj.transform.position, transform.position));
+            if (CheckSocketStatus(other.transform)) ActivateSocket();
+            ballRb.AddForce((transform.position - other.transform.position) * curPullForce);
         }
     }
-
-
+    
     void TriggerTargetObject()
     {
         targetObj.GetComponent<BallTriggerObject>().BallTrigger();
@@ -70,6 +71,19 @@ public class BallSocket : MonoBehaviour {
         else socketTimer = 0;
 
         return false;
+    }
+
+    void ActivateSocket()
+    {
+        if (isForceFieldActive) return;
+        ballRb.gameObject.GetComponent<Renderer>().material = activatedMaterial;
+        isForceFieldActive = true;
+        TriggerTargetObject();
+    }
+
+    void DeactivateSocket()
+    {
+        //Tarvitaan tai sitten ei?
     }
 
     //Tekee pienistä vektoreista isoja ja päinvastoin.

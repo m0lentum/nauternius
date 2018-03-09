@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         GameObject colObject = collision.collider.gameObject;
-        Debug.Log("Osui :" + colObject.name);
+        //Debug.Log("Osui :" + colObject.name);
         
         if (colObject.tag == "wall") SuperSpeedOff();
     }
