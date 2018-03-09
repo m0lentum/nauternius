@@ -276,7 +276,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951186041258750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4912279857307634}
@@ -636,13 +636,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68529ea5fd6883242b13fb53907a3f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverHeight: 2
-  hoverForce: 50
-  maxSpeed: 13000
+  hoverHeight: 5
+  hoverSpeed: 4
+  maxHoverAcceleration: 1.5
+  angleAdjustStrength: 0.15
+  hoverProbeDistance: 2
+  hoverProbeRadius: 0.5
+  thrust: 2
+  maxSpeed: 30
+  maxAcceleration: 0
   turnSpeed: 100
   handling: 1
   jumpForce: 11000
-  jumpWaitTime: 1
+  jumpWaitTime: 20
   checkPointManager: {fileID: 0}
 --- !u!136 &136048626384786080
 CapsuleCollider:

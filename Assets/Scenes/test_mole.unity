@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465794, g: 0.49641478, b: 0.5748201, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028554, g: 0.22571614, b: 0.30692446, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 55888931}
   - component: {fileID: 55888930}
   - component: {fileID: 55888929}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ramp3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 711561314}
   - component: {fileID: 711561313}
   - component: {fileID: 711561312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 719271991}
   - component: {fileID: 719271990}
   - component: {fileID: 719271989}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 723129187}
   - component: {fileID: 723129186}
   - component: {fileID: 723129185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ramp2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,8 +560,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.9338235, g: 0.8532268, b: 0.6797686, a: 1}
-  m_Intensity: 0.6
+  m_Color: {r: 0.9191176, g: 0.87437356, b: 0.8177444, a: 1}
+  m_Intensity: 1.35
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -613,7 +613,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4345750466320146, guid: d1fbfc44816a94f4cbf72a4c15667b10, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.04
       objectReference: {fileID: 0}
     - target: {fileID: 4345750466320146, guid: d1fbfc44816a94f4cbf72a4c15667b10, type: 2}
       propertyPath: m_LocalPosition.z
@@ -644,6 +644,81 @@ Prefab:
       propertyPath: checkPointManager
       value: 
       objectReference: {fileID: 1356694627}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: thrust
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: maxSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 54347898794108696, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: hoverHeight
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: hoverAcceleration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: hoverProbeSize
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: hoverProbeOffset.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 54347898794108696, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: hoverProbeDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: angleAdjustSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: maxAngleAcceleration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: maxHoverAcceleration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: hoverSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: angleAdjustStrength
+      value: 0.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 114814395075641368, guid: d1fbfc44816a94f4cbf72a4c15667b10,
+        type: 2}
+      propertyPath: hoverProbeRadius
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1fbfc44816a94f4cbf72a4c15667b10, type: 2}
   m_IsPrefabParent: 0
@@ -658,7 +733,7 @@ GameObject:
   - component: {fileID: 940074634}
   - component: {fileID: 940074633}
   - component: {fileID: 940074632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ramp1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1128,7 +1203,7 @@ GameObject:
   - component: {fileID: 1862826707}
   - component: {fileID: 1862826706}
   - component: {fileID: 1862826705}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ramp0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1212,7 +1287,7 @@ GameObject:
   - component: {fileID: 2007037494}
   - component: {fileID: 2007037493}
   - component: {fileID: 2007037492}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1296,7 +1371,7 @@ GameObject:
   - component: {fileID: 2087377188}
   - component: {fileID: 2087377187}
   - component: {fileID: 2087377186}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
