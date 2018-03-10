@@ -5,36 +5,39 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
+    [Header("Hover")]
     [Range(0, 10)]
     [SerializeField] private float hoverHeight;
     [Range(0, 5)]
     [SerializeField] private float groundFollowHeight; // korkeus jolla alus mukautuu maan muotoihin mutta ei leiju
     [Range(0, 10)]
-    [SerializeField] private float hoverSpeed;
+    [SerializeField] private float maxHoverSpeed;
     [Range(0, 5)]
     [SerializeField] private float maxHoverAcceleration;
     [Range(0, 5)]
     [SerializeField] private float angleAdjustSpeed;
     [Range(0, 3)]
-    [SerializeField] private float hoverProbeDistance; // leijumiseen käytettävien boxcastien välimatka keskipisteestä
+    [SerializeField] private float hoverProbeDistance; // leijumiseen käytettävien spherecastien välimatka keskipisteestä
     private Vector3 hoverProbeOffset;
-    [Range(0, 3)]
+    [Range(0, 1)]
     [SerializeField] private float hoverProbeRadius;
 
+    [Header("Movement")]
     [Range(0, 5)]
     [SerializeField] private float thrust; // kiihdytysteho
+    [Range(0, 100)]
     [SerializeField] private float maxSpeed;
     private float trueMaxSpeed;
+
     [Range(2, 5)]
     [SerializeField] private float turnSpeed; // kuinka nopeasti alus kääntyy ohjauksesta
-    [SerializeField] private float maxTurnAcceleration; // kuinka nopeasti aluksen nopeus voi muuttua kääntyessä (tämä aiheuttaa driftaamisen nopeissa vauhdeissa)
+
     [Range(0, 60)]
     [SerializeField] private float rollAngle; // sivuttainen kallistuskulma kääntyessä
     [Range(0, 1)]
     [SerializeField] private float rollSpeed;
-
-    [SerializeField] private float handling; //Vaikuttaa kuinka paljon input otetaan huomioon [0,1] //Edessä oleva kommentti ei näytä suomen kielen lauseelta
-
+    
+    [Header("Other")]
     [SerializeField] private float jumpForce;
     private int jumpTimer;
     [SerializeField] private int jumpWaitTime; // hypyn cooldown fixedDeltaTime-intervalleina (frameina)
@@ -57,6 +60,7 @@ public class PlayerController : MonoBehaviour {
     private bool didHitBack;
     float targetRoll;
     float currentRoll;
+    Vector3 targetVelocity;
 
     private const int layerMask = 1 << 8; // maski estää osumat muihin kuin terrain-layerin objekteihin
 
@@ -93,7 +97,7 @@ public class PlayerController : MonoBehaviour {
             float minDistance = Mathf.Min(hitFront.distance, hitBack.distance);
             if (minDistance <= hoverHeight)
             {
-                float targetVel = (hoverHeight - minDistance) * hoverSpeed;
+                float targetVel = (hoverHeight - minDistance) * maxHoverSpeed;
                 float velDiff = targetVel - rb.velocity.y;
                 if (velDiff < maxHoverAcceleration)
                 {
@@ -131,9 +135,9 @@ public class PlayerController : MonoBehaviour {
         transform.Rotate(0, 0, rollToApply, Space.Self);
         currentRoll += rollToApply;
 
-        // kiihdyttäminen
-
-        rb.velocity += vInput * thrust * transform.forward;
+        // kiihdyttäminen ja nopeuden hallinta
+        
+        rb.velocity = Vector3.ProjectOnPlane(rb.velocity, transform.right) + transform.forward * vInput * thrust;
 
         if (rb.velocity.sqrMagnitude > maxSpeed * maxSpeed)
         {

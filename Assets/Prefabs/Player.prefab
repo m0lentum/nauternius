@@ -618,7 +618,7 @@ Rigidbody:
   m_GameObject: {fileID: 1951186041258750}
   serializedVersion: 2
   m_Mass: 400
-  m_Drag: 1.1
+  m_Drag: 0.5
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -638,18 +638,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverHeight: 3
   groundFollowHeight: 2
-  hoverSpeed: 8
+  maxHoverSpeed: 8
   maxHoverAcceleration: 4
   angleAdjustSpeed: 2.5
   hoverProbeDistance: 1.5
   hoverProbeRadius: 0.5
-  thrust: 2
+  thrust: 1.5
   maxSpeed: 80
-  turnSpeed: 3
-  maxTurnAcceleration: 0
-  rollAngle: 20
+  turnSpeed: 2.5
+  rollAngle: 15
   rollSpeed: 0.2
-  handling: 1
   jumpForce: 11000
   jumpWaitTime: 20
   checkPointManager: {fileID: 0}
