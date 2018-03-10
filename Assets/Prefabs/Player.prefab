@@ -619,11 +619,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 400
   m_Drag: 1.1
-  m_AngularDrag: 40
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &114814395075641368
 MonoBehaviour:
@@ -636,16 +636,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68529ea5fd6883242b13fb53907a3f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverHeight: 5
-  hoverSpeed: 4
-  maxHoverAcceleration: 1.5
-  angleAdjustStrength: 0.15
-  hoverProbeDistance: 2
+  hoverHeight: 3
+  hoverSpeed: 6
+  maxHoverAcceleration: 4
+  angleAdjustSpeed: 2.5
+  hoverProbeDistance: 1.5
   hoverProbeRadius: 0.5
   thrust: 2
-  maxSpeed: 30
-  maxAcceleration: 0
-  turnSpeed: 100
+  maxSpeed: 80
+  turnSpeed: 3
+  maxTurnAcceleration: 0
   handling: 1
   jumpForce: 11000
   jumpWaitTime: 20

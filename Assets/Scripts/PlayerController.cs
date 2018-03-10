@@ -9,10 +9,10 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float hoverHeight;
     [Range(0, 10)]
     [SerializeField] private float hoverSpeed;
-    [Range(0, 3)]
+    [Range(0, 5)]
     [SerializeField] private float maxHoverAcceleration;
-    [Range(0, 0.5f)]
-    [SerializeField] private float angleAdjustStrength;
+    [Range(0, 5)]
+    [SerializeField] private float angleAdjustSpeed;
     [Range(0, 3)]
     [SerializeField] private float hoverProbeDistance; // leijumiseen käytettävien boxcastien välimatka keskipisteestä
     private Vector3 hoverProbeOffset;
@@ -23,8 +23,10 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float thrust; // kiihdytysteho
     [SerializeField] private float maxSpeed;
     private float trueMaxSpeed;
-    [SerializeField] private float maxAcceleration;
-    [SerializeField] private float turnSpeed;
+    [Range(2, 5)]
+    [SerializeField] private float turnSpeed; // kuinka nopeasti alus kääntyy ohjauksesta
+    [SerializeField] private float maxTurnAcceleration; // kuinka nopeasti aluksen nopeus voi muuttua kääntyessä (tämä aiheuttaa driftaamisen nopeissa vauhdeissa)
+
     [SerializeField] private float handling; //Vaikuttaa kuinka paljon input otetaan huomioon [0,1] //Edessä oleva kommentti ei näytä suomen kielen lauseelta
 
     [SerializeField] private float jumpForce;
@@ -43,11 +45,11 @@ public class PlayerController : MonoBehaviour {
     // update-loopissa käytettäviä muuttujia
     private float hInput;
     private float vInput;
-    private Vector3 fwd;
     private RaycastHit hitFront;
     private RaycastHit hitBack;
     private bool didHitFront;
     private bool didHitBack;
+    private Vector3 toRotate;
 
     private const int layerMask = 1 << 8; // maski estää osumat muihin kuin terrain-layerin objekteihin
 
@@ -67,30 +69,25 @@ public class PlayerController : MonoBehaviour {
     {
         hInput = Input.GetAxis("Horizontal");
         vInput = Input.GetAxis("Vertical");
-        fwd = transform.rotation * Vector3.forward;
+        toRotate = new Vector3(0, 0, 0);
 
         // leijuminen
 
-        Vector3 originFront = transform.TransformPoint(hoverProbeOffset);
-        Vector3 originBack = transform.TransformPoint(-hoverProbeOffset);
-        Vector3 backToFront = originFront - originBack;
-        didHitFront = Physics.SphereCast(originFront, hoverProbeRadius, Vector3.down, out hitFront, hoverHeight, layerMask);
-        didHitBack = Physics.SphereCast(originBack, hoverProbeRadius, Vector3.down, out hitBack, hoverHeight, layerMask);
+        didHitFront = Physics.SphereCast(transform.TransformPoint(hoverProbeOffset), hoverProbeRadius, Vector3.down, out hitFront, hoverHeight, layerMask);
+        didHitBack = Physics.SphereCast(transform.TransformPoint(-hoverProbeOffset), hoverProbeRadius, Vector3.down, out hitBack, hoverHeight, layerMask);
 
         if (didHitFront && didHitBack)
         {
             // ollaan kokonaan maassa
             isGrounded = true;
 
-            Vector3 targetDir = backToFront + Vector3.down * (hitFront.distance - hitBack.distance);
-            Quaternion targetRot = Quaternion.LookRotation(targetDir);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, angleAdjustStrength);
+            toRotate.x = (hitFront.distance - hitBack.distance) * angleAdjustSpeed;
 
             // pystysuuntainen liikenopeus
             float heightDiff = hoverHeight - Mathf.Min(hitFront.distance, hitBack.distance);
             float targetVel = heightDiff * hoverSpeed;
             float velDiff = targetVel - rb.velocity.y;
-            if (Mathf.Abs(velDiff) < maxHoverAcceleration)
+            if (velDiff < maxHoverAcceleration)
             {
                 rb.velocity = new Vector3(rb.velocity.x, targetVel, rb.velocity.z);
             }
@@ -101,35 +98,37 @@ public class PlayerController : MonoBehaviour {
         }
         else if (didHitFront)
         {
-            if (Vector3.Dot(fwd, rb.velocity) > 0)
-            {
-                // säädetään kulmaa vain jos mennään tasannetta kohti
-                
-            }
+            // jos vain toinen pää on tason päällä, pitäisi kääntää jonkin verran ettei tule tiettyjä jumitilanteita (todo)
         }
         else if (didHitBack)
         {
-            if (Vector3.Dot(fwd, rb.velocity) < 0)
-            {
-                
-            }
+            
         }
         else
         {
             // ollaan (ainakin osittain) ilmassa, käännetään alusta jonkin verran liikesuunnan mukaan
+            isGrounded = false;
+
 
         }
 
+        // kääntyminen
+
+        toRotate.y = hInput * turnSpeed;
+
+
         // kiihdyttäminen
 
-        rb.velocity += vInput * thrust * fwd;
-
-        
+        rb.velocity += vInput * thrust * transform.forward;
 
         if (rb.velocity.sqrMagnitude > maxSpeed * maxSpeed)
         {
             rb.velocity *= maxSpeed / rb.velocity.magnitude;
         }
+
+
+
+        transform.Rotate(toRotate);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -194,6 +193,8 @@ public class PlayerController : MonoBehaviour {
             Gizmos.DrawRay(origin, Vector3.down * hitBack.distance);
             Gizmos.DrawWireSphere(origin + Vector3.down * hitBack.distance, hoverProbeRadius);
         }
+
+        //Gizmos.DrawRay(transform.TransformPoint(Vector3.zero), transform.forward * 20.0f);
     }
 
     // päivitetään vastaavat vektorit kun editorissa muutetaan arvoja
