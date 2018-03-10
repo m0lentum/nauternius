@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour {
 
     [Range(0, 10)]
     [SerializeField] private float hoverHeight;
+    [Range(0, 5)]
+    [SerializeField] private float groundFollowHeight; // korkeus jolla alus mukautuu maan muotoihin mutta ei leiju
     [Range(0, 10)]
     [SerializeField] private float hoverSpeed;
     [Range(0, 5)]
@@ -26,6 +28,10 @@ public class PlayerController : MonoBehaviour {
     [Range(2, 5)]
     [SerializeField] private float turnSpeed; // kuinka nopeasti alus kääntyy ohjauksesta
     [SerializeField] private float maxTurnAcceleration; // kuinka nopeasti aluksen nopeus voi muuttua kääntyessä (tämä aiheuttaa driftaamisen nopeissa vauhdeissa)
+    [Range(0, 60)]
+    [SerializeField] private float rollAngle; // sivuttainen kallistuskulma kääntyessä
+    [Range(0, 1)]
+    [SerializeField] private float rollSpeed;
 
     [SerializeField] private float handling; //Vaikuttaa kuinka paljon input otetaan huomioon [0,1] //Edessä oleva kommentti ei näytä suomen kielen lauseelta
 
@@ -49,7 +55,8 @@ public class PlayerController : MonoBehaviour {
     private RaycastHit hitBack;
     private bool didHitFront;
     private bool didHitBack;
-    private Vector3 toRotate;
+    float targetRoll;
+    float currentRoll;
 
     private const int layerMask = 1 << 8; // maski estää osumat muihin kuin terrain-layerin objekteihin
 
@@ -69,31 +76,35 @@ public class PlayerController : MonoBehaviour {
     {
         hInput = Input.GetAxis("Horizontal");
         vInput = Input.GetAxis("Vertical");
-        toRotate = new Vector3(0, 0, 0);
+        isGrounded = false;
 
         // leijuminen
 
-        didHitFront = Physics.SphereCast(transform.TransformPoint(hoverProbeOffset), hoverProbeRadius, Vector3.down, out hitFront, hoverHeight, layerMask);
-        didHitBack = Physics.SphereCast(transform.TransformPoint(-hoverProbeOffset), hoverProbeRadius, Vector3.down, out hitBack, hoverHeight, layerMask);
+        didHitFront = Physics.SphereCast(transform.TransformPoint(hoverProbeOffset), hoverProbeRadius, Vector3.down, out hitFront, hoverHeight + groundFollowHeight, layerMask);
+        didHitBack = Physics.SphereCast(transform.TransformPoint(-hoverProbeOffset), hoverProbeRadius, Vector3.down, out hitBack, hoverHeight + groundFollowHeight, layerMask);
 
         if (didHitFront && didHitBack)
         {
             // ollaan kokonaan maassa
-            isGrounded = true;
 
-            toRotate.x = (hitFront.distance - hitBack.distance) * angleAdjustSpeed;
+            transform.Rotate((hitFront.distance - hitBack.distance) * angleAdjustSpeed, 0, 0, Space.Self);
 
             // pystysuuntainen liikenopeus
-            float heightDiff = hoverHeight - Mathf.Min(hitFront.distance, hitBack.distance);
-            float targetVel = heightDiff * hoverSpeed;
-            float velDiff = targetVel - rb.velocity.y;
-            if (velDiff < maxHoverAcceleration)
+            float minDistance = Mathf.Min(hitFront.distance, hitBack.distance);
+            if (minDistance <= hoverHeight)
             {
-                rb.velocity = new Vector3(rb.velocity.x, targetVel, rb.velocity.z);
-            }
-            else
-            {
-                rb.velocity = rb.velocity + new Vector3(0, maxHoverAcceleration, 0);
+                float targetVel = (hoverHeight - minDistance) * hoverSpeed;
+                float velDiff = targetVel - rb.velocity.y;
+                if (velDiff < maxHoverAcceleration)
+                {
+                    rb.velocity = new Vector3(rb.velocity.x, targetVel, rb.velocity.z);
+                }
+                else
+                {
+                    rb.velocity = rb.velocity + new Vector3(0, maxHoverAcceleration, 0);
+                }
+
+                isGrounded = true;
             }
         }
         else if (didHitFront)
@@ -107,15 +118,18 @@ public class PlayerController : MonoBehaviour {
         else
         {
             // ollaan (ainakin osittain) ilmassa, käännetään alusta jonkin verran liikesuunnan mukaan
-            isGrounded = false;
 
-
+            
         }
 
-        // kääntyminen
+        // kääntyminen ja kallistus
 
-        toRotate.y = hInput * turnSpeed;
+        transform.Rotate(0, hInput * turnSpeed, 0, Space.World);
 
+        targetRoll = -hInput * rollAngle;
+        float rollToApply = (targetRoll - currentRoll) * rollSpeed;
+        transform.Rotate(0, 0, rollToApply, Space.Self);
+        currentRoll += rollToApply;
 
         // kiihdyttäminen
 
@@ -125,10 +139,6 @@ public class PlayerController : MonoBehaviour {
         {
             rb.velocity *= maxSpeed / rb.velocity.magnitude;
         }
-
-
-
-        transform.Rotate(toRotate);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -175,7 +185,7 @@ public class PlayerController : MonoBehaviour {
         hasJumpAbility = true;
     }
 
-    // Boxcastien debug-piirto
+    // Spherecastien debug-piirto
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
@@ -184,14 +194,14 @@ public class PlayerController : MonoBehaviour {
         {
             Vector3 origin = transform.TransformPoint(hoverProbeOffset);
             Gizmos.DrawRay(origin, Vector3.down * hitFront.distance);
-            Gizmos.DrawWireSphere(origin + Vector3.down * hitFront.distance, hoverProbeRadius);
+            if (isGrounded) Gizmos.DrawWireSphere(origin + Vector3.down * hitFront.distance, hoverProbeRadius);
         }
 
         if (didHitBack)
         {
             Vector3 origin = transform.TransformPoint(-hoverProbeOffset);
             Gizmos.DrawRay(origin, Vector3.down * hitBack.distance);
-            Gizmos.DrawWireSphere(origin + Vector3.down * hitBack.distance, hoverProbeRadius);
+            if (isGrounded) Gizmos.DrawWireSphere(origin + Vector3.down * hitBack.distance, hoverProbeRadius);
         }
 
         //Gizmos.DrawRay(transform.TransformPoint(Vector3.zero), transform.forward * 20.0f);

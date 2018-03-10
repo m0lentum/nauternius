@@ -637,7 +637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverHeight: 3
-  hoverSpeed: 6
+  groundFollowHeight: 2
+  hoverSpeed: 8
   maxHoverAcceleration: 4
   angleAdjustSpeed: 2.5
   hoverProbeDistance: 1.5
@@ -646,6 +647,8 @@ MonoBehaviour:
   maxSpeed: 80
   turnSpeed: 3
   maxTurnAcceleration: 0
+  rollAngle: 20
+  rollSpeed: 0.2
   handling: 1
   jumpForce: 11000
   jumpWaitTime: 20
