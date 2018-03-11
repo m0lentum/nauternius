@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
     [Range(0, 10)]
     [SerializeField] private float maxHoverSpeed;
     [Range(0, 5)]
-    [SerializeField] private float maxHoverAcceleration;
+    [SerializeField] private float hoverAcceleration;
     [Range(0, 5)]
     [SerializeField] private float pitchAdjustSpeedGrounded;
     [Range(0, 3)]
@@ -69,11 +69,11 @@ public class PlayerController : MonoBehaviour {
     private RaycastHit hitBack;
     private bool didHitFront;
     private bool didHitBack;
+    private Vector3 groundNormal;
     float targetRoll;
     float currentRoll;
     float targetPitch;
     float currentPitch;
-    Vector3 targetVelocity;
 
     private const int layerMask = 1 << 8; // maski estää osumat muihin kuin terrain-layerin objekteihin
 
@@ -110,16 +110,12 @@ public class PlayerController : MonoBehaviour {
             float minDistance = Mathf.Min(hitFront.distance, hitBack.distance);
             if (minDistance <= hoverHeight)
             {
+                groundNormal = (hitFront.normal + hitBack.normal + Vector3.up).normalized;
+
                 float targetVel = (hoverHeight - minDistance) * maxHoverSpeed;
-                float velDiff = targetVel - rb.velocity.y;
-                if (velDiff < maxHoverAcceleration)
-                {
-                    rb.velocity = new Vector3(rb.velocity.x, targetVel, rb.velocity.z);
-                }
-                else
-                {
-                    rb.velocity = rb.velocity + new Vector3(0, maxHoverAcceleration, 0);
-                }
+                float velDiff = targetVel - Vector3.Dot(rb.velocity, groundNormal);
+
+                if (velDiff > 0) rb.velocity += Mathf.Min(velDiff, hoverAcceleration) * groundNormal;
 
                 isGrounded = true;
             }
