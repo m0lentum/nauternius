@@ -528,7 +528,7 @@ MonoBehaviour:
   thrust: 1.5
   maxSpeed: 80
   turnSpeed: 2.5
-  airControl: 0.75
+  airControl: 0.6
   rollAngle: 15
   rollSpeed: 0.2
   onGroundDrag: 0.5

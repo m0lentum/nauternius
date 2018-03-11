@@ -104,6 +104,8 @@ public class PlayerController : MonoBehaviour {
         {
             // ollaan kokonaan maassa
 
+            isGrounded = true;
+
             transform.Rotate((hitFront.distance - hitBack.distance) * pitchAdjustSpeedGrounded, 0, 0, Space.Self);
 
             // pystysuuntainen liikenopeus
@@ -116,8 +118,6 @@ public class PlayerController : MonoBehaviour {
                 float velDiff = targetVel - Vector3.Dot(rb.velocity, groundNormal);
 
                 if (velDiff > 0) rb.velocity += Mathf.Min(velDiff, hoverAcceleration) * groundNormal;
-
-                isGrounded = true;
             }
         }
         else if (didHitFront)
