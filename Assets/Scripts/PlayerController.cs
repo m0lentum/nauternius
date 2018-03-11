@@ -91,8 +91,8 @@ public class PlayerController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        hInput = Input.GetAxis("Horizontal");
-        vInput = Input.GetAxis("Vertical");
+        hInput = Input.GetAxis("Steer");
+        vInput = Input.GetAxis("Forward") - Input.GetAxis("Reverse");
         isGrounded = false;
 
         // leijuminen
