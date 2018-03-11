@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour {
 
     [Range(2, 5)]
     [SerializeField] private float turnSpeed; // kuinka nopeasti alus kääntyy ohjauksesta
+    [Range(0, 1)]
+    [SerializeField] private float airControl;
 
     [Range(0, 60)]
     [SerializeField] private float rollAngle; // sivuttainen kallistuskulma kääntyessä
@@ -126,22 +128,30 @@ public class PlayerController : MonoBehaviour {
             
         }
 
-        // kääntyminen ja kallistus
-
-        transform.Rotate(0, hInput * turnSpeed, 0, Space.World);
+        // kallistus
 
         targetRoll = -hInput * rollAngle;
         float rollToApply = (targetRoll - currentRoll) * rollSpeed;
         transform.Rotate(0, 0, rollToApply, Space.Self);
         currentRoll += rollToApply;
 
-        // kiihdyttäminen ja nopeuden hallinta
-        
-        rb.velocity = Vector3.ProjectOnPlane(rb.velocity, transform.right) + transform.forward * vInput * thrust;
+        // kiihdyttäminen ja kääntyminen
 
-        if (rb.velocity.sqrMagnitude > maxSpeed * maxSpeed)
+        if (isGrounded)
         {
-            rb.velocity *= maxSpeed / rb.velocity.magnitude;
+            rb.velocity = Vector3.ProjectOnPlane(rb.velocity, new Vector3(transform.right.x, 0, transform.right.z)) + transform.forward * vInput * thrust;
+            transform.Rotate(0, hInput * turnSpeed, 0, Space.World);
+        }
+        else
+        {
+            rb.velocity = Vector3.ProjectOnPlane(rb.velocity, new Vector3(transform.right.x, 0, transform.right.z)) + Vector3.ProjectOnPlane(transform.forward * vInput * thrust * airControl, Vector3.up);
+            transform.Rotate(0, hInput * turnSpeed * airControl, 0, Space.World);
+        }
+
+
+        if (rb.velocity.z * rb.velocity.z + rb.velocity.x * rb.velocity.x > trueMaxSpeed * trueMaxSpeed)
+        {
+            rb.velocity *= trueMaxSpeed / rb.velocity.magnitude;
         }
     }
 
