@@ -38,6 +38,11 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float rollAngle; // sivuttainen kallistuskulma kääntyessä
     [Range(0, 1)]
     [SerializeField] private float rollSpeed;
+
+    [Range(0, 1)]
+    [SerializeField] private float onGroundDrag;
+    [Range(0, 1)]
+    [SerializeField] private float inAirDrag;
     
     [Header("Other")]
     [SerializeField] private float jumpForce;
@@ -141,11 +146,13 @@ public class PlayerController : MonoBehaviour {
         {
             rb.velocity = Vector3.ProjectOnPlane(rb.velocity, new Vector3(transform.right.x, 0, transform.right.z)) + transform.forward * vInput * thrust;
             transform.Rotate(0, hInput * turnSpeed, 0, Space.World);
+            rb.drag = onGroundDrag;
         }
         else
         {
             rb.velocity = Vector3.ProjectOnPlane(rb.velocity, new Vector3(transform.right.x, 0, transform.right.z)) + Vector3.ProjectOnPlane(transform.forward * vInput * thrust * airControl, Vector3.up);
             transform.Rotate(0, hInput * turnSpeed * airControl, 0, Space.World);
+            rb.drag = inAirDrag;
         }
 
 
