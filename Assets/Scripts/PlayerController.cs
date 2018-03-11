@@ -15,7 +15,11 @@ public class PlayerController : MonoBehaviour {
     [Range(0, 5)]
     [SerializeField] private float maxHoverAcceleration;
     [Range(0, 5)]
-    [SerializeField] private float angleAdjustSpeed;
+    [SerializeField] private float pitchAdjustSpeedGrounded;
+    [Range(0, 3)]
+    [SerializeField] private float pitchAdjustSpeedAir;
+    [Range(0, 60)]
+    [SerializeField] private float maxAirPitch;
     [Range(0, 3)]
     [SerializeField] private float hoverProbeDistance; // leijumiseen käytettävien spherecastien välimatka keskipisteestä
     private Vector3 hoverProbeOffset;
@@ -67,6 +71,8 @@ public class PlayerController : MonoBehaviour {
     private bool didHitBack;
     float targetRoll;
     float currentRoll;
+    float targetPitch;
+    float currentPitch;
     Vector3 targetVelocity;
 
     private const int layerMask = 1 << 8; // maski estää osumat muihin kuin terrain-layerin objekteihin
@@ -98,7 +104,7 @@ public class PlayerController : MonoBehaviour {
         {
             // ollaan kokonaan maassa
 
-            transform.Rotate((hitFront.distance - hitBack.distance) * angleAdjustSpeed, 0, 0, Space.Self);
+            transform.Rotate((hitFront.distance - hitBack.distance) * pitchAdjustSpeedGrounded, 0, 0, Space.Self);
 
             // pystysuuntainen liikenopeus
             float minDistance = Mathf.Min(hitFront.distance, hitBack.distance);
@@ -128,17 +134,33 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            // ollaan (ainakin osittain) ilmassa, käännetään alusta jonkin verran liikesuunnan mukaan
+            // ollaan ilmassa, käännetään alusta jonkin verran liikesuunnan mukaan
 
-            
+            currentPitch = transform.localEulerAngles.x;
+            if (currentPitch > 180.0f) currentPitch -= 360.0f;
+
+            targetPitch = Vector3.SignedAngle(new Vector3(transform.forward.x, 0, transform.forward.z), rb.velocity, transform.right);
+            if (targetPitch > 90.0f) targetPitch -= 180.0f; // liikutaan takaperin
+            else if (targetPitch < -90.0f) targetPitch += 180.0f;
+            targetPitch = Mathf.Clamp(targetPitch, -maxAirPitch, maxAirPitch);
+
+            float diff = targetPitch - currentPitch;
+            if (Mathf.Abs(diff) > pitchAdjustSpeedAir)
+            {
+                transform.Rotate(Mathf.Sign(diff) * pitchAdjustSpeedAir, 0, 0, Space.Self);
+            }
+            else
+            {
+                transform.Rotate(diff, 0, 0, Space.Self);
+            }
         }
 
         // kallistus
 
+        currentRoll = transform.localEulerAngles.z;
+        if (currentRoll > 180.0f) currentRoll -= 360.0f;
         targetRoll = -hInput * rollAngle;
-        float rollToApply = (targetRoll - currentRoll) * rollSpeed;
-        transform.Rotate(0, 0, rollToApply, Space.Self);
-        currentRoll += rollToApply;
+        transform.Rotate(0, 0, (targetRoll - currentRoll) * rollSpeed, Space.Self);
 
         // kiihdyttäminen ja kääntyminen
 
