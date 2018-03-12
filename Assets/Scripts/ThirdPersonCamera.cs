@@ -12,24 +12,15 @@ public class ThirdPersonCamera : MonoBehaviour {
     public float damping = 1;
     Vector3 offset;*/
     
-    public Transform target;
-    public float distance;
-    public float height; // poistoon ja asetus editorista?
-    public float damping;
-    public float rotationDamping;
+    [SerializeField] private Transform target;
+    [SerializeField] private float distance;
+    [SerializeField] private float height; // poistoon ja asetus editorista?
+    [SerializeField] private float damping;
+    [SerializeField] private float rotationDamping;
     
     //test
-    public float playerMinusCameraZ;
+    private float playerMinusCameraZ;
 
-
-    void Start()
-    {
-        distance = 9f;
-        height = 3f;
-        damping = 10f;
-        rotationDamping = 7f;
-        target = GameObject.Find("Player").transform;
-    }
 
     void FixedUpdate()
     {

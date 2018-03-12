@@ -20,6 +20,6 @@ public class BallTriggerObject : MonoBehaviour {
 
     public void BallTrigger()
     {
-        transform.position = transform.position - new Vector3(0,-50, 0);
+        transform.position = transform.position - new Vector3(0,200, 0);
     }
 }

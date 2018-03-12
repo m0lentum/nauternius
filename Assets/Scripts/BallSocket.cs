@@ -7,6 +7,7 @@ using UnityEngine;
 //---------------------------------------------------------------------------------------
 
 //Keskeneräinen, kokeileva, eloisa, hieman hapettunut skripti. Vahva hapan jälkimaku.
+//Force Field ei toimikaan uuden liikkumisen kanssa.
 public class BallSocket : MonoBehaviour {
     
     [SerializeField] private GameObject targetObj;
@@ -17,13 +18,11 @@ public class BallSocket : MonoBehaviour {
     [SerializeField] private float forceFieldPower;
     [SerializeField] private Material activatedMaterial;
 
-    public float curPullForce;
-    public float socketTimer;
-    public bool isForceFieldActive;
-    public Rigidbody ballRb;
-    public Rigidbody collRb;
-
-    private bool isOn;
+    private float curPullForce;
+    private float socketTimer;
+    private bool isForceFieldActive;
+    private Rigidbody ballRb;
+    private Rigidbody collRb;
 
     //Ottaa lähelle tulevan objektin rigidbodyn talteen
     //Bugaa helposti, jos forcefield päällä ja 2 objektia tulee sisään samaan aikaan, koska ottaa uuden RBn talteen ennen kuin vanha on käsitelty. Onko paha?

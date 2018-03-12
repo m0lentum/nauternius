@@ -4,109 +4,188 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
+
+    [Header("Hover")]
+    [Range(0, 10)]
+    [SerializeField] private float hoverHeight;
+    [Range(0, 5)]
+    [SerializeField] private float groundFollowHeight; // korkeus jolla alus mukautuu maan muotoihin mutta ei leiju
+    [Range(0, 10)]
+    [SerializeField] private float maxHoverSpeed;
+    [Range(0, 5)]
+    [SerializeField] private float hoverAcceleration;
+    [Range(0, 5)]
+    [SerializeField] private float pitchAdjustSpeedGrounded;
+    [Range(0, 3)]
+    [SerializeField] private float pitchAdjustSpeedAir;
+    [Range(0, 60)]
+    [SerializeField] private float maxAirPitch;
+    [Range(0, 3)]
+    [SerializeField] private float hoverProbeDistance; // leijumiseen käytettävien spherecastien välimatka keskipisteestä
+    private Vector3 hoverProbeOffset;
+    [Range(0, 1)]
+    [SerializeField] private float hoverProbeRadius;
+
+    [Header("Movement")]
+    [Range(0, 5)]
+    [SerializeField] private float thrust; // kiihdytysteho
+    [Range(0, 100)]
+    [SerializeField] private float maxSpeed;
+    private float trueMaxSpeed;
+
+    [Range(2, 5)]
+    [SerializeField] private float turnSpeed; // kuinka nopeasti alus kääntyy ohjauksesta
+    [Range(0, 1)]
+    [SerializeField] private float airControl;
+
+    [Range(0, 60)]
+    [SerializeField] private float rollAngle; // sivuttainen kallistuskulma kääntyessä
+    [Range(0, 1)]
+    [SerializeField] private float rollSpeed;
+
+    [Range(0, 1)]
+    [SerializeField] private float onGroundDrag;
+    [Range(0, 1)]
+    [SerializeField] private float inAirDrag;
     
-    public float hoverHeight;
-    public float hoverForce;
-    
-    public float maxSpeed;
-    public float speed;
-    public float turnSpeed;
-    public float handling; //Vaikuttaa kuinka paljon input otetaan huomioon [0,1] //Edessä oleva kommentti ei näytä suomen kielen lauseelta
+    [Header("Other")]
+    [SerializeField] private float jumpForce;
+    private int jumpTimer;
+    [SerializeField] private int jumpWaitTime; // hypyn cooldown fixedDeltaTime-intervalleina (frameina)
 
-    public float rotationInput;
-    public float speedInput;
+    private bool hasSuperSpeed;
+    private bool hasJumpAbility;
 
-    public float jumpForce;
-    public float jumpTimer;
-    public float jumpWaitTime;
+    private bool isGrounded;
 
-    public bool hasSuperSpeed;
-    public bool hasJumpAbility;
-    public bool isGrounded;
+    private Rigidbody rb;
+    [SerializeField] private CheckPointManager checkPointManager;
 
-    public Rigidbody rb;
-    public CheckPointManager checkPointManager;
 
-    //Käytetään aluksen kääntämisessä
-    public Quaternion fromRotation;
-    public Quaternion toRotation;
-    public Vector3 targetNormal;
-    public RaycastHit rcHit;
-    public float weight;
-    public float adjustSpeed;
+    // update-loopissa käytettäviä muuttujia
+    private float hInput;
+    private float vInput;
+    private RaycastHit hitFront;
+    private RaycastHit hitBack;
+    private bool didHitFront;
+    private bool didHitBack;
+    private Vector3 groundNormal;
+    float targetRoll;
+    float currentRoll;
+    float targetPitch;
+    float currentPitch;
+
+    private const int layerMask = 1 << 8; // maski estää osumat muihin kuin terrain-layerin objekteihin
+
 
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
-        checkPointManager = GameObject.Find("Check Point Manager").GetComponent<CheckPointManager>();
-        
-        hoverForce = 50f;
-        hoverHeight = 2f;
-
-        maxSpeed = 13000f;
-        speed = maxSpeed;
-        turnSpeed = 100f;
-        handling = 1;
-
-        jumpForce = 11000f;
-        jumpWaitTime = 1;
-
-        weight = 1;
-        adjustSpeed = 1;
+        hoverProbeOffset = new Vector3(0, 0, hoverProbeDistance);
+        trueMaxSpeed = maxSpeed;
+        jumpTimer = 0;
+        hasSuperSpeed = false;
+        hasJumpAbility = false;
+        isGrounded = false;
 	}
-	
-	void Update ()
-    {
-       rotationInput = Input.GetAxis("Horizontal");
-       speedInput = Input.GetAxis("Vertical");
-
-       transform.Rotate(0, rotationInput * turnSpeed * Time.deltaTime, 0);
-
-       jumpTimer += Time.deltaTime;
-        
-       //Kääntää aluksen samaan kulmaan kuin alla oleva maa
-       if (Physics.Raycast(transform.position, -Vector3.up, out rcHit))
-       {
-           fromRotation = transform.rotation;
-
-           if (rcHit.normal == transform.up) return;
-           if (rcHit.normal != targetNormal)
-           {
-               weight = 0;
-               targetNormal = rcHit.normal;
-               toRotation = Quaternion.FromToRotation(Vector3.up, rcHit.normal);
-           }
-           if (weight <= 1)
-           {
-               weight += Time.deltaTime * adjustSpeed * (1 / rcHit.distance);
-               if (weight > 1) weight = 1;
-               toRotation = Quaternion.Euler(toRotation.eulerAngles.x, fromRotation.eulerAngles.y, toRotation.eulerAngles.z);
-               transform.rotation = Quaternion.Slerp(fromRotation, toRotation, weight);
-           }
-           
-       }
-    }
 
     void FixedUpdate()
     {
-        //Handling pienentäisi kaasutuksen vaikutusta ollessa ilmassa, tuntu paskalta ainakin näin simppelinä
-        //handling = 0.5f;
+        jumpTimer += 1;
 
-        //Leijuminen - Nostaa autoa ylöspäin, kun se tippuu liian lähelle maata
-        Ray ray = new Ray(transform.position, -transform.up);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, hoverHeight))
+        hInput = Input.GetAxis("Steer");
+        vInput = Input.GetAxis("Forward") - Input.GetAxis("Reverse");
+        isGrounded = false;
+
+        // leijuminen
+
+        didHitFront = Physics.SphereCast(transform.TransformPoint(hoverProbeOffset), hoverProbeRadius, Vector3.down, out hitFront, hoverHeight + groundFollowHeight, layerMask);
+        didHitBack = Physics.SphereCast(transform.TransformPoint(-hoverProbeOffset), hoverProbeRadius, Vector3.down, out hitBack, hoverHeight + groundFollowHeight, layerMask);
+
+        if (didHitFront && didHitBack)
         {
-            //handling = 1;
-            float proportionalHeight = (hoverHeight - hit.distance); //Mitä lähempänä maata sitä isompi
-            Vector3 forceUp = Vector3.up * proportionalHeight * hoverForce; //Nostaa lujempaa, mitä lähempänä maata
+            // ollaan kokonaan maassa
 
-            rb.AddForce(forceUp, ForceMode.Acceleration);
-            if (Input.GetButtonDown("Jump") && hasJumpAbility && jumpTimer > jumpWaitTime) Jump();
+            isGrounded = true;
+
+            transform.Rotate((hitFront.distance - hitBack.distance) * pitchAdjustSpeedGrounded, 0, 0, Space.Self);
+
+            // pystysuuntainen liikenopeus
+            float minDistance = Mathf.Min(hitFront.distance, hitBack.distance);
+            if (minDistance <= hoverHeight)
+            {
+                groundNormal = (hitFront.normal + hitBack.normal + Vector3.up).normalized;
+
+                float targetVel = (hoverHeight - minDistance) * maxHoverSpeed;
+                float velDiff = targetVel - Vector3.Dot(rb.velocity, groundNormal);
+
+                if (velDiff > 0) rb.velocity += Mathf.Min(velDiff, hoverAcceleration) * groundNormal;
+            }
+        }
+        else if (didHitFront)
+        {
+            // jos vain toinen pää on tason päällä, pitäisi kääntää jonkin verran ettei tule tiettyjä jumitilanteita (todo)
+        }
+        else if (didHitBack)
+        {
+            
+        }
+        else
+        {
+            // ollaan ilmassa, käännetään alusta jonkin verran liikesuunnan mukaan
+
+            currentPitch = transform.localEulerAngles.x;
+            if (currentPitch > 180.0f) currentPitch -= 360.0f;
+
+            targetPitch = Vector3.SignedAngle(new Vector3(transform.forward.x, 0, transform.forward.z), rb.velocity, transform.right);
+            if (targetPitch > 90.0f) targetPitch -= 180.0f; // liikutaan takaperin
+            else if (targetPitch < -90.0f) targetPitch += 180.0f;
+            targetPitch = Mathf.Clamp(targetPitch, -maxAirPitch, maxAirPitch);
+
+            float diff = targetPitch - currentPitch;
+            if (Mathf.Abs(diff) > pitchAdjustSpeedAir)
+            {
+                transform.Rotate(Mathf.Sign(diff) * pitchAdjustSpeedAir, 0, 0, Space.Self);
+            }
+            else
+            {
+                transform.Rotate(diff, 0, 0, Space.Self);
+            }
         }
 
-        rb.AddRelativeForce(0f, 0f, speedInput * speed);
-        //rb.AddRelativeForce(0f, 0f, speedInput * speed * handling);
+        // kallistus
+
+        currentRoll = transform.localEulerAngles.z;
+        if (currentRoll > 180.0f) currentRoll -= 360.0f;
+        targetRoll = -hInput * rollAngle;
+        transform.Rotate(0, 0, (targetRoll - currentRoll) * rollSpeed, Space.Self);
+
+        // kiihdyttäminen ja kääntyminen
+
+        if (isGrounded)
+        {
+            rb.velocity = Vector3.ProjectOnPlane(rb.velocity, new Vector3(transform.right.x, 0, transform.right.z)) + transform.forward * vInput * thrust;
+            transform.Rotate(0, hInput * turnSpeed, 0, Space.World);
+            rb.drag = onGroundDrag;
+        }
+        else
+        {
+            rb.velocity = Vector3.ProjectOnPlane(rb.velocity, new Vector3(transform.right.x, 0, transform.right.z)) + Vector3.ProjectOnPlane(transform.forward * vInput * thrust * airControl, Vector3.up);
+            transform.Rotate(0, hInput * turnSpeed * airControl, 0, Space.World);
+            rb.drag = inAirDrag;
+        }
+
+
+        if (rb.velocity.z * rb.velocity.z + rb.velocity.x * rb.velocity.x > trueMaxSpeed * trueMaxSpeed)
+        {
+            rb.velocity *= trueMaxSpeed / rb.velocity.magnitude;
+        }
+
+        //todo
+        if (isGrounded && Input.GetButtonDown("Jump") && jumpTimer > jumpWaitTime && hasJumpAbility)
+        {
+            Jump();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -114,7 +193,7 @@ public class PlayerController : MonoBehaviour {
         GameObject colObject = collision.collider.gameObject;
         //Debug.Log("Osui :" + colObject.name);
         
-        if (colObject.tag == "wall") SuperSpeedOff();
+        if (colObject.layer == 8) SuperSpeedOff();
     }
 
     public void SuperSpeedOn()
@@ -122,7 +201,7 @@ public class PlayerController : MonoBehaviour {
         if (!hasSuperSpeed)
         {
             hasSuperSpeed = true;
-            speed = 3 * maxSpeed;
+            trueMaxSpeed = 3 * maxSpeed;
         }
     }
 
@@ -131,7 +210,7 @@ public class PlayerController : MonoBehaviour {
         if (hasSuperSpeed)
         {
             hasSuperSpeed = false;
-            speed = maxSpeed;
+            trueMaxSpeed = maxSpeed;
         }
     }
 
@@ -145,5 +224,39 @@ public class PlayerController : MonoBehaviour {
     {
         Debug.Log("Kuoli saatana");
         transform.position = checkPointManager.CurCheckPoint.SpawnPoint;
+    }
+
+    public void EnableJumpAbility()
+    {
+        Debug.Log("Nyt voi hypätä");
+        hasJumpAbility = true;
+    }
+
+    // Spherecastien debug-piirto
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+
+        if (didHitFront)
+        {
+            Vector3 origin = transform.TransformPoint(hoverProbeOffset);
+            Gizmos.DrawRay(origin, Vector3.down * hitFront.distance);
+            if (isGrounded) Gizmos.DrawWireSphere(origin + Vector3.down * hitFront.distance, hoverProbeRadius);
+        }
+
+        if (didHitBack)
+        {
+            Vector3 origin = transform.TransformPoint(-hoverProbeOffset);
+            Gizmos.DrawRay(origin, Vector3.down * hitBack.distance);
+            if (isGrounded) Gizmos.DrawWireSphere(origin + Vector3.down * hitBack.distance, hoverProbeRadius);
+        }
+
+        //Gizmos.DrawRay(transform.TransformPoint(Vector3.zero), transform.forward * 20.0f);
+    }
+
+    // päivitetään vastaavat vektorit kun editorissa muutetaan arvoja
+    void OnValidate()
+    {
+        hoverProbeOffset = new Vector3(0, 0, hoverProbeDistance);
     }
 }

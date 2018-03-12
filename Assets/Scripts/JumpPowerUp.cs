@@ -25,7 +25,7 @@ public class JumpPowerUp : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            playerController.hasJumpAbility = true;
+            playerController.EnableJumpAbility();
             Destroy(gameObject);
         }
     }
