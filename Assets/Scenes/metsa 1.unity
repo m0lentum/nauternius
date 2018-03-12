@@ -817,6 +817,28 @@ Prefab:
       propertyPath: targetObj
       value: 
       objectReference: {fileID: 1800504061}
+    - target: {fileID: 114743547446276396, guid: ad25d915d8983bb4fbc3a9c284cfa1aa,
+        type: 2}
+      propertyPath: forceFieldPower
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 135323988233107504, guid: ad25d915d8983bb4fbc3a9c284cfa1aa,
+        type: 2}
+      propertyPath: m_Radius
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088928662165122, guid: ad25d915d8983bb4fbc3a9c284cfa1aa, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088928662165122, guid: ad25d915d8983bb4fbc3a9c284cfa1aa, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088928662165122, guid: ad25d915d8983bb4fbc3a9c284cfa1aa, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad25d915d8983bb4fbc3a9c284cfa1aa, type: 2}
   m_IsPrefabParent: 0
