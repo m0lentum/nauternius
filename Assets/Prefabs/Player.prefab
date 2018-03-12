@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 136328999007598332}
   m_Layer: 0
   m_Name: Back Collider
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115498855793438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.04, z: 0}
+  m_LocalPosition: {x: -405, y: 3, z: -150}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4756054103730866}
@@ -262,7 +262,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318868409529634}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.409}
+  m_LocalPosition: {x: 0, y: 0, z: 0.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4339995436850132}
@@ -521,7 +521,7 @@ MonoBehaviour:
   maxHoverSpeed: 8
   hoverAcceleration: 1.5
   pitchAdjustSpeedGrounded: 2.5
-  pitchAdjustSpeedAir: 0.5
+  pitchAdjustSpeedAir: 1
   maxAirPitch: 30
   hoverProbeDistance: 1.5
   hoverProbeRadius: 0.25
@@ -533,7 +533,7 @@ MonoBehaviour:
   rollSpeed: 0.2
   onGroundDrag: 0.5
   inAirDrag: 0
-  jumpForce: 11000
+  jumpForce: 6000
   jumpWaitTime: 20
   checkPointManager: {fileID: 0}
 --- !u!136 &136293665471508118
@@ -546,7 +546,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 3.9
+  m_Height: 4.2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136328999007598332

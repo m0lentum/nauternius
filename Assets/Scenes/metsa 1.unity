@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -157,24 +157,6 @@ Prefab:
       propertyPath: checkPointManager
       value: 
       objectReference: {fileID: 1397979387}
-    - target: {fileID: 1844744240905316, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 136293665471508118, guid: eb0d1656a7a2d0f4b820584ad80b1ed7,
-        type: 2}
-      propertyPath: m_Height
-      value: 4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4461735328403666, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865800140465580, guid: eb0d1656a7a2d0f4b820584ad80b1ed7,
-        type: 2}
-      propertyPath: jumpForce
-      value: 6000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
   m_IsPrefabParent: 0
