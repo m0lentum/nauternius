@@ -18,22 +18,32 @@ public class BallSocket : MonoBehaviour {
     [SerializeField] private float maxSocketTimer;
     [SerializeField] private float socketedDistance;
     [SerializeField] private float forceFieldPower;
+
     [SerializeField] private Material activatedMaterial;
+
+    [SerializeField] private AudioClip correctBallSound;
+    [SerializeField] private AudioClip incorrectBallSound;
+    [SerializeField] private AudioClip resetSound;
 
     //publicit pois testin jälkeen
     private float curPullForce;
     public float socketTimer;
-    public bool isForceFieldActive;
-    public GameObject ball;
-    public Rigidbody ballRb;
-    public Rigidbody collRb;
+    private bool isForceFieldActive;
+    private GameObject ball;
+    private Rigidbody ballRb;
+    private Rigidbody collRb;
+    private AudioSource aSource;
+
+    private void Awake()
+    {
+        aSource = GetComponent<AudioSource>();
+    }
 
     //Ottaa lähelle tulevan objektin rigidbodyn talteen
-    //Bugaa helposti, jos forcefield päällä ja 2 objektia tulee sisään samaan aikaan(?), koska ottaa uuden RBn talteen ennen kuin vanha on käsitelty. Onko paha?
     private void OnTriggerEnter(Collider other)
     {
-        //Ottaa talteen pallon ja sen RigidBodyn
-        if (other.tag == "ball" && !isForceFieldActive)
+        //Ottaa talteen ensimmäisen pallon ja sen RigidBodyn
+        if (other.CompareTag("Ball") && !isForceFieldActive)
         {
             curPullForce = maxPullForce;
             ball = other.gameObject;
@@ -65,7 +75,6 @@ public class BallSocket : MonoBehaviour {
             awayDirection = awayDirection - new Vector3(0, awayDirection.y, 0);
             if(collRb != null) collRb.AddForce(awayDirection * (collRb.velocity.magnitude + 10) * forceFieldPower);
         }
-        
     }
     
     void TriggerTargetObject()
@@ -76,7 +85,6 @@ public class BallSocket : MonoBehaviour {
     //Katsoo onko oikea objekti paikallaan socketissa ja jos on ollut tarpeeksi kauan paikallaan, palauttaa True.
     bool CheckSocketStatus(GameObject socketedObj)
     {
-        //if (socketedObj != targetBall) return false;
         if (socketTimer > maxSocketTimer) return true;
 
         if (Vector3.Distance(socketedObj.transform.position, transform.position) < socketedDistance) socketTimer += Time.deltaTime;
@@ -94,27 +102,23 @@ public class BallSocket : MonoBehaviour {
         if (socketedObj == targetBall)
         {
             ballRb.gameObject.GetComponent<Renderer>().material = activatedMaterial;
+            aSource.PlayOneShot(correctBallSound);
+
             TriggerTargetObject();
         }
-
-
-        /*if (socketedObj == targetBall)
-        {
-            ballRb.gameObject.GetComponent<Renderer>().material = activatedMaterial;
-            isForceFieldActive = true;
-            TriggerTargetObject();
-        }*/
+        else aSource.PlayOneShot(incorrectBallSound);
     }
 
     //Nollaa soketin muuttujat ja pelaaja pystyy työntämään pallon pois siitä
-    void ResetSocket()
+    public void ResetSocket()
     {
         ball = null; ballRb = null; collRb = null;
         isForceFieldActive = false;
         socketTimer = 0;
+        aSource.PlayOneShot(resetSound);
     }
 
-    //Testi, Reset erilliseen pelimaailman objektiin(?)
+    //Testi, Reset erilliseen pelimaailman objektiin
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.M)) ResetSocket();

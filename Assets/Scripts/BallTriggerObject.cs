@@ -7,17 +7,7 @@ using UnityEngine;
 //---------------------------------------------------------------------------------------
 
 public class BallTriggerObject : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    
     public void BallTrigger()
     {
         transform.position = transform.position - new Vector3(0,200, 0);
