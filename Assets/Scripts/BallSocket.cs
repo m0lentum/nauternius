@@ -9,7 +9,10 @@ using UnityEngine;
 //Keskeneräinen, kokeileva, eloisa, hieman hapettunut skripti. Vahva hapan jälkimaku.
 //Force Field ei toimikaan uuden liikkumisen kanssa.
 public class BallSocket : MonoBehaviour {
-    
+
+    public delegate void SocketActivation();
+    public event SocketActivation OnSocketActivated;
+
     [SerializeField] private GameObject targetObj;
     [SerializeField] private GameObject targetBall;
 
@@ -29,6 +32,7 @@ public class BallSocket : MonoBehaviour {
     private float curPullForce;
     public float socketTimer;
     private bool isForceFieldActive;
+    public bool isActive;
     private GameObject ball;
     private Rigidbody ballRb;
     private Rigidbody collRb;
@@ -50,11 +54,9 @@ public class BallSocket : MonoBehaviour {
             ballRb = other.GetComponent<Rigidbody>();
         }
         //Ottaa talteen törmäävän objektin RigidBodyn, kun ForceField on päällä
-        //todo ei toimi, jos rigidbody ei ole hierarkian ylimmässä objektissa
         else
         {
-            Debug.Log(other.transform.root.name);
-            collRb = other.transform.root.GetComponent<Rigidbody>();
+            collRb = GetParentWithRb(other.transform);
         }
     }
 
@@ -93,35 +95,29 @@ public class BallSocket : MonoBehaviour {
         return false;
     }
 
-    //Aktivoi ForceFieldin ja jos oikea pallo, näyttää sen efektillä ja triggeröi targetobjektin
+    //Aktivoi ForceFieldin ja jos oikea pallo, invokee eventin
     void ActivateSocket(GameObject socketedObj)
     {
         if (isForceFieldActive) return;
+
         isForceFieldActive = true;
+        //aSource.PlayOneShot(ÄäniKunPalloKiinnittyySockettiin)
 
         if (socketedObj == targetBall)
         {
-            ballRb.gameObject.GetComponent<Renderer>().material = activatedMaterial;
-            aSource.PlayOneShot(correctBallSound);
-
-            TriggerTargetObject();
+            isActive = true;
+            OnSocketActivated.Invoke();
         }
-        else aSource.PlayOneShot(incorrectBallSound);
     }
 
-    //Nollaa soketin muuttujat ja pelaaja pystyy työntämään pallon pois siitä
+    //Nollaa soketin muuttujat ja pelaaja pystyy työntämään pallon pois siitä - todo varmaan parempikin tapa tähän
     public void ResetSocket()
     {
         ball = null; ballRb = null; collRb = null;
         isForceFieldActive = false;
+        isActive = false;
         socketTimer = 0;
         aSource.PlayOneShot(resetSound);
-    }
-
-    //Testi, Reset erilliseen pelimaailman objektiin
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.M)) ResetSocket();
     }
 
     //Tekee pienistä vektoreista isoja ja päinvastoin.
@@ -130,4 +126,20 @@ public class BallSocket : MonoBehaviour {
         return (1 / vect.magnitude * vect);
     }
 
+    //Palauttaa ensimmäisen objektin rigidbodyn, tai sen ensimmäisen vanhemman rigidbodyn, jolla sellainen on
+    private Rigidbody GetParentWithRb(Transform childTr)
+    {
+        Transform tr = childTr;
+        while (tr != null)
+        {
+            Rigidbody rb = tr.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                return rb;
+            }
+            tr = tr.parent;
+        }
+
+        return null; //Ei vanhempaa, jolla rigidbody
+    }
 }

@@ -7,9 +7,22 @@ using UnityEngine;
 //---------------------------------------------------------------------------------------
 
 public class BallTriggerObject : MonoBehaviour {
-    
+
+    private AudioSource aSource;
+
+    [SerializeField] private AudioClip triggerSound;
+    [SerializeField] private AudioClip wrongTriggerSound;
+
+    private void Awake()
+    {
+        aSource = GetComponent<AudioSource>(); 
+    }
+
+    //todo
     public void BallTrigger()
     {
-        transform.position = transform.position - new Vector3(0,200, 0);
+        Debug.Log("ball trigger " + transform.GetChild(0).name);
+        transform.GetChild(0).position = transform.GetChild(0).position - new Vector3(0,200, 0);
+        aSource.PlayOneShot(triggerSound);
     }
 }
