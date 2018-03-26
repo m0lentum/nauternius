@@ -18,38 +18,34 @@ public class ThirdPersonCamera : MonoBehaviour {
     [SerializeField] private float rotationDamping;
     [SerializeField] private float rotateSpeed;
 
-    public Vector3 cameraRelative;
+    [SerializeField] private float bumperDistanceCheck = 2.5f; // length of bumper ray
+    [SerializeField] private float bumperCameraHeight = 1.0f; // adjust camera height while bumping
+    [SerializeField] private Vector3 bumperRayOffset; // allows offset of the bumper ray from target origin
 
-    private void Awake()
-    {
-        initDamping = 7;
-        damping = initDamping;
-    }
+    public Vector3 cameraRelative;
+    
     void FixedUpdate()
     {
-
         cameraRelative = target.InverseTransformPoint(transform.position);
-        float relZ = cameraRelative.z + 9;
-        if (cameraRelative.z > -8) damping = (1 + relZ) * initDamping;
+        float relZ = cameraRelative.z + distance;
+        if (relZ > 1) damping = relZ * initDamping;
         else damping = initDamping;
         
         Vector3 wantedPosition = target.TransformPoint(0, height, -distance);
-        transform.position = Vector3.Lerp(transform.position, wantedPosition, damping * Time.deltaTime);
-        
-        Quaternion wantedRotation = target.rotation;
-        transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, rotationDamping * Time.deltaTime);
 
-        /*float horizontal = Input.GetAxis("Mouse X") * rotateSpeed;
-
-        if (horizontal != 0)
+        RaycastHit hit;
+        Vector3 back = target.transform.TransformDirection(-1 * Vector3.forward);
+        if (Physics.Raycast(target.TransformPoint(bumperRayOffset), back, out hit, bumperDistanceCheck))
         {
-            transform.Rotate(0, horizontal, 0);
+            wantedPosition.x = hit.point.x;
+            wantedPosition.y = wantedPosition.y = Mathf.Lerp(hit.point.y + bumperCameraHeight, wantedPosition.y, Time.deltaTime * damping);
+            wantedPosition.z = hit.point.z;
         }
-        else
-        {
+
+        transform.position = Vector3.Lerp(transform.position, wantedPosition, damping * Time.deltaTime);
+
         Quaternion wantedRotation = target.rotation;
         transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, rotationDamping * Time.deltaTime);
-        }*/
     }
 }
 
