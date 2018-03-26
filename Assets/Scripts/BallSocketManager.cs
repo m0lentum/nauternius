@@ -12,6 +12,7 @@ public class BallSocketManager : MonoBehaviour {
     [SerializeField] private Transform ballsParent;
     [SerializeField] private GameObject targetObj;
 
+    // todo private
     public List<BallSocket> ballSockets;
     public List<Ball> balls;
 
@@ -42,6 +43,7 @@ public class BallSocketManager : MonoBehaviour {
     //Aina kun socket aktivoidaan, tarkistaa onko kaikki socketit aktivoitu 
     void SocketActivated()
     {
+        Debug.Log("managerista socket activated kuultu");
         foreach (BallSocket script in ballSockets)
         {
             if (!script.isActive) return;

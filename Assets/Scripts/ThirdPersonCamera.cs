@@ -16,10 +16,10 @@ public class ThirdPersonCamera : MonoBehaviour {
     public float damping;
     public float initDamping;
     [SerializeField] private float rotationDamping;
-    [SerializeField] private float rotateSpeed;
+    //[SerializeField] private float rotateSpeed;
 
-    [SerializeField] private float bumperDistanceCheck = 2.5f; // length of bumper ray
-    [SerializeField] private float bumperCameraHeight = 1.0f; // adjust camera height while bumping
+    [SerializeField] private float bumperDistanceCheck; // length of bumper ray
+    [SerializeField] private float bumperCameraHeight; // adjust camera height while bumping
     [SerializeField] private Vector3 bumperRayOffset; // allows offset of the bumper ray from target origin
 
     public Vector3 cameraRelative;
@@ -38,7 +38,7 @@ public class ThirdPersonCamera : MonoBehaviour {
         if (Physics.Raycast(target.TransformPoint(bumperRayOffset), back, out hit, bumperDistanceCheck))
         {
             wantedPosition.x = hit.point.x;
-            wantedPosition.y = wantedPosition.y = Mathf.Lerp(hit.point.y + bumperCameraHeight, wantedPosition.y, Time.deltaTime * damping);
+            wantedPosition.y = Mathf.Lerp(hit.point.y + bumperCameraHeight, wantedPosition.y, Time.deltaTime * damping);
             wantedPosition.z = hit.point.z;
         }
 

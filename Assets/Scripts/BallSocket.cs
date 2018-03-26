@@ -6,8 +6,7 @@ using UnityEngine;
 // Copyright © Janne Isoaho, Aarne Manneri, Mikael Myyrä, Lauri Niskanen, Saska Sinkkonen
 //---------------------------------------------------------------------------------------
 
-//Keskeneräinen, kokeileva, eloisa, hieman hapettunut skripti. Vahva hapan jälkimaku.
-//Force Field ei toimikaan uuden liikkumisen kanssa.
+//todo forcefieldiä parempi ja helpompi ois varmaan näkymätön collidersphere pallon ympärille
 public class BallSocket : MonoBehaviour {
 
     public delegate void SocketActivation();
@@ -24,15 +23,13 @@ public class BallSocket : MonoBehaviour {
 
     [SerializeField] private Material activatedMaterial;
 
-    [SerializeField] private AudioClip correctBallSound;
-    [SerializeField] private AudioClip incorrectBallSound;
+    [SerializeField] private AudioClip ballAttachSound;
     [SerializeField] private AudioClip resetSound;
-
-    //publicit pois testin jälkeen
+    
     private float curPullForce;
-    public float socketTimer;
+    private float socketTimer;
     private bool isForceFieldActive;
-    public bool isActive;
+    public bool isActive; //todo propertyksi
     private GameObject ball;
     private Rigidbody ballRb;
     private Rigidbody collRb;
@@ -101,7 +98,7 @@ public class BallSocket : MonoBehaviour {
         if (isForceFieldActive) return;
 
         isForceFieldActive = true;
-        //aSource.PlayOneShot(ÄäniKunPalloKiinnittyySockettiin)
+        aSource.PlayOneShot(ballAttachSound);
 
         if (socketedObj == targetBall)
         {
