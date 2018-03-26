@@ -58,6 +58,7 @@ public class BallSocketManager : MonoBehaviour {
     }
 
     //Resettaa kaikki pallot ja socketit
+    //ei tee mitään jos ovi jo avattu?
     void Reset()
     {
         foreach (BallSocket script in ballSockets)
