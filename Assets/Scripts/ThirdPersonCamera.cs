@@ -13,16 +13,17 @@ public class ThirdPersonCamera : MonoBehaviour {
     [SerializeField] private Transform target;
     [SerializeField] private float distance;
     [SerializeField] private float height; // poistoon ja asetus editorista?
-    public float damping;
-    public float initDamping;
+    [SerializeField] private float initDamping;
     [SerializeField] private float rotationDamping;
+    private float damping;
+    private Vector3 cameraRelative;
+
     //[SerializeField] private float rotateSpeed;
 
-    [SerializeField] private float bumperDistanceCheck; // length of bumper ray
-    [SerializeField] private float bumperCameraHeight; // adjust camera height while bumping
-    [SerializeField] private Vector3 bumperRayOffset; // allows offset of the bumper ray from target origin
+    [SerializeField] private float bumperDistanceCheck; 
+    [SerializeField] private float bumperCameraHeight; 
+    [SerializeField] private Vector3 bumperRayOffset; //BumperRayn lähtöpisteen ero pelaajan keskipisteeseen
 
-    public Vector3 cameraRelative;
     
     void FixedUpdate()
     {
