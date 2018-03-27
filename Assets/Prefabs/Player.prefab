@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4461735328403666}
   - component: {fileID: 136293665471508118}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Front Collider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4339995436850132}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4018956472409956}
   - component: {fileID: 136328999007598332}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115498855793438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -405, y: 3, z: -150}
+  m_LocalPosition: {x: 210, y: 32.3, z: 871}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4756054103730866}
@@ -598,7 +598,7 @@ MonoBehaviour:
   hoverProbeDistance: 1.5
   hoverProbeRadius: 0.25
   thrust: 1.5
-  maxSpeed: 80
+  maxSpeed: 60
   turnSpeed: 2.5
   airControl: 0.6
   rollAngle: 15
@@ -614,7 +614,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318868409529634}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a319f0a33bdb7b04e9fd9abb546d4854, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -627,7 +627,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1844744240905316}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a319f0a33bdb7b04e9fd9abb546d4854, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
