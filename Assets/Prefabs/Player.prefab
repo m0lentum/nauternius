@@ -209,15 +209,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115498855793438}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 210, y: 32.3, z: 871}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 90, y: 3.04, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4756054103730866}
   - {fileID: 4339995436850132}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4241452348426822
 Transform:
   m_ObjectHideFlags: 1
@@ -265,7 +265,7 @@ Transform:
   m_GameObject: {fileID: 1441175090565838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4461735328403666}
   - {fileID: 4018956472409956}
@@ -306,7 +306,7 @@ Transform:
   m_GameObject: {fileID: 1747347024407038}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4607749052001590}
   - {fileID: 4331864033233310}
@@ -588,17 +588,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68529ea5fd6883242b13fb53907a3f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverHeight: 3
-  groundFollowHeight: 2
-  maxHoverSpeed: 8
-  hoverAcceleration: 1.5
-  pitchAdjustSpeedGrounded: 2.5
-  pitchAdjustSpeedAir: 1
+  hoverHeight: 1
+  groundFollowHeight: 1.5
+  maxHoverSpeed: 5
+  hoverAcceleration: 1
+  pitchAdjustSpeedGrounded: 5
+  pitchAdjustSpeedAir: 2
   maxAirPitch: 30
-  hoverProbeDistance: 1.5
-  hoverProbeRadius: 0.25
-  thrust: 1.5
-  maxSpeed: 60
+  hoverProbeDistance: 0.5
+  hoverProbeRadius: 0.1
+  thrust: 1
+  maxSpeed: 40
   turnSpeed: 2.5
   airControl: 0.6
   rollAngle: 15
