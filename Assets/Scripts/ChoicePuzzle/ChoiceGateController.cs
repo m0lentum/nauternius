@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ChoiceGateController : MonoBehaviour {
 
-    private bool isClosed;
+    public bool isClosed
+    {
+        get { return anim.GetBool("isClosed"); }
+        private set { anim.SetBool("isClosed", value); }
+    }
     private bool _isActivated;
     public bool isActivated // onko portista ajettu läpi
     {
@@ -19,10 +23,18 @@ public class ChoiceGateController : MonoBehaviour {
     }
 
     [SerializeField] private ChoiceGateController nextGate;
+    private Animator anim;
+
+
+    void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
+
 
     public void Answer(bool value)
     {
-        if (!isActivated)
+        if (!isActivated && !isClosed)
         {
             Debug.Log("Answer given: " + value);
 

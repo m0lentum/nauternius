@@ -11,6 +11,7 @@ public class FinalDoorController : MonoBehaviour {
     void Start()
     {
         isSolved = false;
+        ResetGates();
     }
 
     void OnTriggerEnter(Collider other)
