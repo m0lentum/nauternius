@@ -8,18 +8,23 @@ using UnityEngine;
 
 public class PlayerSounds : MonoBehaviour {
 
-    [SerializeField] AudioClip acceleration;
-    [SerializeField] AudioClip deceleration;
-    [SerializeField] AudioClip regularDriveFast;
-    [SerializeField] AudioClip regularDriveSlow;
+    [SerializeField] private AudioClip acceleration;
+    [SerializeField] private AudioClip deceleration;
+    [SerializeField] private AudioClip regularDriveFast;
+    [SerializeField] private AudioClip regularDriveSlow;
+    [SerializeField] private AudioClip crash;
 
     [SerializeField] private float accelerationThreshold;
     [SerializeField] private float speedThreshold;
+    [SerializeField] private float collisionWaitTime;
     private float previousSpeed;
-    private float speed;
-    private float speedDiff;
+    public float speed;
+    public float speedDiff;
+    public float collisionTimer = 0f;
+    public bool crashedRecently;
     private Vector3 horizontalVelocity;
     private Rigidbody rb;
+    private AudioSource aSourceDefault;
     
     //Äänten feidaus
     [SerializeField] private float fadeDuration;
@@ -45,15 +50,16 @@ public class PlayerSounds : MonoBehaviour {
     //todo audiocheck threshold sen hetkisestä nopeudesta riippuvaiseksi?
     //todo kiihdytys ääni pois jos nopeus liian hidas?
     //todo ehkä invokerepeating pois ja fixedupdateen checkaudio? Tai invokerepeating väli pienemmäksi
+    //todo nyt kiihdytys ja hidastuskin (vaikka threshold/2) loppuu "liian aikaisin". Kuulostaa paremmalta jos kiihdytyksessä sen ääni kuuluu vielä vähän vaikka nopeus on jo maksimissa
+    //myös törmäyksessä hidastus pitäisi soittaa kerran läpi
     void CheckAudio()
     {
-        Debug.Log("Checked Audio");
         horizontalVelocity = rb.velocity - new Vector3(0, rb.velocity.y, 0);
         speed = horizontalVelocity.magnitude;
         speedDiff = speed - previousSpeed;
 
-        if (speedDiff < -accelerationThreshold) Play(deceleration);
-        else if (speedDiff > accelerationThreshold) Play(acceleration);
+        if (speedDiff < -accelerationThreshold / 2) Play(deceleration);
+        else if (speedDiff > accelerationThreshold && speed > 0) Play(acceleration);
         else
         {
             if (speed < speedThreshold) Play(regularDriveSlow);
@@ -63,15 +69,28 @@ public class PlayerSounds : MonoBehaviour {
         previousSpeed = speed;
     }
 
+    void SwitchAudioClip(AudioClip clip)
+    {
+        if (aSourceDefault.clip == clip) return;
+        aSourceDefault.clip = clip;
+        Debug.Log("nyt oneshot");
+        aSourceDefault.PlayOneShot(clip);
+        //aSourceDefault.clip = clip;
+        //aSourceDefault.Play();
+
+    }
+
     private void Awake()
     {
-        //Generate the two AudioSources
+
+        aSourceDefault = gameObject.GetComponent<AudioSource>();
+        
+        //Tehdään kaksi audioSourcea joiden avulla crossfade
         aSources = new AudioSource[2]{
             gameObject.AddComponent<AudioSource>(),
             gameObject.AddComponent<AudioSource>()
         };
-
-        //Set default values
+        
         foreach (AudioSource s in aSources)
         {
             s.loop = true;
@@ -81,6 +100,41 @@ public class PlayerSounds : MonoBehaviour {
 
         rb = GetComponent<Rigidbody>();
         InvokeRepeating("CheckAudio", 1f, 0.2f);
+    }
+
+    void Update()
+    {
+        if (crashedRecently)
+        {
+            collisionTimer += Time.deltaTime;
+            if (collisionTimer > collisionWaitTime)
+            {
+                crashedRecently = false;
+                collisionTimer = 0;
+            }
+        }
+
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        //Debug.Log(other.relativeVelocity.magnitude);
+        Vector3 relpos = (other.contacts[0].point - gameObject.transform.position).normalized;
+        Vector3 vel = -other.relativeVelocity.normalized;
+        float angle = Vector3.Angle(relpos, vel);
+        Debug.Log(angle);
+
+        if (!crashedRecently)
+        {
+            aSourceDefault.volume = Mathf.Clamp((5/angle), 0, 1) * Mathf.Clamp((other.relativeVelocity.magnitude/40), 0, 1);
+            Debug.Log("KULMA: " + Mathf.Clamp((5 / angle), 0, 1));
+            Debug.Log("NOPEUS " + Mathf.Clamp((other.relativeVelocity.magnitude / 40), 0, 1));
+            Debug.Log("VOLUME" + aSourceDefault.volume);
+            aSourceDefault.PlayOneShot(crash);
+            crashedRecently = true;
+            //aSourceDefault.volume = 1.0f;
+        }
+
     }
 
     public void Play(AudioClip clip)
