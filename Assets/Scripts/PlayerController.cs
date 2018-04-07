@@ -105,7 +105,6 @@ public class PlayerController : MonoBehaviour {
         if (didHitFront && didHitBack)
         {
             // ollaan kokonaan maassa
-
             isGrounded = true;
 
             transform.Rotate((hitFront.distance - hitBack.distance) * pitchAdjustSpeedGrounded, 0, 0, Space.Self);

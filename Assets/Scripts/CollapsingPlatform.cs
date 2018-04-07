@@ -12,6 +12,7 @@ public class CollapsingPlatform : MonoBehaviour {
 
     private GameObject platform;
     private Renderer rend;
+    private Collider coll;
     private float collapseTimer;
     private bool timerStarted;
 
@@ -19,6 +20,7 @@ public class CollapsingPlatform : MonoBehaviour {
     {
         platform = transform.parent.gameObject;
         rend = platform.GetComponent<Renderer>();
+        coll = platform.GetComponent<Collider>();
 	}
 	
 	void Update ()
@@ -27,7 +29,11 @@ public class CollapsingPlatform : MonoBehaviour {
         {
             collapseTimer += Time.deltaTime;
 
-            if (collapseTimer > collapseWaitTime) rend.enabled = false;
+            if (collapseTimer > collapseWaitTime)
+            {
+                rend.enabled = false;
+                coll.enabled = false;
+            }
         }
 	}
 
