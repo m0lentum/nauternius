@@ -5,13 +5,18 @@ using UnityEngine;
 public class FinalDoorController : MonoBehaviour {
 
     [SerializeField] private ChoiceGateController[] gates;
-
-    private bool isSolved;
+    private Animator anim;
+    private bool isSolved
+    {
+        get { return anim.GetBool("isSolved"); }
+        set { anim.SetBool("isSolved", value); }
+    }
 
     void Start()
     {
-        isSolved = false;
         ResetGates();
+        anim = GetComponentInParent<Animator>();
+        isSolved = false;
     }
 
     void OnTriggerEnter(Collider other)
@@ -22,18 +27,22 @@ public class FinalDoorController : MonoBehaviour {
 
     public void CheckSolution()
     {
-        foreach (ChoiceGateController gate in gates)
+        if (!isSolved)
         {
-            // jos ei ole menty kaikista porteista läpi, ei tehdä mitään
-            if (!gate.isActivated)
+            foreach (ChoiceGateController gate in gates)
             {
-                return;
-            }
+                // jos ei ole menty kaikista porteista läpi, ei tehdä mitään
+                if (!gate.isActivated)
+                {
+                    return;
+                }
 
-            if (!gate.isCorrect)
-            {
-                ResetGates();
-                return;
+                if (!gate.isCorrect)
+                {
+                    ResetGates();
+                    anim.SetTrigger("checkAnswer");
+                    return;
+                }
             }
         }
 
@@ -59,5 +68,7 @@ public class FinalDoorController : MonoBehaviour {
         {
             gate.Reset();
         }
+
+        anim.SetTrigger("checkAnswer");
     }
 }
