@@ -57,6 +57,7 @@ public class ChoiceGateController : MonoBehaviour {
 
     public void Reset()
     {
+        if (!anim) anim = GetComponentInChildren<Animator>();
         isClosed = true;
         isActivated = false;
         isCorrect = false;
