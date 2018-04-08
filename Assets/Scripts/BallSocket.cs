@@ -11,8 +11,7 @@ public class BallSocket : MonoBehaviour {
 
     public delegate void SocketActivation();
     public event SocketActivation OnSocketActivated;
-
-    [SerializeField] private GameObject targetObj;
+    
     [SerializeField] private GameObject targetBall;
 
     [SerializeField] private float maxPullForce;
@@ -20,9 +19,7 @@ public class BallSocket : MonoBehaviour {
     [SerializeField] private float maxSocketTimer;
     [SerializeField] private float socketedDistance;
     [SerializeField] private float forceFieldPower;
-
-    [SerializeField] private Material activatedMaterial;
-
+    
     [SerializeField] private AudioClip ballAttachSound;
     [SerializeField] private AudioClip resetSound;
     
@@ -74,11 +71,6 @@ public class BallSocket : MonoBehaviour {
             awayDirection = awayDirection - new Vector3(0, awayDirection.y, 0);
             if(collRb != null) collRb.AddForce(awayDirection * (collRb.velocity.magnitude + 10) * forceFieldPower);
         }
-    }
-    
-    void TriggerTargetObject()
-    {
-        targetObj.GetComponent<BallTriggerObject>().BallTrigger();
     }
 
     //Katsoo onko oikea objekti paikallaan socketissa ja jos on ollut tarpeeksi kauan paikallaan, palauttaa True.

@@ -9,20 +9,22 @@ using UnityEngine;
 public class BallTriggerObject : MonoBehaviour {
 
     private AudioSource aSource;
+    private Animator anim;
 
     [SerializeField] private AudioClip triggerSound;
     [SerializeField] private AudioClip wrongTriggerSound;
 
     private void Awake()
     {
-        aSource = GetComponent<AudioSource>(); 
+        aSource = GetComponent<AudioSource>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     //todo
     public void BallTrigger()
     {
         Debug.Log("ball trigger " + transform.GetChild(0).name);
-        transform.GetChild(0).position = transform.GetChild(0).position - new Vector3(0,200, 0);
+        anim.SetBool("SocketsActivated", true);
         aSource.PlayOneShot(triggerSound);
     }
 }

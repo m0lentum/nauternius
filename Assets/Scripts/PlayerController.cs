@@ -52,16 +52,30 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float jumpForce;
     private int jumpTimer;
     [SerializeField] private int jumpWaitTime; // hypyn cooldown fixedDeltaTime-intervalleina (frameina)
+    [SerializeField] private CheckPointManager checkPointManager;
+
+    public delegate void FilterChange(bool filterStatus);
+    public event FilterChange OnFilterChanged;
 
     private bool hasSuperSpeed;
     private bool hasJumpAbility;
-
     private bool isGrounded;
-
     private Rigidbody rb;
-    [SerializeField] private CheckPointManager checkPointManager;
-
-
+    public bool HasFilter { get; set; }
+    private bool filterOn;
+    public bool FilterOn
+    {
+        get { return filterOn; }
+        set
+        {
+            if (filterOn != value)
+            {
+                filterOn = value;
+                OnFilterChanged.Invoke(value);
+            }
+        }
+    }
+    
     // update-loopissa käytettäviä muuttujia
     private float hInput;
     private float vInput;
@@ -76,7 +90,7 @@ public class PlayerController : MonoBehaviour {
     float currentPitch;
 
     private const int layerMask = 1 << 8; // maski estää osumat muihin kuin terrain-layerin objekteihin
-
+    
 
     void Start ()
     {
@@ -85,6 +99,7 @@ public class PlayerController : MonoBehaviour {
         trueMaxSpeed = maxSpeed;
         jumpTimer = 0;
         hasSuperSpeed = false;
+        OnFilterChanged.Invoke(false);
         hasJumpAbility = false;
         isGrounded = false;
 	}
@@ -105,7 +120,6 @@ public class PlayerController : MonoBehaviour {
         if (didHitFront && didHitBack)
         {
             // ollaan kokonaan maassa
-
             isGrounded = true;
 
             transform.Rotate((hitFront.distance - hitBack.distance) * pitchAdjustSpeedGrounded, 0, 0, Space.Self);
@@ -188,10 +202,15 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && rb.velocity.magnitude < 5 && HasFilter) FilterOn = true;
+        if (rb.velocity.magnitude > 5 && FilterOn) FilterOn = false;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         GameObject colObject = collision.collider.gameObject;
-        //Debug.Log("Osui :" + colObject.name);
         
         if (colObject.layer == 8) SuperSpeedOff();
     }
