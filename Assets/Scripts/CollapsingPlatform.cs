@@ -44,4 +44,12 @@ public class CollapsingPlatform : MonoBehaviour {
             timerStarted = true;
         }
     }
+
+    public void ResetPlatform()
+    {
+        rend.enabled = true;
+        coll.enabled = true;
+        timerStarted = false;
+        collapseTimer = 0f;
+    }
 }

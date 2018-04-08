@@ -128,9 +128,9 @@ public class PlayerSounds : MonoBehaviour {
         {
             //muuttujat randomlukujen tilalle
             aSourceDefault.volume = Mathf.Clamp((5/angle), 0, 1) * Mathf.Clamp((other.relativeVelocity.magnitude/40), 0, 1);
-            Debug.Log("KULMA: " + Mathf.Clamp((5 / angle), 0, 1));
-            Debug.Log("NOPEUS " + Mathf.Clamp((other.relativeVelocity.magnitude / 40), 0, 1));
-            Debug.Log("VOLUME" + aSourceDefault.volume);
+            //Debug.Log("KULMA: " + Mathf.Clamp((5 / angle), 0, 1));
+            //Debug.Log("NOPEUS " + Mathf.Clamp((other.relativeVelocity.magnitude / 40), 0, 1));
+            //Debug.Log("VOLUME" + aSourceDefault.volume);
             aSourceDefault.PlayOneShot(crash);
             crashedRecently = true;
             //aSourceDefault.volume = 1.0f;

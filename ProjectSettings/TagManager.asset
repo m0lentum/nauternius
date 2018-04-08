@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - jumppowerup
+  - wall
+  - invisiblefilter
+  - CollapsingPlatform
   layers:
   - Default
   - TransparentFX
