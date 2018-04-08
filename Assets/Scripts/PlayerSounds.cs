@@ -113,9 +113,9 @@ public class PlayerSounds : MonoBehaviour {
                 collisionTimer = 0;
             }
         }
-
     }
 
+    //todo
     void OnCollisionEnter(Collision other)
     {
         //Debug.Log(other.relativeVelocity.magnitude);
@@ -126,6 +126,7 @@ public class PlayerSounds : MonoBehaviour {
 
         if (!crashedRecently)
         {
+            //muuttujat randomlukujen tilalle
             aSourceDefault.volume = Mathf.Clamp((5/angle), 0, 1) * Mathf.Clamp((other.relativeVelocity.magnitude/40), 0, 1);
             Debug.Log("KULMA: " + Mathf.Clamp((5 / angle), 0, 1));
             Debug.Log("NOPEUS " + Mathf.Clamp((other.relativeVelocity.magnitude / 40), 0, 1));

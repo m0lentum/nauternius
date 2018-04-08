@@ -229,7 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7820487}
   m_Layer: 0
-  m_Name: Haara (27)
+  m_Name: Suora (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,61 +303,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
     type: 2}
   m_PrefabInternal: {fileID: 10848600}
---- !u!1001 &11443210
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 772327677}
-    m_Modifications:
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 48.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 52.58377
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 117.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.38268343
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.92387956
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155542704544004, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_Name
-      value: Collapsing Platform (18)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 45
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &11443211 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
-    type: 2}
-  m_PrefabInternal: {fileID: 11443210}
 --- !u!1001 &11538711
 Prefab:
   m_ObjectHideFlags: 0
@@ -372,7 +317,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4129783832809218, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 210
+      value: 292.3
       objectReference: {fileID: 0}
     - target: {fileID: 4129783832809218, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -380,7 +325,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4129783832809218, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 871
+      value: 736.1
       objectReference: {fileID: 0}
     - target: {fileID: 4129783832809218, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
       propertyPath: m_LocalRotation.x
@@ -935,7 +880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 54190047}
   m_Layer: 0
-  m_Name: Haara (21)
+  m_Name: Suora (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -967,7 +912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 54837584}
   m_Layer: 0
-  m_Name: Haara (26)
+  m_Name: Suora (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1681,7 +1626,7 @@ Transform:
   - {fileID: 1040760822}
   - {fileID: 965136000}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 37
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &75286861
 Prefab:
@@ -1994,7 +1939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 88373683}
   m_Layer: 0
-  m_Name: Haara (37)
+  m_Name: Suora (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2110,6 +2055,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 114573147172126878, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
@@ -2190,7 +2145,7 @@ Transform:
   - {fileID: 2102251723}
   - {fileID: 1606562766}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &106104511
 GameObject:
@@ -2201,7 +2156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 106104512}
   m_Layer: 0
-  m_Name: Haara (14)
+  m_Name: Suora (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2222,7 +2177,7 @@ Transform:
   - {fileID: 890312579}
   - {fileID: 2094001723}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &106395236 stripped
 Transform:
@@ -2994,7 +2949,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 139329604}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ec694b15d6bc344a909dd95b07cdd3e, type: 3}
   m_Name: 
@@ -3788,7 +3743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 171470348}
   m_Layer: 0
-  m_Name: Haara (2)
+  m_Name: Suora (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3811,61 +3766,6 @@ Transform:
   m_Father: {fileID: 1400332039}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1001 &171529781
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1245097559}
-    m_Modifications:
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -9.210066
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 52.58377
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 59.289978
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.38268343
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.92387956
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155542704544004, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_Name
-      value: Collapsing Platform (18)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 45
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &171529782 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
-    type: 2}
-  m_PrefabInternal: {fileID: 171529781}
 --- !u!1 &172211920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4090,7 +3990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 180329005}
   m_Layer: 0
-  m_Name: Haara (33)
+  m_Name: Suora (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4300,8 +4200,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 192419621}
-  m_LocalRotation: {x: 0.08282785, y: 0.3736123, z: 0.19996412, w: 0.90198}
-  m_LocalPosition: {x: 240.6, y: 43.5, z: 78.4}
+  m_LocalRotation: {x: 0.0499502, y: 0.3794095, z: 0.120590456, w: 0.91597563}
+  m_LocalPosition: {x: 242.36, y: 37.79, z: 76.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1471589216}
@@ -4310,7 +4210,7 @@ Transform:
   - {fileID: 255063564}
   m_Father: {fileID: 1619284784}
   m_RootOrder: 45
-  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 25}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 15}
 --- !u!1001 &194054773
 Prefab:
   m_ObjectHideFlags: 0
@@ -4751,7 +4651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 219917470}
   m_Layer: 0
-  m_Name: Haara (8)
+  m_Name: Suora (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5586,7 +5486,7 @@ Transform:
   - {fileID: 76414767}
   - {fileID: 668138333}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 30
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &265809584
 Prefab:
@@ -5845,7 +5745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 282353398}
   m_Layer: 0
-  m_Name: Haara (9)
+  m_Name: Suora (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5866,7 +5766,7 @@ Transform:
   - {fileID: 313386554}
   - {fileID: 1382619833}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!1001 &285642018
 Prefab:
@@ -5936,10 +5836,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 286549168}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 920.34503, y: -70.30405, z: 674.068}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 130.6073, y: -34.304047, z: 45.854553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1700786114}
+  - {fileID: 726047919}
   - {fileID: 1434577994}
   - {fileID: 2076838190}
   - {fileID: 1672816340}
@@ -5954,9 +5856,6 @@ Transform:
   - {fileID: 1085222178}
   - {fileID: 841237330}
   - {fileID: 282353398}
-  - {fileID: 1774731155}
-  - {fileID: 1999677750}
-  - {fileID: 1291703796}
   - {fileID: 619422152}
   - {fileID: 513325774}
   - {fileID: 1502814043}
@@ -5965,13 +5864,8 @@ Transform:
   - {fileID: 2036880347}
   - {fileID: 298788408}
   - {fileID: 875742480}
-  - {fileID: 1245097559}
-  - {fileID: 1775781319}
-  - {fileID: 740304663}
-  - {fileID: 772327677}
   - {fileID: 544253188}
   - {fileID: 259928216}
-  - {fileID: 877533345}
   - {fileID: 1703950659}
   - {fileID: 1636691823}
   - {fileID: 1359988175}
@@ -5984,8 +5878,8 @@ Transform:
   - {fileID: 1508022556}
   - {fileID: 1245371159}
   - {fileID: 561467037}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1929094690}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &289437854 stripped
 Transform:
@@ -6016,7 +5910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 291182117}
   m_Layer: 0
-  m_Name: Haara (23)
+  m_Name: Suora (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6146,7 +6040,7 @@ GameObject:
   m_Component:
   - component: {fileID: 298788408}
   m_Layer: 0
-  m_Name: Haara (16)
+  m_Name: Suora (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6167,7 +6061,7 @@ Transform:
   - {fileID: 518391066}
   - {fileID: 1137416821}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!1 &300748753
 GameObject:
@@ -6452,6 +6346,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 78a2cbd4dccfbaf47a9819a1376d1f73, type: 2}
+    - target: {fileID: 114573147172126878, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
@@ -6595,6 +6499,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 114573147172126878, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
@@ -7344,7 +7258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 365016285}
   m_Layer: 0
-  m_Name: Haara (7)
+  m_Name: Suora (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7365,7 +7279,7 @@ Transform:
   - {fileID: 1463757482}
   - {fileID: 876876768}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &365454800
 GameObject:
@@ -7550,7 +7464,7 @@ Transform:
   - {fileID: 1439195295}
   - {fileID: 899900100}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 35
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &387643785
 Prefab:
@@ -7638,7 +7552,7 @@ Transform:
   - {fileID: 1230594575}
   - {fileID: 1847123667}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 40
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &403086209 stripped
 Transform:
@@ -8619,8 +8533,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 449676535}
-  m_LocalRotation: {x: 0.08282785, y: 0.3736123, z: 0.19996412, w: 0.90198}
-  m_LocalPosition: {x: 228.31573, y: 35.427956, z: 90.700134}
+  m_LocalRotation: {x: 0.0499502, y: 0.3794095, z: 0.120590456, w: 0.91597563}
+  m_LocalPosition: {x: 228.84576, y: 32.647957, z: 90.170105}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1006740919}
@@ -8629,7 +8543,7 @@ Transform:
   - {fileID: 1202031629}
   m_Father: {fileID: 1619284784}
   m_RootOrder: 44
-  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 25}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 15}
 --- !u!4 &453062681 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4885465284815738, guid: ad25d915d8983bb4fbc3a9c284cfa1aa,
@@ -9104,7 +9018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 470133816}
   m_Layer: 0
-  m_Name: Haara (29)
+  m_Name: Suora (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9954,7 +9868,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1155542704544004, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_Name
@@ -10575,7 +10489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 535039225}
   m_Layer: 0
-  m_Name: Haara (34)
+  m_Name: Suora (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10772,7 +10686,7 @@ Transform:
   - {fileID: 10848601}
   - {fileID: 1807384463}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 29
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &547565529
 Prefab:
@@ -11014,7 +10928,7 @@ GameObject:
   - component: {fileID: 561467035}
   - component: {fileID: 561467034}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Tolppa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11085,7 +10999,7 @@ Transform:
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 286549169}
-  m_RootOrder: 43
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &562099835
 Prefab:
@@ -11337,6 +11251,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 114573147172126878, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
@@ -11564,6 +11488,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 21afa9ca99b6fac40878c17e6e245fbe, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
@@ -12374,7 +12303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619422152}
   m_Layer: 0
-  m_Name: Haara (13)
+  m_Name: Suora (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12395,7 +12324,7 @@ Transform:
   - {fileID: 1898800763}
   - {fileID: 136146920}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &620000052
 GameObject:
@@ -12831,7 +12760,7 @@ GameObject:
   m_Component:
   - component: {fileID: 640939671}
   m_Layer: 0
-  m_Name: Haara (19)
+  m_Name: Suora (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14150,7 +14079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &703267597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14219,8 +14148,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1189533042}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1929094690}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14669,6 +14598,41 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &726047918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 726047919}
+  m_Layer: 0
+  m_Name: Invis Platforms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &726047919
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726047918}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 41.225037, y: 91.97905, z: -78.48804}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1245097559}
+  - {fileID: 1775781319}
+  - {fileID: 740304663}
+  - {fileID: 772327677}
+  - {fileID: 1774731155}
+  - {fileID: 1999677750}
+  - {fileID: 1291703796}
+  m_Father: {fileID: 286549169}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &731048433 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
@@ -14785,7 +14749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 734220486}
   m_Layer: 0
-  m_Name: Haara (23)
+  m_Name: Suora (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14955,7 +14919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 738889137}
   m_Layer: 0
-  m_Name: Haara
+  m_Name: Suora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14983,19 +14947,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 286549169}
+    m_TransformParent: {fileID: 726047919}
     m_Modifications:
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 15.154968
+      value: -21.1
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 90.30405
+      value: -1.675003
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -25.268005
+      value: 53.22003
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -15015,7 +14979,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_RootOrder
-      value: 27
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1155542704544004, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_Name
@@ -15034,61 +14998,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
     type: 2}
   m_PrefabInternal: {fileID: 609576826}
---- !u!1001 &745351694
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 772327677}
-    m_Modifications:
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 41.72999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 52.58377
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 110.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.38268343
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.92387956
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155542704544004, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_Name
-      value: Collapsing Platform (17)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 45
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &745351695 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
-    type: 2}
-  m_PrefabInternal: {fileID: 745351694}
 --- !u!1 &745515778
 GameObject:
   m_ObjectHideFlags: 0
@@ -15098,7 +15007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 745515779}
   m_Layer: 0
-  m_Name: Haara (21)
+  m_Name: Suora (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15339,7 +15248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 755242285}
   m_Layer: 0
-  m_Name: Haara (13)
+  m_Name: Suora (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15824,7 +15733,7 @@ GameObject:
   m_Component:
   - component: {fileID: 772327677}
   m_Layer: 0
-  m_Name: Haara (19)
+  m_Name: Suora (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15837,15 +15746,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 772327676}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -52.005005, y: 37.720276, z: -74.16797}
+  m_LocalPosition: {x: -93.23004, y: -54.258774, z: 4.3200684}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1486536388}
   - {fileID: 1726000197}
-  - {fileID: 745351695}
-  - {fileID: 11443211}
-  m_Father: {fileID: 286549169}
-  m_RootOrder: 28
+  m_Father: {fileID: 726047919}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1001 &773885295
 Prefab:
@@ -16304,7 +16211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 798297838}
   m_Layer: 0
-  m_Name: Haara (14)
+  m_Name: Suora (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16730,7 +16637,7 @@ Transform:
   - {fileID: 798074750}
   - {fileID: 1391464245}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &842956855
 Prefab:
@@ -17251,7 +17158,7 @@ Transform:
   - {fileID: 34340724}
   - {fileID: 1098441343}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &876102267
 Prefab:
@@ -17359,57 +17266,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
     type: 2}
   m_PrefabInternal: {fileID: 876876767}
---- !u!1001 &877533344
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 286549169}
-    m_Modifications:
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 75.42499
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 90.30405
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -25.708008
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_RootOrder
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 1155542704544004, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-      propertyPath: m_Name
-      value: Collapsing Platform (5)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &877533345 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
-    type: 2}
-  m_PrefabInternal: {fileID: 877533344}
 --- !u!1001 &879559551
 Prefab:
   m_ObjectHideFlags: 0
@@ -18303,7 +18159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 918461965}
   m_Layer: 0
-  m_Name: Haara (32)
+  m_Name: Suora (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18641,9 +18497,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 934482819}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 139.95001, y: -21.07, z: -76}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.2680792, y: 0, z: 0, w: 0.9633969}
+  m_LocalPosition: {x: 139.95001, y: -22.59, z: -92.72}
+  m_LocalScale: {x: 1, y: 1, z: 1.2}
   m_Children:
   - {fileID: 227985719}
   - {fileID: 596203587}
@@ -18651,7 +18507,7 @@ Transform:
   - {fileID: 1087370642}
   m_Father: {fileID: 1327386069}
   m_RootOrder: 54
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 31.1, y: 0, z: 0}
 --- !u!1001 &935276879
 Prefab:
   m_ObjectHideFlags: 0
@@ -18773,7 +18629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 938857614}
   m_Layer: 0
-  m_Name: Haara (22)
+  m_Name: Suora (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19149,7 +19005,7 @@ Transform:
   - {fileID: 1701887847}
   - {fileID: 511462476}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 36
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &957133372
 Prefab:
@@ -20763,7 +20619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1016851710}
   m_Layer: 0
-  m_Name: Haara (35)
+  m_Name: Suora (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21644,7 +21500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1085222178}
   m_Layer: 0
-  m_Name: Haara (8)
+  m_Name: Suora (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21665,7 +21521,7 @@ Transform:
   - {fileID: 226073817}
   - {fileID: 795966469}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &1087370642 stripped
 Transform:
@@ -22383,7 +22239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1143543904}
   m_Layer: 0
-  m_Name: Haara (3)
+  m_Name: Suora (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23188,7 +23044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1184698115}
   m_Layer: 0
-  m_Name: Haara (6)
+  m_Name: Suora (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23209,7 +23065,7 @@ Transform:
   - {fileID: 1454786362}
   - {fileID: 2029146349}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1001 &1188083182
 Prefab:
@@ -23272,12 +23128,12 @@ GameObject:
   - component: {fileID: 1189533044}
   - component: {fileID: 1189533043}
   m_Layer: 5
-  m_Name: UI
+  m_Name: Ohjeteksti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1189533042
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23308,7 +23164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -23317,10 +23173,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -23328,7 +23184,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: "Pys\xE4hdy ja paina Q"
 --- !u!222 &1189533044
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23811,6 +23667,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 114573147172126878, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
@@ -23921,6 +23787,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 78a2cbd4dccfbaf47a9819a1376d1f73, type: 2}
+    - target: {fileID: 114573147172126878, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
@@ -24005,7 +23881,7 @@ Transform:
   - {fileID: 498288470}
   - {fileID: 1056789993}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 38
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1227626169
 Prefab:
@@ -24288,7 +24164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1234095909}
   m_Layer: 0
-  m_Name: Haara (19)
+  m_Name: Suora (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24563,7 +24439,7 @@ Transform:
   - {fileID: 255348877}
   - {fileID: 431655905}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1242769358
 Prefab:
@@ -24670,7 +24546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1245097559}
   m_Layer: 0
-  m_Name: Haara (18)
+  m_Name: Suora (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24683,15 +24559,14 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1245097558}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -52.005005, y: 37.720276, z: -74.16797}
+  m_LocalPosition: {x: -93.23004, y: -54.258774, z: 4.3200684}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 28345476}
   - {fileID: 711791230}
   - {fileID: 123243800}
-  - {fileID: 171529782}
-  m_Father: {fileID: 286549169}
-  m_RootOrder: 25
+  m_Father: {fileID: 726047919}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &1245113306
 GameObject:
@@ -24702,7 +24577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1245113307}
   m_Layer: 0
-  m_Name: Haara (16)
+  m_Name: Suora (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24734,7 +24609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1245371159}
   m_Layer: 0
-  m_Name: Haara (20)
+  m_Name: Suora (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24754,7 +24629,7 @@ Transform:
   - {fileID: 1934739501}
   - {fileID: 373824471}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 42
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1001 &1245930628
 Prefab:
@@ -25355,7 +25230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1291703796}
   m_Layer: 0
-  m_Name: Haara (12)
+  m_Name: Suora (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25368,15 +25243,15 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1291703795}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -51.14496, y: 37.720276, z: -120.72797}
+  m_LocalPosition: {x: -92.369995, y: -54.258774, z: -42.23993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1697083882}
   - {fileID: 217623264}
   - {fileID: 311809498}
   - {fileID: 143748104}
-  m_Father: {fileID: 286549169}
-  m_RootOrder: 16
+  m_Father: {fileID: 726047919}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &1293729705
 GameObject:
@@ -25457,6 +25332,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 114573147172126878, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
@@ -25790,8 +25675,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1327386068}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1013.95746, y: 20.500336, z: 729.02045}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 224.21973, y: 56.500336, z: 100.80701}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1173260217}
@@ -25849,8 +25734,8 @@ Transform:
   - {fileID: 1316513504}
   - {fileID: 995934662}
   - {fileID: 934482820}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1929094690}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1327891436
 Prefab:
@@ -26027,7 +25912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1343312750}
   m_Layer: 0
-  m_Name: Haara (12)
+  m_Name: Suora (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26220,7 +26105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1355163662}
   m_Layer: 0
-  m_Name: Haara (20)
+  m_Name: Suora (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26305,7 +26190,7 @@ Transform:
   - {fileID: 533253203}
   - {fileID: 160596335}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 34
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1361610877
 Prefab:
@@ -26737,7 +26622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1381476455}
   m_Layer: 0
-  m_Name: Haara (5)
+  m_Name: Suora (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26758,7 +26643,7 @@ Transform:
   - {fileID: 1843033247}
   - {fileID: 154232079}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &1381999055
 GameObject:
@@ -26838,6 +26723,16 @@ Prefab:
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 78a2cbd4dccfbaf47a9819a1376d1f73, type: 2}
+    - target: {fileID: 114573147172126878, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
@@ -27113,8 +27008,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1400332038}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 904.1844, y: -40.527954, z: 773.6999}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 114.446655, y: -4.527954, z: 145.48645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1804222559}
@@ -27125,8 +27020,8 @@ Transform:
   - {fileID: 1528544384}
   - {fileID: 1882411062}
   - {fileID: 989489672}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1929094690}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1400731161
 Prefab:
@@ -27623,7 +27518,7 @@ Transform:
   - {fileID: 1789470875}
   - {fileID: 1759669915}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 39
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1434577993
 GameObject:
@@ -27655,7 +27550,7 @@ Transform:
   - {fileID: 112251128}
   - {fileID: 1203870643}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1435037317 stripped
 Transform:
@@ -27703,7 +27598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1436643363}
   m_Layer: 0
-  m_Name: Haara (31)
+  m_Name: Suora (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27837,7 +27732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441023290}
   m_Layer: 0
-  m_Name: Haara (9)
+  m_Name: Suora (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28819,7 +28714,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 27.610033
+      value: 41.8
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -28827,7 +28722,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 96.11003
+      value: 110.3
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -28938,7 +28833,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1700165907030560, guid: c5812b2b68bc5954b8cec084381e0921, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 82246173382065558, guid: c5812b2b68bc5954b8cec084381e0921,
         type: 2}
@@ -29107,7 +29002,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
@@ -29241,7 +29136,7 @@ Transform:
   - {fileID: 1197217609}
   - {fileID: 295446535}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 41
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1509787675 stripped
 Transform:
@@ -29522,7 +29417,7 @@ Transform:
   - {fileID: 363885720}
   - {fileID: 491209886}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1522484825
 Prefab:
@@ -29626,6 +29521,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 114573147172126878, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
@@ -30192,7 +30097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1565434209}
   m_Layer: 0
-  m_Name: Haara (10)
+  m_Name: Suora (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30419,7 +30324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1577656134}
   m_Layer: 0
-  m_Name: Haara (28)
+  m_Name: Suora (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31074,8 +30979,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1619284783}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 904.1844, y: -40.527954, z: 773.6999}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 114.446655, y: -4.527954, z: 145.48645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 738889137}
@@ -31129,8 +31034,8 @@ Transform:
   - {fileID: 315649676}
   - {fileID: 1931678814}
   - {fileID: 1417340009}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1929094690}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1620207254
 GameObject:
@@ -31361,7 +31266,7 @@ Transform:
   - {fileID: 1837987712}
   - {fileID: 880707583}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 33
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1636758304
 Prefab:
@@ -32121,7 +32026,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1672816340}
   m_Layer: 0
-  m_Name: Haara (4)
+  m_Name: Suora (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32142,7 +32047,7 @@ Transform:
   - {fileID: 1424952346}
   - {fileID: 1789918039}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1 &1674767895 stripped
 GameObject:
@@ -32321,7 +32226,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1155542704544004, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_Name
@@ -32552,6 +32457,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
     type: 2}
   m_PrefabInternal: {fileID: 1700052795}
+--- !u!4 &1700786114 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4210445990077354, guid: 89bbb4a63eca0f240b241edd23ee3bec,
+    type: 2}
+  m_PrefabInternal: {fileID: 1962502651}
 --- !u!1001 &1701887846
 Prefab:
   m_ObjectHideFlags: 0
@@ -32689,7 +32599,7 @@ Transform:
   - {fileID: 1864340000}
   - {fileID: 1764701899}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 32
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1705225970
 Prefab:
@@ -32969,6 +32879,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 114573147172126878, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
@@ -32986,7 +32906,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 34.66999
+      value: 48.85999
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -32994,7 +32914,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 103.170006
+      value: 117.36
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -33337,6 +33257,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 78a2cbd4dccfbaf47a9819a1376d1f73, type: 2}
+    - target: {fileID: 114573147172126878, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
@@ -33430,7 +33360,7 @@ Transform:
   - {fileID: 1830599791}
   - {fileID: 750938739}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1748731154
 Prefab:
@@ -33584,7 +33514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1753548578}
   m_Layer: 0
-  m_Name: Haara (24)
+  m_Name: Suora (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33921,7 +33851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1774731155}
   m_Layer: 0
-  m_Name: Haara (10)
+  m_Name: Suora (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33934,34 +33864,34 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1774731154}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -122.44501, y: 37.720276, z: -61.227966}
+  m_LocalPosition: {x: -163.67004, y: -54.258774, z: 17.26007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 571493840}
   - {fileID: 1940991431}
   - {fileID: 1209078447}
   - {fileID: 94282480}
-  m_Father: {fileID: 286549169}
-  m_RootOrder: 14
+  m_Father: {fileID: 726047919}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1775781318
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 286549169}
+    m_TransformParent: {fileID: 726047919}
     m_Modifications:
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.1549683
+      value: -31.099998
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 90.30405
+      value: -1.675003
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -25.268005
+      value: 53.22003
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -33981,7 +33911,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_RootOrder
-      value: 26
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1155542704544004, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
       propertyPath: m_Name
@@ -34009,7 +33939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1780299171}
   m_Layer: 0
-  m_Name: Haara (30)
+  m_Name: Suora (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34340,7 +34270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1804222559}
   m_Layer: 0
-  m_Name: Haara (1)
+  m_Name: Suora (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34483,7 +34413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1809288481}
   m_Layer: 0
-  m_Name: Haara (17)
+  m_Name: Suora (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35480,7 +35410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1830671074}
   m_Layer: 0
-  m_Name: Haara (18)
+  m_Name: Suora (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35512,7 +35442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834172733}
   m_Layer: 0
-  m_Name: Haara (24)
+  m_Name: Suora (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36741,7 +36671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1914371064}
   m_Layer: 0
-  m_Name: Haara (15)
+  m_Name: Suora (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37191,6 +37121,40 @@ Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
     type: 2}
   m_PrefabInternal: {fileID: 1925928397}
+--- !u!1 &1929094689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1929094690}
+  m_Layer: 0
+  m_Name: Vauhtirauniot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1929094690
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1929094689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 789.73773, y: -36, z: 628.21344}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 703267600}
+  - {fileID: 1327386069}
+  - {fileID: 286549169}
+  - {fileID: 1619284784}
+  - {fileID: 1400332039}
+  - {fileID: 2106277408}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1931678813
 GameObject:
   m_ObjectHideFlags: 0
@@ -37200,7 +37164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1931678814}
   m_Layer: 0
-  m_Name: Haara (39)
+  m_Name: Suora (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37392,6 +37356,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 114573147172126878, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23768860745020490, guid: 61c996d87d10e294c9411ba12a85112a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
@@ -37414,7 +37388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1943584722}
   m_Layer: 0
-  m_Name: Haara (36)
+  m_Name: Suora (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37504,7 +37478,7 @@ Transform:
   - {fileID: 637572539}
   - {fileID: 1810961529}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1945378970 stripped
 Transform:
@@ -37913,7 +37887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956244178}
   m_Layer: 0
-  m_Name: Haara (22)
+  m_Name: Suora (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37987,6 +37961,58 @@ Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
     type: 2}
   m_PrefabInternal: {fileID: 1958279539}
+--- !u!1001 &1962502651
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 286549169}
+    m_Modifications:
+    - target: {fileID: 4210445990077354, guid: 89bbb4a63eca0f240b241edd23ee3bec, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -86.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210445990077354, guid: 89bbb4a63eca0f240b241edd23ee3bec, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 93.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210445990077354, guid: 89bbb4a63eca0f240b241edd23ee3bec, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -14.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210445990077354, guid: 89bbb4a63eca0f240b241edd23ee3bec, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210445990077354, guid: 89bbb4a63eca0f240b241edd23ee3bec, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210445990077354, guid: 89bbb4a63eca0f240b241edd23ee3bec, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210445990077354, guid: 89bbb4a63eca0f240b241edd23ee3bec, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210445990077354, guid: 89bbb4a63eca0f240b241edd23ee3bec, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973610451835612, guid: 89bbb4a63eca0f240b241edd23ee3bec,
+        type: 2}
+      propertyPath: affectedObjectsParent
+      value: 
+      objectReference: {fileID: 726047919}
+    - target: {fileID: 114973610451835612, guid: 89bbb4a63eca0f240b241edd23ee3bec,
+        type: 2}
+      propertyPath: helpText
+      value: 
+      objectReference: {fileID: 1189533043}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 89bbb4a63eca0f240b241edd23ee3bec, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1963667513 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
@@ -38250,7 +38276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978781660}
   m_Layer: 0
-  m_Name: Haara (11)
+  m_Name: Suora (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38282,7 +38308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1979641263}
   m_Layer: 0
-  m_Name: Haara (18)
+  m_Name: Suora (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38513,7 +38539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1999677750}
   m_Layer: 0
-  m_Name: Haara (11)
+  m_Name: Suora (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38526,15 +38552,15 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1999677749}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -52.005005, y: 37.720276, z: -74.16797}
+  m_LocalPosition: {x: -93.23004, y: -54.258774, z: 4.3200684}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1296270962}
   - {fileID: 330630616}
   - {fileID: 1523773953}
   - {fileID: 1725290527}
-  m_Father: {fileID: 286549169}
-  m_RootOrder: 15
+  m_Father: {fileID: 726047919}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!1001 &2000913379
 Prefab:
@@ -39535,7 +39561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2036880347}
   m_Layer: 0
-  m_Name: Haara (15)
+  m_Name: Suora (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39556,7 +39582,7 @@ Transform:
   - {fileID: 580739393}
   - {fileID: 217932556}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!4 &2038198271 stripped
 Transform:
@@ -39572,7 +39598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2038992208}
   m_Layer: 0
-  m_Name: Haara (25)
+  m_Name: Suora (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39996,7 +40022,7 @@ Transform:
   - {fileID: 900633567}
   - {fileID: 420338467}
   m_Father: {fileID: 286549169}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2076953846
 Prefab:
@@ -40612,8 +40638,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2106277407}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 788.8196, y: 21.674927, z: 808.9622}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.91815186, y: 57.674927, z: 180.74878}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 922028581}
@@ -40633,8 +40659,8 @@ Transform:
   - {fileID: 567214091}
   - {fileID: 2013706867}
   - {fileID: 1012935045}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 1929094690}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2107366644
 Prefab:
@@ -40751,7 +40777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2107487587}
   m_Layer: 0
-  m_Name: Haara (20)
+  m_Name: Suora (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
