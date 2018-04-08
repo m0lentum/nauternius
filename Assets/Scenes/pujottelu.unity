@@ -1143,34 +1143,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4129783832809218, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4129783832809218, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865800140465580, guid: eb0d1656a7a2d0f4b820584ad80b1ed7,
-        type: 2}
-      propertyPath: groundFollowHeight
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865800140465580, guid: eb0d1656a7a2d0f4b820584ad80b1ed7,
-        type: 2}
-      propertyPath: hoverHeight
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865800140465580, guid: eb0d1656a7a2d0f4b820584ad80b1ed7,
-        type: 2}
-      propertyPath: hoverAcceleration
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865800140465580, guid: eb0d1656a7a2d0f4b820584ad80b1ed7,
-        type: 2}
-      propertyPath: hoverProbeRadius
-      value: 0.05
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
   m_IsPrefabParent: 0
