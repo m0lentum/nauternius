@@ -6,33 +6,47 @@ using UnityEngine;
 // Copyright © Janne Isoaho, Aarne Manneri, Mikael Myyrä, Lauri Niskanen, Saska Sinkkonen
 //---------------------------------------------------------------------------------------
 
+    //todo timereita pois, muuttujien yms. siistiminen
 public class CollapsingPlatform : MonoBehaviour {
 
-    [SerializeField] private float collapseWaitTime;
+    [SerializeField] private float animationWaitTime;
+    [SerializeField] private float resetTime;
 
     private GameObject platform;
     private Renderer rend;
     private Collider coll;
-    private float collapseTimer;
+    private Animator anim;
+    private float dropTimer;
+    private float resetTimer;
     private bool timerStarted;
+    private Vector3 startingPos;
+    private AudioSource aSource;
 
 	private void Awake ()
     {
         platform = transform.parent.gameObject;
+        startingPos = platform.transform.position;
         rend = platform.GetComponent<Renderer>();
         coll = platform.GetComponent<Collider>();
+        anim = platform.GetComponent<Animator>();
+        aSource = platform.GetComponent<AudioSource>();
 	}
 	
 	void Update ()
     {
         if (timerStarted)
         {
-            collapseTimer += Time.deltaTime;
+            dropTimer += Time.deltaTime;
+            resetTimer += Time.deltaTime;
 
-            if (collapseTimer > collapseWaitTime)
+            if(resetTimer > animationWaitTime + resetTime)
             {
-                rend.enabled = false;
-                coll.enabled = false;
+                ResetPlatform();
+            }
+            else if (dropTimer > animationWaitTime)
+            {
+                DropPlatform();
+                dropTimer = -resetTime * 2;
             }
         }
 	}
@@ -45,11 +59,20 @@ public class CollapsingPlatform : MonoBehaviour {
         }
     }
 
+    void DropPlatform()
+    {
+        Debug.Log("dropplat kutsuttu");
+        aSource.Play();
+        anim.SetBool("DropTriggered", true);
+    }
+
     public void ResetPlatform()
     {
-        rend.enabled = true;
-        coll.enabled = true;
+        Debug.Log("reset kutsuttu");
+        anim.SetBool("DropTriggered", false);
         timerStarted = false;
-        collapseTimer = 0f;
+        dropTimer = 0f;
+        resetTimer = 0f;
     }
+
 }
