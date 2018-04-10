@@ -18,24 +18,16 @@ public class ThirdPersonCamera : MonoBehaviour {
     private float damping;
     private Vector3 cameraRelative;
     private Vector3 wantedPosition;
-    private Vector3 offsetX;
-    private Vector3 offsetY;
     private bool freeCamera;
 
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float bumperDistanceCheck; 
     [SerializeField] private float bumperCameraHeight; 
     [SerializeField] private Vector3 bumperRayOffset; //BumperRayn lähtöpisteen ero pelaajan keskipisteeseen
-
-    void Start()
-    {
-
-        offsetX = new Vector3(0, height, -distance);
-        offsetY = new Vector3(0, 0, -distance);
-    }
-
+    
     void FixedUpdate()
     {
+        
         if ((Input.GetAxisRaw("RightStickHorizontal") != 0) || (Input.GetAxisRaw("RightStickVertical") != 0)) freeCamera = true; 
 
         cameraRelative = target.InverseTransformPoint(transform.position);
@@ -70,19 +62,10 @@ public class ThirdPersonCamera : MonoBehaviour {
 
     void LateUpdate()
     {
-
-        transform.Translate(Input.GetAxis("RightStickHorizontal") * Vector3.up * rotationSpeed * Time.deltaTime, target);
-        transform.Translate(Input.GetAxis("RightStickVertical") * -Vector3.right * rotationSpeed * Time.deltaTime, target);
+        transform.Translate(Input.GetAxis("RightStickHorizontal") * Vector3.up * rotationSpeed * Time.deltaTime);
+        transform.Translate(Input.GetAxis("RightStickVertical") * -Vector3.right * rotationSpeed * Time.deltaTime);
         transform.LookAt(target.transform);
     }
 
-    public static float ClampAngle(float angle, float min, float max)
-    {
-        if (angle < -360f)
-            angle += 360F;
-        if (angle > 360F)
-            angle -= 360F;
-        return Mathf.Clamp(angle, min, max);
-    }
 }
 
