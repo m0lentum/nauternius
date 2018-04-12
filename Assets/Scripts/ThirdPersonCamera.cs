@@ -62,9 +62,11 @@ public class ThirdPersonCamera : MonoBehaviour {
 
     void LateUpdate()
     {
-        transform.Translate(Input.GetAxis("RightStickHorizontal") * Vector3.up * rotationSpeed * Time.deltaTime);
-        transform.Translate(Input.GetAxis("RightStickVertical") * -Vector3.right * rotationSpeed * Time.deltaTime);
+        transform.RotateAround(target.position,  Vector3.up, Input.GetAxis("RightStickVertical") * rotationSpeed * Time.deltaTime);
+        transform.RotateAround(target.position, -Vector3.right, Input.GetAxis("RightStickHorizontal") * rotationSpeed * Time.deltaTime);
         transform.LookAt(target.transform);
+        if ((Input.GetAxisRaw("RightStickHorizontal") != 0) || (Input.GetAxisRaw("RightStickVertical") != 0))
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, target.position.z + distance), damping * Time.deltaTime);
     }
 
 }
