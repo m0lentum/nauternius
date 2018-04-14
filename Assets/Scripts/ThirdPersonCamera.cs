@@ -18,55 +18,62 @@ public class ThirdPersonCamera : MonoBehaviour {
     private float damping;
     private Vector3 cameraRelative;
     private Vector3 wantedPosition;
+    private Vector3 fixedPosition;
     private bool freeCamera;
 
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float bumperDistanceCheck; 
     [SerializeField] private float bumperCameraHeight; 
     [SerializeField] private Vector3 bumperRayOffset; //BumperRayn lähtöpisteen ero pelaajan keskipisteeseen
-    
+
+
     void FixedUpdate()
     {
-        
         if ((Input.GetAxisRaw("RightStickHorizontal") != 0) || (Input.GetAxisRaw("RightStickVertical") != 0)) freeCamera = true; 
 
         cameraRelative = target.InverseTransformPoint(transform.position);
         float relZ = cameraRelative.z + distance;
         if (relZ > 1) damping = relZ * initDamping;
         else damping = initDamping;
-        wantedPosition = target.TransformPoint(0, height, -distance);
 
 
 
 
-       if (!freeCamera)
-       {
-           RaycastHit hit;
-           Vector3 back = target.transform.TransformDirection(-1 * Vector3.forward);
 
-           if (Physics.Raycast(target.TransformPoint(bumperRayOffset), back, out hit, bumperDistanceCheck))
-           {
+        if (!freeCamera)
+        {
+            wantedPosition = target.TransformPoint(0, height, -distance);
 
-               wantedPosition.x = hit.point.x;
-               wantedPosition.y = Mathf.Lerp(hit.point.y + bumperCameraHeight, wantedPosition.y, Time.deltaTime * damping);
-               wantedPosition.z = hit.point.z;
-           }
+            RaycastHit hit;
+            Vector3 back = target.transform.TransformDirection(-1 * Vector3.forward);
 
-           transform.position = Vector3.Lerp(transform.position, wantedPosition, damping * Time.deltaTime);
+            if (Physics.Raycast(target.TransformPoint(bumperRayOffset), back, out hit, bumperDistanceCheck))
+            {
+
+                wantedPosition.x = hit.point.x;
+                wantedPosition.y = Mathf.Lerp(hit.point.y + bumperCameraHeight, wantedPosition.y, Time.deltaTime * damping);
+                wantedPosition.z = hit.point.z;
+            }
+
+
+            Quaternion wantedRotation = target.rotation;
+            transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, rotationDamping * Time.deltaTime);
+
+        }
+        else
+        {
+            transform.RotateAround(target.position, Vector3.up, Input.GetAxis("RightStickVertical") * rotationSpeed * Time.deltaTime);
+            transform.RotateAround(target.position, Vector3.right, Input.GetAxis("RightStickHorizontal") * rotationSpeed * Time.deltaTime);
+            transform.LookAt(target);
+            fixedPosition = (target.position - transform.position).normalized;
+            wantedPosition = target.position - fixedPosition * distance;
         }
 
-        Quaternion wantedRotation = target.rotation;
-        transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, rotationDamping * Time.deltaTime);
-        freeCamera = false;
-    }
+        transform.position = Vector3.Lerp(transform.position, wantedPosition, damping * Time.deltaTime);
 
-    void LateUpdate()
-    {
-        transform.RotateAround(target.position,  Vector3.up, Input.GetAxis("RightStickVertical") * rotationSpeed * Time.deltaTime);
-        transform.RotateAround(target.position, -Vector3.right, Input.GetAxis("RightStickHorizontal") * rotationSpeed * Time.deltaTime);
-        transform.LookAt(target.transform);
-        if ((Input.GetAxisRaw("RightStickHorizontal") != 0) || (Input.GetAxisRaw("RightStickVertical") != 0))
-            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, target.position.z + distance), damping * Time.deltaTime);
+
+
+        freeCamera = false;
     }
 
 }
