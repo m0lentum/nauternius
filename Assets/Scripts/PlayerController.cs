@@ -200,7 +200,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         //todo
-        if (isGrounded && Input.GetButtonDown("Jump") && hasJumpAbility)
+        if (isGrounded && Input.GetButtonDown("Jump") && jumpTimer > jumpWaitTime && hasJumpAbility)
         {
             Jump();
         }
