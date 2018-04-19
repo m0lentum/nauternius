@@ -240,7 +240,7 @@ public class PlayerController : MonoBehaviour {
     public void Jump()
     {
 
-        rb.velocity += Vector3.up * jumpForce;
+        rb.AddRelativeForce(rb.velocity + Vector3.up * jumpForce, ForceMode.Impulse);
         if(rb.velocity.y < 0 ) rb.velocity += Vector3.up * Physics.gravity.y * (fallMulti - 1) * Time.deltaTime;
         else if (rb.velocity.y > 0 && !Input.GetButton("Jump")) rb.velocity += Vector3.up * Physics.gravity.y * (jumpMulti - 1) * Time.deltaTime;
         jumpTimer = 0;
