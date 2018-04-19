@@ -20,6 +20,7 @@ public class ThirdPersonCamera : MonoBehaviour {
     private Vector3 wantedPosition;
     private Vector3 fixedPosition;
     private bool freeCamera;
+    private Rigidbody targetRB;
 
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float bumperDistanceCheck; 
@@ -29,6 +30,7 @@ public class ThirdPersonCamera : MonoBehaviour {
 
     void FixedUpdate()
     {
+
         if ((Input.GetAxisRaw("RightStickHorizontal") != 0) || (Input.GetAxisRaw("RightStickVertical") != 0)) freeCamera = true; 
 
         cameraRelative = target.InverseTransformPoint(transform.position);
@@ -65,12 +67,12 @@ public class ThirdPersonCamera : MonoBehaviour {
             transform.RotateAround(target.position, Vector3.up, Input.GetAxis("RightStickVertical") * rotationSpeed * Time.deltaTime);
             transform.RotateAround(target.position, Vector3.right, Input.GetAxis("RightStickHorizontal") * rotationSpeed * Time.deltaTime);
             transform.LookAt(target);
+
             fixedPosition = (target.position - transform.position).normalized;
             wantedPosition = target.position - fixedPosition * distance;
         }
 
         transform.position = Vector3.Lerp(transform.position, wantedPosition, damping * Time.deltaTime);
-
 
 
         freeCamera = false;

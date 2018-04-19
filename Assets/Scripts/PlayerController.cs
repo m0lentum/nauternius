@@ -53,6 +53,10 @@ public class PlayerController : MonoBehaviour {
     private int jumpTimer;
     [SerializeField] private int jumpWaitTime; // hypyn cooldown fixedDeltaTime-intervalleina (frameina)
     [SerializeField] private CheckPointManager checkPointManager;
+    [SerializeField]
+    private float fallMulti;
+    [SerializeField]
+    private float jumpMulti;
 
     public delegate void FilterChange(bool filterStatus);
     public event FilterChange OnFilterChanged;
@@ -196,7 +200,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         //todo
-        if (isGrounded && Input.GetButtonDown("Jump") && jumpTimer > jumpWaitTime && hasJumpAbility)
+        if (isGrounded && Input.GetButtonDown("Jump") && hasJumpAbility)
         {
             Jump();
         }
@@ -235,7 +239,10 @@ public class PlayerController : MonoBehaviour {
 
     public void Jump()
     {
-        rb.AddRelativeForce(0f, jumpForce, 0f, ForceMode.Impulse);
+
+        rb.velocity += Vector3.up * jumpForce;
+        if(rb.velocity.y < 0 ) rb.velocity += Vector3.up * Physics.gravity.y * (fallMulti - 1) * Time.deltaTime;
+        else if (rb.velocity.y > 0 && !Input.GetButton("Jump")) rb.velocity += Vector3.up * Physics.gravity.y * (jumpMulti - 1) * Time.deltaTime;
         jumpTimer = 0;
     }
 
