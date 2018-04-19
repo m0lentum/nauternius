@@ -7,45 +7,42 @@ using UnityEngine;
 //---------------------------------------------------------------------------------------
 
 public class PlayerSounds : MonoBehaviour {
-
+    [Header("Audio Clips")]
     [SerializeField] private AudioClip acceleration;
     [SerializeField] private AudioClip deceleration;
     [SerializeField] private AudioClip regularDriveFast;
     [SerializeField] private AudioClip regularDriveSlow;
     [SerializeField] private AudioClip crash;
-
-    [SerializeField] private float accelerationThreshold;
-    [SerializeField] private float speedThreshold;
-    [SerializeField] private float collisionWaitTime;
-    private float previousSpeed;
-    public float speed;
-    public float speedDiff;
-    public float collisionTimer = 0f;
-    public bool crashedRecently;
-    private Vector3 horizontalVelocity;
-    private Rigidbody rb;
-    private AudioSource aSourceDefault;
+    [SerializeField] private AudioClip crashGround;
     
-    //Äänten feidaus
+    [Header("Crossfade")]
     [SerializeField] private float fadeDuration;
+    [SerializeField] private float crossfadeVolume;
+    public float CrossfadeVolume
+    {
+        get { return crossfadeVolume; }
+        set { crossfadeVolume = value; }
+    }
     private AudioSource[] aSources;
     private IEnumerator[] fader = new IEnumerator[2];
     private int activeSourceIndex = 0;
     private int volumeChangesPerSecond = 15;
     
-    [SerializeField]
-    private float volume;
-    public float Volume
-    {
-        get
-        {
-            return volume;
-        }
-        set
-        {
-            volume = value;
-        }
-    }
+    [Header("Other")]
+    [SerializeField] private float accelerationThreshold;
+    [SerializeField] private float speedThreshold;
+    [SerializeField] private float collisionWaitTime;
+    private float previousSpeed;
+    private float speed;
+    private float speedDiff;
+    private float collisionTimer;
+    private bool crashedRecently;
+    private Vector3 horizontalVelocity;
+    private Rigidbody rb;
+    private AudioSource aSourceDefault;
+
+    private float sameAudioTimer;
+    private bool sameAudioTimerStarted;
 
     //todo audiocheck threshold sen hetkisestä nopeudesta riippuvaiseksi?
     //todo kiihdytys ääni pois jos nopeus liian hidas?
@@ -55,7 +52,8 @@ public class PlayerSounds : MonoBehaviour {
     void CheckAudio()
     {
         horizontalVelocity = rb.velocity - new Vector3(0, rb.velocity.y, 0);
-        speed = horizontalVelocity.magnitude;
+        speed = rb.velocity.magnitude;
+        //Debug.Log("hor: " + horizontalVelocity.magnitude + ", koko: " + rb.velocity.magnitude);
         speedDiff = speed - previousSpeed;
 
         if (speedDiff < -accelerationThreshold / 2) Play(deceleration);
@@ -113,6 +111,15 @@ public class PlayerSounds : MonoBehaviour {
                 collisionTimer = 0;
             }
         }
+        
+        //Jos samaa auton ääntä soitettu pitkään, muutetaan sitä vähän
+        //todo lerppaa äänen muutos (waitforsecondsilla esim?)
+        sameAudioTimer += Time.deltaTime;
+        if (sameAudioTimer > 2)
+        {
+            aSources[activeSourceIndex].pitch = Random.Range(0.95f, 1f);
+            StartSameAudioTimer();
+        }
     }
 
     //todo
@@ -131,13 +138,15 @@ public class PlayerSounds : MonoBehaviour {
             //Debug.Log("KULMA: " + Mathf.Clamp((5 / angle), 0, 1));
             //Debug.Log("NOPEUS " + Mathf.Clamp((other.relativeVelocity.magnitude / 40), 0, 1));
             //Debug.Log("VOLUME" + aSourceDefault.volume);
-            aSourceDefault.PlayOneShot(crash);
+            if (other.collider.gameObject.CompareTag("Ground")) aSourceDefault.PlayOneShot(crashGround);
+            else aSourceDefault.PlayOneShot(crash);
             crashedRecently = true;
             //aSourceDefault.volume = 1.0f;
         }
 
     }
 
+    //Vaihtaa soitettavan clipin. Häivyttää vanhan pois ja uuden sisään
     public void Play(AudioClip clip)
     {
         if (clip == aSources[activeSourceIndex].clip)
@@ -165,8 +174,9 @@ public class PlayerSounds : MonoBehaviour {
         int NextPlayer = (activeSourceIndex + 1) % aSources.Length;
         aSources[NextPlayer].clip = clip;
         aSources[NextPlayer].Play();
+        StartSameAudioTimer();
 
-        fader[1] = FadeAudioSource(aSources[NextPlayer], fadeDuration, Volume, () => { fader[1] = null; });
+        fader[1] = FadeAudioSource(aSources[NextPlayer], fadeDuration, CrossfadeVolume, () => { fader[1] = null; });
         StartCoroutine(fader[1]);
         
         activeSourceIndex = NextPlayer;
@@ -192,5 +202,12 @@ public class PlayerSounds : MonoBehaviour {
         {
             finishedCallback();
         }
+    }
+
+    //Laskee, kuinka pitkään samaa auton ääntä soitettu
+    void StartSameAudioTimer()
+    {
+        //sameAudioTimerStarted = true;
+        sameAudioTimer = 0;
     }
 }

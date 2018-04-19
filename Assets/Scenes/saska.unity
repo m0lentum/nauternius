@@ -3199,7 +3199,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -3230,7 +3230,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3277,15 +3277,12 @@ MonoBehaviour:
   regularDriveFast: {fileID: 8300000, guid: 96748e3e04b88b142ac2c4d55d1a6ce6, type: 3}
   regularDriveSlow: {fileID: 8300000, guid: 17ae1a62d7750af46944ebd97fa661e3, type: 3}
   crash: {fileID: 8300000, guid: fcb358517ec77954fb03380a331edddb, type: 3}
+  crashGround: {fileID: 8300000, guid: e9ce2d439d2b18e4c951c74cdfec16de, type: 3}
+  fadeDuration: 1
+  crossfadeVolume: 0.2
   accelerationThreshold: 3
   speedThreshold: 50
   collisionWaitTime: 1
-  speed: 0
-  speedDiff: 0
-  collisionTimer: 0
-  crashedRecently: 0
-  fadeDuration: 0.5
-  volume: 1
 --- !u!1001 &143748103
 Prefab:
   m_ObjectHideFlags: 0
@@ -12836,7 +12833,7 @@ GameObject:
   - component: {fileID: 604381867}
   m_Layer: 8
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -30899,7 +30896,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-650238
+  m_Name: pb_Mesh-3026
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -41661,7 +41658,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-650236
+  m_Name: pb_Mesh-3030
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -42317,7 +42314,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-650240
+  m_Name: pb_Mesh-3028
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
