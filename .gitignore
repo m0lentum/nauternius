@@ -41,3 +41,7 @@ sysinfo.txt
 *.blend[0-9]
 *.blend[0-9].meta
 Assets/Plugins.meta
+
+# Baked lighting data
+/Assets/Scenes/saska/*
+/Assets/Scenes/test_mole/*
