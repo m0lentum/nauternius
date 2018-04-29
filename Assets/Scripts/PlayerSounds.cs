@@ -36,6 +36,7 @@ public class PlayerSounds : MonoBehaviour {
     private float speed;
     private float speedDiff;
     private float collisionTimer;
+    private float randomPitch;
     private bool crashedRecently;
     private Vector3 horizontalVelocity;
     private Rigidbody rb;
@@ -117,7 +118,8 @@ public class PlayerSounds : MonoBehaviour {
         sameAudioTimer += Time.deltaTime;
         if (sameAudioTimer > 2)
         {
-            aSources[activeSourceIndex].pitch = Random.Range(0.95f, 1f);
+            randomPitch = Random.Range(0.98f, 1.02f);
+            StartCoroutine(LerpPitch(aSources[activeSourceIndex], 1, randomPitch));
             StartSameAudioTimer();
         }
     }
@@ -202,6 +204,21 @@ public class PlayerSounds : MonoBehaviour {
         {
             finishedCallback();
         }
+    }
+
+    //Muuttaa audioSourcen pitchiä pehmeästi
+    IEnumerator LerpPitch(AudioSource player, float duration, float targetPitch)
+    {
+        int Steps = (int)(volumeChangesPerSecond * duration);
+        float StepTime = duration / Steps;
+        float StepSize = (targetPitch - player.pitch) / Steps;
+
+        for (int i = 1; i < Steps; i++)
+        {
+            player.pitch += StepSize;
+            yield return new WaitForSeconds(StepTime);
+        }
+        player.pitch = targetPitch;
     }
 
     //Laskee, kuinka pitkään samaa auton ääntä soitettu

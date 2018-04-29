@@ -228,14 +228,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f9d1fc3814ea4478005a75894db03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObj: {fileID: 0}
   targetBall: {fileID: 0}
   maxPullForce: 5000
   minPullForce: 500
   maxSocketTimer: 2.5
   socketedDistance: 7
   forceFieldPower: 15000
-  activatedMaterial: {fileID: 2100000, guid: 699416f229bbb474583149eff6242464, type: 2}
   ballAttachSound: {fileID: 8300000, guid: c43428a8537a38849a193c41fdd3c3e3, type: 3}
   resetSound: {fileID: 8300000, guid: e62b3e38351c3b242b5bb3f61aaf2e20, type: 3}
   isActive: 0
