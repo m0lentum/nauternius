@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4651618484877404}
   - component: {fileID: 33805032685569180}
   - component: {fileID: 23747622448311492}
+  - component: {fileID: 136145385025685114}
   m_Layer: 0
   m_Name: MushroomLight
   m_TagString: Untagged
@@ -180,6 +181,19 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!136 &136145385025685114
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049902486574266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 10
+  m_Direction: 1
+  m_Center: {x: 0, y: 4.6, z: 0}
 --- !u!182 &182095945675738656
 WindZone:
   m_ObjectHideFlags: 1
