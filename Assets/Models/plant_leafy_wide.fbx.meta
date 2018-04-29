@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6df8ab189dc07bd4cac838b537bc28fa
-timeCreated: 1524924514
+guid: 2410b0108b7859a40a14f315463f5bf0
+timeCreated: 1525020314
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,8 +10,8 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cylinder
-    4300002: mushroom_light
+    4300000: Cone
+    4300002: plant_leafy_wide
   externalObjects: {}
   materials:
     importMaterials: 0
