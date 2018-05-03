@@ -131,7 +131,7 @@ public class PlayerSounds : MonoBehaviour {
         Vector3 relpos = (other.contacts[0].point - gameObject.transform.position).normalized;
         Vector3 vel = -other.relativeVelocity.normalized;
         float angle = Vector3.Angle(relpos, vel);
-        Debug.Log(angle);
+        //Debug.Log(angle);
 
         if (!crashedRecently)
         {
