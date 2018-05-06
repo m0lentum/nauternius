@@ -8,6 +8,11 @@ using UnityEngine;
 
 public class VoiceLineTrigger : MonoBehaviour {
     
+    //pitäsköhän nää tehdä listalla tai jtn?
+    [SerializeField] private AudioClip clip1;
+    [SerializeField] private AudioClip clip2;
+    [SerializeField] private float waitBetweenAudio;
+
     public bool Triggered { get; set; }
     private AudioSource aSource;
     private List<VoiceLineTrigger> sameVoiceLine = new List<VoiceLineTrigger>();
@@ -27,8 +32,16 @@ public class VoiceLineTrigger : MonoBehaviour {
     {
         if (other.CompareTag("Player") && !Triggered)
         {
-            aSource.Play();
             foreach (VoiceLineTrigger vlc in sameVoiceLine) vlc.Triggered = true;
+            StartCoroutine(PlayClips());
         }
     }
+
+    IEnumerator PlayClips()
+    {
+        aSource.PlayOneShot(clip1);
+        yield return new WaitForSeconds(waitBetweenAudio + clip1.length);
+        if (clip2 != null) aSource.PlayOneShot(clip2);
+    }
+      
 }

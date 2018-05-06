@@ -140,7 +140,7 @@ public class PlayerSounds : MonoBehaviour {
             //Debug.Log("KULMA: " + Mathf.Clamp((5 / angle), 0, 1));
             //Debug.Log("NOPEUS " + Mathf.Clamp((other.relativeVelocity.magnitude / 40), 0, 1));
             //Debug.Log("VOLUME" + aSourceDefault.volume);
-            if (other.collider.gameObject.CompareTag("Ground")) aSourceDefault.PlayOneShot(crashGround);
+            if (other.collider.gameObject.layer == 8) aSourceDefault.PlayOneShot(crashGround);
             else aSourceDefault.PlayOneShot(crash);
             crashedRecently = true;
             //aSourceDefault.volume = 1.0f;
