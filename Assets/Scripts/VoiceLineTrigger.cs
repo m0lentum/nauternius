@@ -19,6 +19,8 @@ public class VoiceLineTrigger : MonoBehaviour {
     [SerializeField] private List<string> sentences2 = new List<string>();
     [SerializeField] private List<int> sentenceLengths2 = new List<int>();
 
+    [SerializeField] private Text voiceLineText;
+
     public bool Triggered { get; set; }
     private AudioSource aSource;
     private CanvasGroup canvasGroup;
