@@ -38,8 +38,8 @@ public class OrbitCamera : MonoBehaviour {
         }
         else
         {
-            transform.RotateAround(transform.parent.position, -Vector3.up, Input.GetAxis("RightStickVertical") * rotationSpeed * Time.deltaTime);
-            transform.RotateAround(transform.parent.position, -Vector3.right, Input.GetAxis("RightStickHorizontal") * rotationSpeed * Time.deltaTime);
+            transform.RotateAround(transform.parent.position, Vector3.up, Input.GetAxis("RightStickVertical") * rotationSpeed * Time.deltaTime);
+            transform.RotateAround(transform.parent.position, Vector3.right, Input.GetAxis("RightStickHorizontal") * rotationSpeed * Time.deltaTime);
             transform.LookAt(transform.parent);
             wantedPosition = transform.position;
         }
