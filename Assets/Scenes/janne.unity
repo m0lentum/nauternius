@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 999773384}
-  m_IndirectSpecularColor: {r: 0.009445897, g: 0.018962618, b: 0.026665768, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1282,6 +1282,11 @@ Prefab:
       propertyPath: waitBetweenAudio
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: voiceLineText
+      value: 
+      objectReference: {fileID: 1229899978}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
   m_IsPrefabParent: 0
@@ -12709,6 +12714,111 @@ Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
     type: 2}
   m_PrefabInternal: {fileID: 588558468}
+--- !u!1001 &588793373
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224740760479824942, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &590092011
 Prefab:
   m_ObjectHideFlags: 0
@@ -22747,6 +22857,11 @@ MonoBehaviour:
   clip1: {fileID: 8300000, guid: e003410795534bc4a833012ef5cd54e6, type: 3}
   clip2: {fileID: 0}
   waitBetweenAudio: 0
+  sentences: []
+  sentenceLengths: 
+  sentences2: []
+  sentenceLengths2: 
+  voiceLineText: {fileID: 1229899978}
 --- !u!65 &1035687279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26825,6 +26940,12 @@ Transform:
   m_Father: {fileID: 1619284784}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!114 &1229899978 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114548133139728478, guid: 0eeaf4e6c7ef9f946a8e6966c3b8f1c4,
+    type: 2}
+  m_PrefabInternal: {fileID: 588793373}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1229978117
 Prefab:
   m_ObjectHideFlags: 0
@@ -40632,6 +40753,11 @@ Prefab:
       propertyPath: clip1
       value: 
       objectReference: {fileID: 8300000, guid: e003410795534bc4a833012ef5cd54e6, type: 3}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: voiceLineText
+      value: 
+      objectReference: {fileID: 1229899978}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
   m_IsPrefabParent: 0
@@ -41873,6 +41999,11 @@ MonoBehaviour:
   clip1: {fileID: 8300000, guid: e003410795534bc4a833012ef5cd54e6, type: 3}
   clip2: {fileID: 0}
   waitBetweenAudio: 0
+  sentences: []
+  sentenceLengths: 
+  sentences2: []
+  sentenceLengths2: 
+  voiceLineText: {fileID: 1229899978}
 --- !u!65 &1872901588
 BoxCollider:
   m_ObjectHideFlags: 0
