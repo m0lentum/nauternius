@@ -43,5 +43,4 @@ sysinfo.txt
 Assets/Plugins.meta
 
 # Baked lighting data
-/Assets/Scenes/saska/*
-/Assets/Scenes/test_mole/*
+/Assets/Scenes/*/

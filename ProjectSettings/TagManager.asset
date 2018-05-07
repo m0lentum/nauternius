@@ -9,6 +9,7 @@ TagManager:
   - wall
   - invisiblefilter
   - CollapsingPlatform
+  - Ground
   layers:
   - Default
   - TransparentFX
