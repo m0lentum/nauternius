@@ -9817,7 +9817,10 @@ MonoBehaviour:
   clip1: {fileID: 0}
   clip2: {fileID: 0}
   waitBetweenAudio: 0
-  textLine: 
+  sentences: []
+  sentenceLengths: 
+  sentences2: []
+  sentenceLengths2: 
   voiceLineText: {fileID: 0}
 --- !u!65 &492593810
 BoxCollider:
@@ -11183,7 +11186,10 @@ MonoBehaviour:
   clip1: {fileID: 0}
   clip2: {fileID: 0}
   waitBetweenAudio: 0
-  textLine: 
+  sentences: []
+  sentenceLengths: 
+  sentences2: []
+  sentenceLengths2: 
   voiceLineText: {fileID: 0}
 --- !u!65 &542704305
 BoxCollider:
