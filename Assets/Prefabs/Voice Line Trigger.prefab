@@ -51,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1938373521231188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 152.6, y: -0.6, z: -226.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4695908039145092}
@@ -64,13 +64,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1035914096490360}
-  m_LocalRotation: {x: -0, y: -0.14780933, z: -0, w: 0.9890159}
-  m_LocalPosition: {x: 228.54, y: 28.76, z: 1048.16}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 257.4, y: 37.7, z: 1048.16}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 4461585447942266}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -17, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &65833445066887022
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -189,3 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc1cb64eca927e46ae538b8f4d7b6d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip1: {fileID: 8300000, guid: 511b3a22d26f4864195c262ebfb22546, type: 3}
+  clip2: {fileID: 0}
+  waitBetweenAudio: 0
+  textLine: moi oon joakimmoi oon joakimmoi oon joakimmoi oon joakimmoi oon joakim
+  voiceLineText: {fileID: 0}
