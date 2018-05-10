@@ -28,7 +28,7 @@ public class OrbitCamera : MonoBehaviour {
         if (relZ > 1) damping = relZ * initDamping;
         else damping = initDamping;
 
-        if (target.velocity.magnitude * 0.1f > 1f) targetVel = target.velocity.magnitude * 0.05f;
+        if (target.velocity.magnitude * 0.5f > 1f) targetVel = target.velocity.magnitude * 0.05f;
         else targetVel = 1;
 
         if (!freeCamera)
