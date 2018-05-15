@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33480701633225074}
   - component: {fileID: 23172193824991828}
   - component: {fileID: 114693693775523818}
+  - component: {fileID: 114323467488113954}
   m_Layer: 0
   m_Name: flame
   m_TagString: Untagged
@@ -58,6 +59,7 @@ GameObject:
   - component: {fileID: 4607749052001590}
   - component: {fileID: 33741253055553114}
   - component: {fileID: 23395639364893434}
+  - component: {fileID: 114939420813252442}
   m_Layer: 0
   m_Name: engineBL
   m_TagString: Untagged
@@ -76,6 +78,7 @@ GameObject:
   - component: {fileID: 33761408392126626}
   - component: {fileID: 23558796711571440}
   - component: {fileID: 114809011676038608}
+  - component: {fileID: 114491947063498346}
   m_Layer: 0
   m_Name: flame
   m_TagString: Untagged
@@ -124,6 +127,7 @@ GameObject:
   - component: {fileID: 4331864033233310}
   - component: {fileID: 33143751935633022}
   - component: {fileID: 23519051652540120}
+  - component: {fileID: 114425630625688244}
   m_Layer: 0
   m_Name: engineBR
   m_TagString: Untagged
@@ -141,6 +145,7 @@ GameObject:
   - component: {fileID: 4337971554380744}
   - component: {fileID: 33353442431614254}
   - component: {fileID: 23903787545104818}
+  - component: {fileID: 114239940287985846}
   m_Layer: 0
   m_Name: engineFL
   m_TagString: Untagged
@@ -158,6 +163,7 @@ GameObject:
   - component: {fileID: 4022747901050570}
   - component: {fileID: 33349878880599770}
   - component: {fileID: 23673619419309870}
+  - component: {fileID: 114862777008032988}
   m_Layer: 0
   m_Name: engineFR
   m_TagString: Untagged
@@ -210,6 +216,7 @@ GameObject:
   - component: {fileID: 33704329451288020}
   - component: {fileID: 23740530074444232}
   - component: {fileID: 114602349073586374}
+  - component: {fileID: 114292227798293376}
   m_Layer: 0
   m_Name: flame
   m_TagString: Untagged
@@ -228,6 +235,7 @@ GameObject:
   - component: {fileID: 33766923658669378}
   - component: {fileID: 23106008050014310}
   - component: {fileID: 114210239765949080}
+  - component: {fileID: 114374161423810554}
   m_Layer: 0
   m_Name: flame
   m_TagString: Untagged
@@ -262,6 +270,7 @@ GameObject:
   - component: {fileID: 33473965934088944}
   - component: {fileID: 23564307262521994}
   - component: {fileID: 114634521397957326}
+  - component: {fileID: 114977976389719184}
   m_Layer: 0
   m_Name: flame
   m_TagString: Untagged
@@ -344,15 +353,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115498855793438}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -67.9, y: 30, z: 899.5}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 180.4, y: 3.04, z: 40.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4756054103730866}
   - {fileID: 4339995436850132}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4241452348426822
 Transform:
   m_ObjectHideFlags: 1
@@ -1128,6 +1137,90 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationRate: {x: 0, y: 0.015}
+--- !u!114 &114239940287985846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1542964128086884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e68b9f7d24889f408d9e3364a52d2c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBack: 0
+  maxTurnSpeed: 300
+  maxAngle: 15
+--- !u!114 &114292227798293376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807173702717140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587abbffb79e90c4e92e0319d59711aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpeed: 0.01
+  maxSpeed: 0.04
+  useHorizontalAxis: 0
+--- !u!114 &114323467488113954
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1084168045885340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587abbffb79e90c4e92e0319d59711aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpeed: 0.01
+  maxSpeed: 0.04
+  useHorizontalAxis: 0
+--- !u!114 &114374161423810554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1842719857751562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587abbffb79e90c4e92e0319d59711aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpeed: 0.01
+  maxSpeed: 0.04
+  useHorizontalAxis: 1
+--- !u!114 &114425630625688244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1499306510269714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e68b9f7d24889f408d9e3364a52d2c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBack: 1
+  maxTurnSpeed: 300
+  maxAngle: 60
+--- !u!114 &114491947063498346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1272696911380564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587abbffb79e90c4e92e0319d59711aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpeed: 0.01
+  maxSpeed: 0.04
+  useHorizontalAxis: 1
 --- !u!114 &114602349073586374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1176,6 +1269,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationRate: {x: 0, y: 0.015}
+--- !u!114 &114862777008032988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605394052442118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e68b9f7d24889f408d9e3364a52d2c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBack: 0
+  maxTurnSpeed: 300
+  maxAngle: 15
 --- !u!114 &114865800140465580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1229,6 +1336,34 @@ MonoBehaviour:
   accelerationThreshold: 3
   speedThreshold: 50
   collisionWaitTime: 1
+--- !u!114 &114939420813252442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1231167950376218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e68b9f7d24889f408d9e3364a52d2c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBack: 1
+  maxTurnSpeed: 300
+  maxAngle: 60
+--- !u!114 &114977976389719184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1863329056080950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587abbffb79e90c4e92e0319d59711aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpeed: 0.01
+  maxSpeed: 0.04
+  useHorizontalAxis: 0
 --- !u!136 &136293665471508118
 CapsuleCollider:
   m_ObjectHideFlags: 1
