@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class VoiceLineTrigger : MonoBehaviour {
     
-    //pitäsköhän nää tehdä listalla tai jtn?
+    // purkkaviritelmä/5
     [SerializeField] private AudioClip clip1;
     [SerializeField] private AudioClip clip2;
     [SerializeField] private float waitBetweenAudio;
@@ -59,7 +59,7 @@ public class VoiceLineTrigger : MonoBehaviour {
         }
     }
 
-    //Kirjoittaa tekstiä kirjain kerrallaan näytölle
+    //Kirjoittaa tekstiä lause kerrallaan näytölle
     IEnumerator TypeText(List<string> sentences, List<int> sentenceLengths)
     {
         canvasGroup.alpha = 1f;
@@ -67,7 +67,9 @@ public class VoiceLineTrigger : MonoBehaviour {
         for (int i = 0; i < sentences.Count; i++)
         {
             voiceLineText.text = sentences[i];
-            if (i == sentences.Count - 1) StartCoroutine(FadeCanvas(sentenceLengths[i-1]));
+            //Debug.Log(sentenceLengths.Count + "ja lauseet count " + sentences.Count);
+            //Debug.Log(i - 1 + "ja vika kesto ennen fadecanvasta " + sentenceLengths[i - 1]);
+            if (i == sentences.Count - 1) StartCoroutine(FadeCanvas(sentenceLengths[i]));
             yield return new WaitForSeconds(sentenceLengths[i]);
         }
     }

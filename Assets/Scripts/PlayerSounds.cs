@@ -54,7 +54,6 @@ public class PlayerSounds : MonoBehaviour {
     {
         horizontalVelocity = rb.velocity - new Vector3(0, rb.velocity.y, 0);
         speed = rb.velocity.magnitude;
-        //Debug.Log("hor: " + horizontalVelocity.magnitude + ", koko: " + rb.velocity.magnitude);
         speedDiff = speed - previousSpeed;
 
         if (speedDiff < -accelerationThreshold / 2) Play(deceleration);
@@ -68,27 +67,12 @@ public class PlayerSounds : MonoBehaviour {
         previousSpeed = speed;
     }
 
-    void SwitchAudioClip(AudioClip clip)
-    {
-        if (aSourceDefault.clip == clip) return;
-        aSourceDefault.clip = clip;
-        Debug.Log("nyt oneshot");
-        aSourceDefault.PlayOneShot(clip);
-        //aSourceDefault.clip = clip;
-        //aSourceDefault.Play();
-
-    }
-
     private void Awake()
     {
-
         aSourceDefault = gameObject.GetComponent<AudioSource>();
-        
+
         //Tehdään kaksi audioSourcea joiden avulla crossfade
-        aSources = new AudioSource[2]{
-            gameObject.AddComponent<AudioSource>(),
-            gameObject.AddComponent<AudioSource>()
-        };
+        aSources = new AudioSource[2]{ gameObject.AddComponent<AudioSource>(), gameObject.AddComponent<AudioSource>() };
         
         foreach (AudioSource s in aSources)
         {
@@ -114,7 +98,6 @@ public class PlayerSounds : MonoBehaviour {
         }
         
         //Jos samaa auton ääntä soitettu pitkään, muutetaan sitä vähän
-        //todo lerppaa äänen muutos (waitforsecondsilla esim?)
         sameAudioTimer += Time.deltaTime;
         if (sameAudioTimer > 2)
         {
@@ -123,27 +106,29 @@ public class PlayerSounds : MonoBehaviour {
             StartSameAudioTimer();
         }
     }
-
-    //todo
+    
     void OnCollisionEnter(Collision other)
     {
-        //Debug.Log(other.relativeVelocity.magnitude);
+        //Lasketaan törmäyksen kulma
         Vector3 relpos = (other.contacts[0].point - gameObject.transform.position).normalized;
         Vector3 vel = -other.relativeVelocity.normalized;
         float angle = Vector3.Angle(relpos, vel);
-        //Debug.Log(angle);
 
         if (!crashedRecently)
         {
-            //muuttujat randomlukujen tilalle
+            //Muuttaa volumea törmäyksen kulman mukaan - todo muuttujat randomlukujen tilalle
             aSourceDefault.volume = Mathf.Clamp((5/angle), 0, 1) * Mathf.Clamp((other.relativeVelocity.magnitude/40), 0, 1);
-            //Debug.Log("KULMA: " + Mathf.Clamp((5 / angle), 0, 1));
-            //Debug.Log("NOPEUS " + Mathf.Clamp((other.relativeVelocity.magnitude / 40), 0, 1));
-            //Debug.Log("VOLUME" + aSourceDefault.volume);
-            if (other.collider.gameObject.layer == 8) aSourceDefault.PlayOneShot(crashGround);
-            else aSourceDefault.PlayOneShot(crash);
+
+            if (other.collider.gameObject.CompareTag("Ground"))
+            {
+                aSourceDefault.PlayOneShot(crashGround);
+            }
+            else
+            {
+                aSourceDefault.volume = 0.2f * aSourceDefault.volume; //Tämä vaan kun ei jaksa muokata seinääntörmäysclippiä hiljasemmaks
+                aSourceDefault.PlayOneShot(crash);
+            }
             crashedRecently = true;
-            //aSourceDefault.volume = 1.0f;
         }
 
     }
@@ -224,7 +209,6 @@ public class PlayerSounds : MonoBehaviour {
     //Laskee, kuinka pitkään samaa auton ääntä soitettu
     void StartSameAudioTimer()
     {
-        //sameAudioTimerStarted = true;
         sameAudioTimer = 0;
     }
 }
