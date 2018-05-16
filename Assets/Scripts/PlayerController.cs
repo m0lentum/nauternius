@@ -57,10 +57,11 @@ public class PlayerController : MonoBehaviour {
     public delegate void FilterChange(bool filterStatus);
     public event FilterChange OnFilterChanged;
 
-    private bool hasSuperSpeed;
-    private bool hasJumpAbility;
+    [SerializeField] private bool hasSuperSpeed;
+    [SerializeField] private bool hasJumpAbility;
     private bool isGrounded;
     private Rigidbody rb;
+
     public bool HasFilter { get; set; }
     private bool filterOn;
     public bool FilterOn
@@ -146,12 +147,12 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            // ollaan ilmassa, käännetään alusta jonkin verran liikesuunnan mukaan
+            // ollaan ilmassa, käännetään alusta jonkin verran liikesuunnan mukaan jos ollaan putoamassa
 
             currentPitch = transform.localEulerAngles.x;
             if (currentPitch > 180.0f) currentPitch -= 360.0f;
 
-            targetPitch = Vector3.SignedAngle(new Vector3(transform.forward.x, 0, transform.forward.z), rb.velocity, transform.right);
+            targetPitch = Mathf.Clamp(-0.03f * rb.velocity.y, -1.0f, 1.0f) * maxAirPitch;
             if (targetPitch > 90.0f) targetPitch -= 180.0f; // liikutaan takaperin
             else if (targetPitch < -90.0f) targetPitch += 180.0f;
             targetPitch = Mathf.Clamp(targetPitch, -maxAirPitch, maxAirPitch);
