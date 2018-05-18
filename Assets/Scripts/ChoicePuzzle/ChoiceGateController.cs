@@ -53,13 +53,13 @@ public class ChoiceGateController : MonoBehaviour {
     {
         if (nextGate) nextGate.Open();
         isClosed = true;
-        audioSrc.PlayOneShot(soundOnClose);
+        if (soundOnClose) audioSrc.PlayOneShot(soundOnClose);
     }
 
     public void Open()
     {
         isClosed = false;
-        audioSrc.PlayOneShot(soundOnOpen);
+        if (soundOnOpen) audioSrc.PlayOneShot(soundOnOpen);
     }
 
     public void Reset()
