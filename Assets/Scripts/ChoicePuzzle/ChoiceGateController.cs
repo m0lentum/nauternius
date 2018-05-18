@@ -25,10 +25,15 @@ public class ChoiceGateController : MonoBehaviour {
     [SerializeField] private ChoiceGateController nextGate;
     private Animator anim;
 
+    private AudioSource audioSrc;
+    [SerializeField] private AudioClip soundOnOpen;
+    [SerializeField] private AudioClip soundOnClose;
+    
 
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        audioSrc = GetComponent<AudioSource>();
     }
 
 
@@ -48,11 +53,13 @@ public class ChoiceGateController : MonoBehaviour {
     {
         if (nextGate) nextGate.Open();
         isClosed = true;
+        audioSrc.PlayOneShot(soundOnClose);
     }
 
     public void Open()
     {
         isClosed = false;
+        audioSrc.PlayOneShot(soundOnOpen);
     }
 
     public void Reset()
