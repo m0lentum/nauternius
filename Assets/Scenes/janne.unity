@@ -32404,7 +32404,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 206.5
+      value: 213.67
       objectReference: {fileID: 0}
     - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -32412,7 +32412,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 842.1
+      value: 857.81
       objectReference: {fileID: 0}
     - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -32436,7 +32436,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1938373521231188, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
       propertyPath: m_Name
-      value: Voice Line Trigger Box (1)
+      value: Voice Line Trigger BoxY3
       objectReference: {fileID: 0}
     - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
       propertyPath: m_LocalScale.z
@@ -39663,7 +39663,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-16618
+  m_Name: pb_Mesh-19452
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -46909,52 +46909,52 @@ Prefab:
         type: 2}
       propertyPath: soundOnOpen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: cc926d68339bed64eac9f4a7c08ed84c, type: 3}
     - target: {fileID: 114441186006431584, guid: 3f3f505fff06e1149bdc8a9dd962dad0,
         type: 2}
       propertyPath: soundOnOpen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: cc926d68339bed64eac9f4a7c08ed84c, type: 3}
     - target: {fileID: 114596273527175072, guid: 3f3f505fff06e1149bdc8a9dd962dad0,
         type: 2}
       propertyPath: soundOnOpen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: cc926d68339bed64eac9f4a7c08ed84c, type: 3}
     - target: {fileID: 114513451911684932, guid: 3f3f505fff06e1149bdc8a9dd962dad0,
         type: 2}
       propertyPath: soundOnOpen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: cc926d68339bed64eac9f4a7c08ed84c, type: 3}
     - target: {fileID: 114105161580265012, guid: 3f3f505fff06e1149bdc8a9dd962dad0,
         type: 2}
       propertyPath: soundOnOpen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: cc926d68339bed64eac9f4a7c08ed84c, type: 3}
     - target: {fileID: 114358055379791114, guid: 3f3f505fff06e1149bdc8a9dd962dad0,
         type: 2}
       propertyPath: soundOnClose
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: cc926d68339bed64eac9f4a7c08ed84c, type: 3}
     - target: {fileID: 114441186006431584, guid: 3f3f505fff06e1149bdc8a9dd962dad0,
         type: 2}
       propertyPath: soundOnClose
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: cc926d68339bed64eac9f4a7c08ed84c, type: 3}
     - target: {fileID: 114596273527175072, guid: 3f3f505fff06e1149bdc8a9dd962dad0,
         type: 2}
       propertyPath: soundOnClose
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: cc926d68339bed64eac9f4a7c08ed84c, type: 3}
     - target: {fileID: 114513451911684932, guid: 3f3f505fff06e1149bdc8a9dd962dad0,
         type: 2}
       propertyPath: soundOnClose
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: cc926d68339bed64eac9f4a7c08ed84c, type: 3}
     - target: {fileID: 114105161580265012, guid: 3f3f505fff06e1149bdc8a9dd962dad0,
         type: 2}
       propertyPath: soundOnClose
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: cc926d68339bed64eac9f4a7c08ed84c, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f3f505fff06e1149bdc8a9dd962dad0, type: 2}
   m_IsPrefabParent: 0
