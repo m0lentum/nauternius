@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UVScroller : MonoBehaviour {
 
-    [SerializeField] private Vector2 animationRate = new Vector2(0, 0.07f);
+    public Vector2 animationRate = new Vector2(0, 0.015f);
     private Vector2 totalOffset;
 
     private Renderer rend;
