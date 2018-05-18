@@ -20,15 +20,18 @@ public class VoiceLineTrigger : MonoBehaviour {
     [SerializeField] private List<int> sentenceLengths2 = new List<int>();
 
     [SerializeField] private Text voiceLineText;
+    [SerializeField] private GameObject aSourceObj;
+    private AudioSource aSource;
+    private CheckIfFree textInUseCheck;
 
     public bool Triggered { get; set; }
-    private AudioSource aSource;
     private CanvasGroup canvasGroup;
     private List<VoiceLineTrigger> sameVoiceLine = new List<VoiceLineTrigger>();
     
     private void Start()
     {
-        aSource = GetComponent<AudioSource>();
+        textInUseCheck = voiceLineText.GetComponent<CheckIfFree>();
+        aSource = aSourceObj.GetComponent<AudioSource>();
         canvasGroup = voiceLineText.transform.parent.GetComponent<CanvasGroup>();
 
         //Lisää listaan kaikki lapsi-skriptit eli skriptit, joissa sama voiceline eri triggerboxissa
@@ -49,12 +52,16 @@ public class VoiceLineTrigger : MonoBehaviour {
 
     IEnumerator PlayClips()
     {
-        aSource.PlayOneShot(clip1);
+        aSource.clip = clip1;
+        aSource.Play();
+        //aSource.PlayOneShot(clip1);
         StartCoroutine(TypeText(sentences, sentenceLengths));
         yield return new WaitForSeconds(waitBetweenAudio + clip1.length);
         if (clip2 != null)
         {
-            aSource.PlayOneShot(clip2);
+            //aSource.PlayOneShot(clip2);
+            aSource.clip = clip2;
+            aSource.Play();
             StartCoroutine(TypeText(sentences2, sentenceLengths2));
         }
     }
@@ -62,6 +69,9 @@ public class VoiceLineTrigger : MonoBehaviour {
     //Kirjoittaa tekstiä lause kerrallaan näytölle
     IEnumerator TypeText(List<string> sentences, List<int> sentenceLengths)
     {
+        textInUseCheck.StartText(this);
+        
+        textInUseCheck.inUse = true; //Kerrotaan että tekstiobjekti käytössä
         canvasGroup.alpha = 1f;
         voiceLineText.text = "";
         for (int i = 0; i < sentences.Count; i++)
@@ -81,6 +91,7 @@ public class VoiceLineTrigger : MonoBehaviour {
             canvasGroup.alpha -= 0.05f;
             yield return new WaitForSeconds(0.05f);
         }
+        textInUseCheck.StopText(); //Kerrotaan että tekstiobjekti vapaa
     }
 
 }
