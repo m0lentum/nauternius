@@ -12,11 +12,16 @@ public class FinalDoorController : MonoBehaviour {
         set { anim.SetBool("isSolved", value); }
     }
 
+    private AudioSource audioSrc;
+    [SerializeField] private AudioClip soundOnCorrect;
+    [SerializeField] private AudioClip soundOnWrong;
+
     void Start()
     {
         ResetGates();
         anim = GetComponentInParent<Animator>();
         isSolved = false;
+        audioSrc = GetComponentInParent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -41,6 +46,7 @@ public class FinalDoorController : MonoBehaviour {
                 {
                     ResetGates();
                     anim.SetTrigger("checkAnswer");
+                    audioSrc.PlayOneShot(soundOnWrong);
                     return;
                 }
             }
@@ -70,5 +76,7 @@ public class FinalDoorController : MonoBehaviour {
         }
 
         anim.SetTrigger("checkAnswer");
+
+        audioSrc.PlayOneShot(soundOnCorrect);
     }
 }
