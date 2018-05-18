@@ -28,6 +28,7 @@ public class InvisibilityFilter : MonoBehaviour {
             pController.HasFilter = true;
             gameObject.GetComponent<Renderer>().enabled = false;
             gameObject.GetComponent<Collider>().enabled = false;
+            gameObject.GetComponent<ParticleSystem>().Stop();
             //helpText.gameObject.SetActive(true);
             //StartCoroutine(DisableAfterWait(helpText.gameObject));
         }
