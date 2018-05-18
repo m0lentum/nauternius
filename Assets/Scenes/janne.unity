@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 999773384}
-  m_IndirectSpecularColor: {r: 0.009445897, g: 0.018962618, b: 0.026665768, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -453,6 +453,16 @@ Prefab:
       propertyPath: flashCanvas
       value: 
       objectReference: {fileID: 796056917}
+    - target: {fileID: 114620920009240784, guid: eb0d1656a7a2d0f4b820584ad80b1ed7,
+        type: 2}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1244052387}
+    - target: {fileID: 81288452034420316, guid: eb0d1656a7a2d0f4b820584ad80b1ed7,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
   m_IsPrefabParent: 0
@@ -31551,7 +31561,7 @@ GameObject:
   - component: {fileID: 1205672309}
   - component: {fileID: 1205672308}
   - component: {fileID: 1205672307}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Invis Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32641,6 +32651,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
+--- !u!20 &1244052387 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20877065787140022, guid: c58b4d2efd98142429f57d3b90b41398,
+    type: 2}
+  m_PrefabInternal: {fileID: 439660223}
 --- !u!1 &1245097558
 GameObject:
   m_ObjectHideFlags: 0
