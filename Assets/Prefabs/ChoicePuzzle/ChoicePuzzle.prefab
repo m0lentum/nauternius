@@ -16237,8 +16237,8 @@ MonoBehaviour:
   - {fileID: 114513451911684932}
   - {fileID: 114596273527175072}
   - {fileID: 114358055379791114}
-  soundOnCorrect: {fileID: 0}
-  soundOnWrong: {fileID: 0}
+  soundOnCorrect: {fileID: 8300000, guid: 920d44ab64eda664c97677d8abece6d8, type: 3}
+  soundOnWrong: {fileID: 8300000, guid: 95752c340abf49f49adbd687b897a8b3, type: 3}
 --- !u!114 &114651251196087572
 MonoBehaviour:
   m_ObjectHideFlags: 1
