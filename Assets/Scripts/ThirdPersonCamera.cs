@@ -29,7 +29,6 @@ public class ThirdPersonCamera : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if ((Input.GetAxisRaw("RightStickHorizontal") != 0) || (Input.GetAxisRaw("RightStickVertical") != 0)) freeCamera = true; 
 
         cameraRelative = target.InverseTransformPoint(transform.position);
         float relZ = cameraRelative.z + distance;
@@ -38,10 +37,6 @@ public class ThirdPersonCamera : MonoBehaviour {
 
 
 
-
-
-        if (!freeCamera)
-        {
             wantedPosition = target.TransformPoint(0, height, -distance);
 
             RaycastHit hit;
@@ -59,21 +54,10 @@ public class ThirdPersonCamera : MonoBehaviour {
             Quaternion wantedRotation = target.rotation;
             transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, rotationDamping * Time.deltaTime);
 
-        }
-        else
-        {
-            transform.RotateAround(target.position, Vector3.up, Input.GetAxis("RightStickVertical") * rotationSpeed * Time.deltaTime);
-            transform.RotateAround(target.position, Vector3.right, Input.GetAxis("RightStickHorizontal") * rotationSpeed * Time.deltaTime);
-            transform.LookAt(target);
-            fixedPosition = (target.position - transform.position).normalized;
-            wantedPosition = target.position - fixedPosition * distance;
-        }
+
 
         transform.position = Vector3.Lerp(transform.position, wantedPosition, damping * Time.deltaTime);
 
-
-
-        freeCamera = false;
     }
 
 }
