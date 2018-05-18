@@ -50,9 +50,9 @@ public class FinalDoorController : MonoBehaviour {
                     return;
                 }
             }
-        }
 
-        SetSolved();
+            SetSolved();
+        }
     }
 
     public void ResetGates()
