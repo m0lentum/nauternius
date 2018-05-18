@@ -11,7 +11,7 @@ public class InvisibilityFilter : MonoBehaviour {
 
     //Tähän asetetaan tyhjä objekti, jonka lapsina ovat kaikki filtterin vaikutuksessa olevat objektit
     [SerializeField] private Transform affectedObjectsParent;
-    [SerializeField] private Text helpText;
+    //[SerializeField] private Text helpText;
     private PlayerController pController;
     
     void Awake ()
@@ -28,8 +28,8 @@ public class InvisibilityFilter : MonoBehaviour {
             pController.HasFilter = true;
             gameObject.GetComponent<Renderer>().enabled = false;
             gameObject.GetComponent<Collider>().enabled = false;
-            helpText.gameObject.SetActive(true);
-            StartCoroutine(DisableAfterWait(helpText.gameObject));
+            //helpText.gameObject.SetActive(true);
+            //StartCoroutine(DisableAfterWait(helpText.gameObject));
         }
     }
 

@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour {
     private int jumpTimer;
     [SerializeField] private int jumpWaitTime; // hypyn cooldown fixedDeltaTime-intervalleina (frameina)
     [SerializeField] private CheckPointManager checkPointManager;
+    [SerializeField] private Canvas flashCanvas;
+    private FlashCanvas flashScript;
 
     public delegate void FilterChange(bool filterStatus);
     public event FilterChange OnFilterChanged;
@@ -96,6 +98,7 @@ public class PlayerController : MonoBehaviour {
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
+        flashScript = flashCanvas.GetComponent<FlashCanvas>();
         hoverProbeOffset = new Vector3(0, 0, hoverProbeDistance);
         trueMaxSpeed = maxSpeed;
         jumpTimer = 0;
@@ -240,10 +243,12 @@ public class PlayerController : MonoBehaviour {
         jumpTimer = 0;
     }
 
-    public void Die()
+    public IEnumerator Die()
     {
-        Debug.Log("Kuoli saatana");
+        flashScript.Flash(Color.black, 0.4f);
+        yield return new WaitForSeconds(0.4f);
         transform.position = checkPointManager.CurCheckPoint.SpawnPoint;
+        rb.velocity = new Vector3(0, 0, 0);
     }
 
     public void EnableJumpAbility()

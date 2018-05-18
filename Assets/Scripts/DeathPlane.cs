@@ -25,7 +25,7 @@ public class DeathPlane : MonoBehaviour {
         if (otherParent.tag == "Player")
         {
             //Ei _pitäis_ olla mahdollisuutta erroriin, kunhan vain pelaajalla on Player-tag
-            otherParent.GetComponent<PlayerController>().Die();
+            StartCoroutine(otherParent.GetComponent<PlayerController>().Die());
         }
     }
 }

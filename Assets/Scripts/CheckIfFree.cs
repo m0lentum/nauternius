@@ -8,18 +8,18 @@ using UnityEngine;
 
 public class CheckIfFree : MonoBehaviour {
 
-    public bool inUse;
-    public VoiceLineTrigger lastCallingScript;
+    public bool InUse { get; set; }
+    private VoiceLineTrigger lastCallingScript;
 
     public void StartText(VoiceLineTrigger vlt)
     {
-        if (inUse) lastCallingScript.StopAllCoroutines();
+        if (InUse) lastCallingScript.StopAllCoroutines();
         lastCallingScript = vlt;
-        inUse = true;
+        InUse = true;
     }
 
     public void StopText()
     {
-        inUse = false;
+        InUse = false;
     }
 }

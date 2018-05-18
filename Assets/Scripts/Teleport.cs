@@ -12,36 +12,29 @@ public class Teleport : MonoBehaviour {
 	[SerializeField] private GameObject player;
     [SerializeField] private Canvas flashCanvas;
 
-    private CanvasGroup flashCG;
+    private FlashCanvas flashScript;
     private AudioSource aSource;
 
     private void Start()
     {
-        flashCG = flashCanvas.GetComponent<CanvasGroup>();
+        flashScript = flashCanvas.GetComponent<FlashCanvas>();
         aSource = GetComponent<AudioSource>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(FlashCanvas());
             aSource.Play();
-            player.transform.position = teleportEndPos;
+            StartCoroutine(UseTeleport());
         }
     }
 
-    public IEnumerator FlashCanvas()
+    private IEnumerator UseTeleport()
     {
-        for (int i = 0; i < 10; i++)
-        {
-            flashCG.alpha += 0.05f;
-            if (i == 10) yield return new WaitForSeconds(0.1f);
-            yield return new WaitForSeconds(0.01f);
-        }
-        for (int i = 0; i < 20; i++)
-        {
-            flashCG.alpha -= 0.05f;
-            yield return new WaitForSeconds(0.01f);
-        }
+        flashScript.Flash(Color.cyan, 0.2f);
+        yield return new WaitForSeconds(0.2f);
+        player.transform.position = teleportEndPos;
+        player.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
     }
 }

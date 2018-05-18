@@ -70,8 +70,7 @@ public class VoiceLineTrigger : MonoBehaviour {
     IEnumerator TypeText(List<string> sentences, List<int> sentenceLengths)
     {
         textInUseCheck.StartText(this);
-        
-        textInUseCheck.inUse = true; //Kerrotaan että tekstiobjekti käytössä
+
         canvasGroup.alpha = 1f;
         voiceLineText.text = "";
         for (int i = 0; i < sentences.Count; i++)

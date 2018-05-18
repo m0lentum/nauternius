@@ -121,11 +121,12 @@ public class PlayerSounds : MonoBehaviour {
 
             if (other.collider.gameObject.CompareTag("Ground"))
             {
+                aSourceDefault.volume = 0.75f * aSourceDefault.volume;
                 aSourceDefault.PlayOneShot(crashGround);
             }
             else
             {
-                aSourceDefault.volume = 0.2f * aSourceDefault.volume; //Tämä vaan kun ei jaksa muokata seinääntörmäysclippiä hiljasemmaks
+                aSourceDefault.volume = 0.15f * aSourceDefault.volume; //Tämä vaan kun ei jaksa muokata seinääntörmäysclippiä hiljasemmaks
                 aSourceDefault.PlayOneShot(crash);
             }
             crashedRecently = true;
