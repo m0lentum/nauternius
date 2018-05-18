@@ -67,8 +67,6 @@ public class VoiceLineTrigger : MonoBehaviour {
         for (int i = 0; i < sentences.Count; i++)
         {
             voiceLineText.text = sentences[i];
-            //Debug.Log(sentenceLengths.Count + "ja lauseet count " + sentences.Count);
-            //Debug.Log(i - 1 + "ja vika kesto ennen fadecanvasta " + sentenceLengths[i - 1]);
             if (i == sentences.Count - 1) StartCoroutine(FadeCanvas(sentenceLengths[i]));
             yield return new WaitForSeconds(sentenceLengths[i]);
         }
