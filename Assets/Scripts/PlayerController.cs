@@ -208,7 +208,7 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && rb.velocity.magnitude < 5 && HasFilter) FilterOn = true;
+        if (Input.GetButtonDown("Filter") && rb.velocity.magnitude < 5 && HasFilter) FilterOn = true;
         if (rb.velocity.magnitude > 5 && FilterOn) FilterOn = false;
     }
 
