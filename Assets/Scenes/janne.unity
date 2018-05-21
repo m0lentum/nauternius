@@ -33142,7 +33142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Steer
-  m_VerticalAxis: Forward
+  m_VerticalAxis: LeftStickVertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -33159,7 +33159,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1310967470}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &1255267886
@@ -34580,6 +34580,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 867bb1d3a3549d04498b4b64cd095767, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1310967470 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1972968677864592, guid: f5e1a74b87034c04fb6d91fc9db0c4f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 562287317}
 --- !u!1001 &1311528303
 Prefab:
   m_ObjectHideFlags: 0
