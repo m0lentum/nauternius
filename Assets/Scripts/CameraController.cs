@@ -26,7 +26,9 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if ((Input.GetAxisRaw("RightStickHorizontal") != 0) || (Input.GetAxisRaw("RightStickVertical") != 0)) mouseLook = true;
+        if (Input.GetButtonDown("CameraControl") && !mouseLook) mouseLook = true;
+        else if (Input.GetButtonDown("CameraControl") && mouseLook) mouseLook = false;
+
 
         if (mouseLook)
         {
@@ -39,7 +41,5 @@ public class CameraController : MonoBehaviour
             mainCamera.enabled = true;
             orbitCamera.transform.position = orbitCamera.transform.parent.TransformPoint(0, 1.5f, -4f);
         }
-
-        mouseLook = false;
     }
 }
