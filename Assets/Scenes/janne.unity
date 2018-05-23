@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 999773384}
-  m_IndirectSpecularColor: {r: 0.009445897, g: 0.018962618, b: 0.026665768, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -452,7 +452,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4129783832809218, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -436.53442
+      value: -13.7
       objectReference: {fileID: 0}
     - target: {fileID: 4129783832809218, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -460,7 +460,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4129783832809218, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -35.226425
+      value: 77.3
       objectReference: {fileID: 0}
     - target: {fileID: 4129783832809218, guid: eb0d1656a7a2d0f4b820584ad80b1ed7, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1569,6 +1569,10 @@ Transform:
   - {fileID: 35490867}
   - {fileID: 331028788}
   - {fileID: 1992363152}
+  - {fileID: 1288537821}
+  - {fileID: 1019051241}
+  - {fileID: 178850495}
+  - {fileID: 2127066358}
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5485,6 +5489,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
     type: 2}
   m_PrefabInternal: {fileID: 175321905}
+--- !u!4 &178850495 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b,
+    type: 2}
+  m_PrefabInternal: {fileID: 798490225}
 --- !u!1 &180329004
 GameObject:
   m_ObjectHideFlags: 0
@@ -23384,6 +23393,287 @@ Transform:
   m_PrefabParentObject: {fileID: 4304057340375588, guid: a61a178c5832a974facec2095d3d765d,
     type: 2}
   m_PrefabInternal: {fileID: 798447146}
+--- !u!1001 &798490225
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 53095457}
+    m_Modifications:
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1264.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -25.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -903.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.2407738
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9705813
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938373521231188, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_Name
+      value: Voice Line Trigger Pujotteluscanner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -27.864002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2.0244658
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: voiceLineText
+      value: 
+      objectReference: {fileID: 1229899978}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: aSourceObj
+      value: 
+      objectReference: {fileID: 1992363150}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[0]
+      value: Please refrain from wondering about location, reasons for the crash or
+        chances of survival.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[1]
+      value: 'These are irrelevant values, if your sanity is significantly damaged. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[2]
+      value: 'My calculations grade your cognitive abilities as: sufficient.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[3]
+      value: Congratulations.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[4]
+      value: "Or: I\u2019m sorry."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[5]
+      value: Depends on which grade you had before.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[6]
+      value: "I am sensing unknown electromagnetics waves form (suunta t\xE4h\xE4n)."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[7]
+      value: I suggest on investigating that.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[4]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[5]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[6]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[7]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: waitBetweenAudio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: clip2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[1]
+      value: My hardware is still performing optimally despite your piloting.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[2]
+      value: Into that asteroid.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[3]
+      value: Which caused the crash.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[4]
+      value: Because I can read your life signs, I must conclude that the controlled
+        landing was a success.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[5]
+      value: Apart of my horrible integral failures.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[6]
+      value: 'And also apart from the rest of the crew being now quite non-existent. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[7]
+      value: 'Please now demonstrate your mental abilities to comprehend simple orders:
+        drive.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[8]
+      value: And could you please not use my burning wreckage as a ramp?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[3]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[4]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[5]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[6]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[7]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[8]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[0]
+      value: My scanners clearly detect something, but I'm unable to pintoint exact
+        location.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[0]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: clip1
+      value: 
+      objectReference: {fileID: 8300000, guid: 4bdb41b84a1d0fb4fba8a5f44fbcac2b, type: 3}
+    - target: {fileID: 4695908039145092, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 23.160313
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695908039145092, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 8.920429
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &800105187 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4304057340375588, guid: a61a178c5832a974facec2095d3d765d,
@@ -24362,6 +24652,270 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a61a178c5832a974facec2095d3d765d, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &857353504
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 53095457}
+    m_Modifications:
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -113
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -25.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -986.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938373521231188, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_Name
+      value: Voice Line Trigger GLow
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: clip2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: clip1
+      value: 
+      objectReference: {fileID: 8300000, guid: de670b6e219a76c42bf0f3b3a4179031, type: 3}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: waitBetweenAudio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[2]
+      value: Into that asteroid.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[3]
+      value: Which caused the crash.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[4]
+      value: Because I can read your life signs, I must conclude that the controlled
+        landing was a success.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[5]
+      value: Apart of my horrible integral failures.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[6]
+      value: 'And also apart from the rest of the crew being now quite non-existent. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[7]
+      value: 'Please now demonstrate your mental abilities to comprehend simple orders:
+        drive.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[8]
+      value: And could you please not use my burning wreckage as a ramp?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[0]
+      value: Well, that truly is an interesting one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[1]
+      value: I am unable to give you explanation behind that glow.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[0]
+      value: Please refrain from wondering about location, reasons for the crash or
+        chances of survival.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[1]
+      value: 'These are irrelevant values, if your sanity is significantly damaged. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[2]
+      value: 'My calculations grade your cognitive abilities as: sufficient.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[3]
+      value: Congratulations.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[4]
+      value: "Or: I\u2019m sorry."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[5]
+      value: Depends on which grade you had before.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[6]
+      value: "I am sensing unknown electromagnetics waves form (suunta t\xE4h\xE4n)."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[7]
+      value: I suggest on investigating that.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[3]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[4]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[5]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[6]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[7]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[8]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[4]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[5]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[6]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[7]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: voiceLineText
+      value: 
+      objectReference: {fileID: 1229899978}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: aSourceObj
+      value: 
+      objectReference: {fileID: 1992363150}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
   m_IsPrefabParent: 0
 --- !u!43 &860233533
 Mesh:
@@ -29707,6 +30261,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
     type: 2}
   m_PrefabInternal: {fileID: 1019025749}
+--- !u!4 &1019051241 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b,
+    type: 2}
+  m_PrefabInternal: {fileID: 857353504}
 --- !u!4 &1020223979 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
@@ -32249,7 +32808,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4157285562981748, guid: 030410b22b2ef5f479a1bd8993dcc3c5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -184.56
+      value: -183.1
       objectReference: {fileID: 0}
     - target: {fileID: 4157285562981748, guid: 030410b22b2ef5f479a1bd8993dcc3c5, type: 2}
       propertyPath: m_LocalPosition.y
@@ -32257,7 +32816,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4157285562981748, guid: 030410b22b2ef5f479a1bd8993dcc3c5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2339.51
+      value: 2267.5
       objectReference: {fileID: 0}
     - target: {fileID: 4157285562981748, guid: 030410b22b2ef5f479a1bd8993dcc3c5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -37968,6 +38527,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
     type: 2}
   m_PrefabInternal: {fileID: 1699433795}
+--- !u!4 &1288537821 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1680788384}
 --- !u!1001 &1291682731
 Prefab:
   m_ObjectHideFlags: 0
@@ -45058,7 +45622,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4157285562981748, guid: 030410b22b2ef5f479a1bd8993dcc3c5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -179.8
+      value: -177.6
       objectReference: {fileID: 0}
     - target: {fileID: 4157285562981748, guid: 030410b22b2ef5f479a1bd8993dcc3c5, type: 2}
       propertyPath: m_LocalPosition.y
@@ -45066,7 +45630,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4157285562981748, guid: 030410b22b2ef5f479a1bd8993dcc3c5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2326.1
+      value: 2258.1
       objectReference: {fileID: 0}
     - target: {fileID: 4157285562981748, guid: 030410b22b2ef5f479a1bd8993dcc3c5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -48219,6 +48783,283 @@ Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
     type: 2}
   m_PrefabInternal: {fileID: 1231987600}
+--- !u!1001 &1680788384
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 53095457}
+    m_Modifications:
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1852.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -22.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3535.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.8200847
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.57224226
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938373521231188, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_Name
+      value: Voice Line Trigger V1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 110.187004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.8240756
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: clip2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[1]
+      value: My hardware is still performing optimally despite your piloting.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[2]
+      value: Into that asteroid.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[3]
+      value: Which caused the crash.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[4]
+      value: Because I can read your life signs, I must conclude that the controlled
+        landing was a success.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[5]
+      value: Apart of my horrible integral failures.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[6]
+      value: 'And also apart from the rest of the crew being now quite non-existent. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[7]
+      value: 'Please now demonstrate your mental abilities to comprehend simple orders:
+        drive.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[8]
+      value: And could you please not use my burning wreckage as a ramp?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[3]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[4]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[5]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[6]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[7]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[8]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[0]
+      value: Please refrain from wondering about location, reasons for the crash or
+        chances of survival.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[1]
+      value: 'These are irrelevant values, if your sanity is significantly damaged. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[2]
+      value: 'My calculations grade your cognitive abilities as: sufficient.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[3]
+      value: Congratulations.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[4]
+      value: "Or: I\u2019m sorry."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[5]
+      value: Depends on which grade you had before.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[6]
+      value: "I am sensing unknown electromagnetics waves form (suunta t\xE4h\xE4n)."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences2.Array.data[7]
+      value: I suggest on investigating that.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[4]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[5]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[6]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths2.Array.data[7]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: voiceLineText
+      value: 
+      objectReference: {fileID: 1229899978}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: clip1
+      value: 
+      objectReference: {fileID: 8300000, guid: 40d0b5bc2ed0d2243869211163aff171, type: 3}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[0]
+      value: These platforms are made out from the same material as the structure
+        with gates.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[0]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: waitBetweenAudio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: aSourceObj
+      value: 
+      objectReference: {fileID: 1992363150}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1681219667
 Prefab:
   m_ObjectHideFlags: 0
@@ -59576,6 +60417,192 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61c996d87d10e294c9411ba12a85112a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &2007840080
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 53095457}
+    m_Modifications:
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1530.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.663779
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.74792874
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938373521231188, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_Name
+      value: Voice Line Trigger Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -83.177
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.0076386
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: clip1
+      value: 
+      objectReference: {fileID: 8300000, guid: 300eaa3608f80634ea228ae3026a5206, type: 3}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: clip2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: waitBetweenAudio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[2]
+      value: Into that asteroid.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[3]
+      value: Which caused the crash.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[4]
+      value: Because I can read your life signs, I must conclude that the controlled
+        landing was a success.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[5]
+      value: Apart of my horrible integral failures.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[6]
+      value: 'And also apart from the rest of the crew being now quite non-existent. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[7]
+      value: 'Please now demonstrate your mental abilities to comprehend simple orders:
+        drive.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[8]
+      value: And could you please not use my burning wreckage as a ramp?
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[0]
+      value: There are no signs of unkown lifeforms,
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentences.Array.data[1]
+      value: But the environment seem a little bit too... structured... to be just...
+        wild environment.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[3]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[4]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[5]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[6]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[7]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[8]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: sentenceLengths.Array.data[1]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: voiceLineText
+      value: 
+      objectReference: {fileID: 1229899978}
+    - target: {fileID: 114772815912107954, guid: b98234aa2d48982448e01106891c6d3b,
+        type: 2}
+      propertyPath: aSourceObj
+      value: 
+      objectReference: {fileID: 1992363150}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b98234aa2d48982448e01106891c6d3b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &2009655562
 Prefab:
   m_ObjectHideFlags: 0
@@ -62929,6 +63956,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4524119573569464, guid: 61c996d87d10e294c9411ba12a85112a,
     type: 2}
   m_PrefabInternal: {fileID: 227904573}
+--- !u!4 &2127066358 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4461585447942266, guid: b98234aa2d48982448e01106891c6d3b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2007840080}
 --- !u!1001 &2128792677
 Prefab:
   m_ObjectHideFlags: 0
