@@ -13,17 +13,14 @@ using UnityEngine;
 //miltähän näyttäisi jos enableisi rigidbodyn kun switchoffataan?
 public class ElevatorSwitch : MonoBehaviour {
 
-    [SerializeField] private Transform targetElevator;
+    [SerializeField] private Transform target;
     [SerializeField] private float stayOnTime;
-    private Animator anim;
     private bool timerStarted;
     private float onTimer;
     private float elevatorStartHeight;
 
 	void Start ()
     {
-        anim = targetElevator.GetComponent<Animator>();
-        elevatorStartHeight = targetElevator.position.y;
 	}
 
 	void Update ()
@@ -31,33 +28,22 @@ public class ElevatorSwitch : MonoBehaviour {
 		if (timerStarted)
         {
             onTimer += Time.deltaTime;
-            if (onTimer > stayOnTime) SwitchOff();
+            if (onTimer > stayOnTime)
+            {
+                target.GetComponent<Elevator>().SwitchState();
+                timerStarted = false;
+                onTimer = 0f;
+            }
         }
 	}
 
-    private void OnCollisionEnter(Collision coll)
+    private void OnTriggerEnter(Collider col)
     {
-        if (coll.collider.CompareTag("Player"))
+        if (col.gameObject.tag == "Player")
         {
-            anim.SetBool("IsOn", true);
+            Debug.Log("collider tag : " + col.GetComponent<Collider>().tag);
             timerStarted = true;
-        }
-    }
-    
-    private void SwitchOff()
-    {
-        anim.SetBool("IsOn", false);
-        timerStarted = false;
-        onTimer = 0;
-        //StartCoroutine(DropElevator());
-    }
-
-    IEnumerator DropElevator()
-    {
-        while (targetElevator.position.y > elevatorStartHeight + 0.04f)
-        {
-            targetElevator.position -= new Vector3(0, 0.2f, 0);
-            yield return new WaitForSeconds(0.01f);
+            target.GetComponent<Elevator>().SwitchState();
         }
     }
 }
