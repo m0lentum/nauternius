@@ -33,6 +33,7 @@ public class ElevatorSwitch : MonoBehaviour {
                 target.GetComponent<Elevator>().SwitchState();
                 timerStarted = false;
                 onTimer = 0f;
+                transform.position = new Vector3(transform.position.x, transform.position.y + 0.25f, transform.position.z);
             }
         }
 	}
@@ -44,6 +45,7 @@ public class ElevatorSwitch : MonoBehaviour {
             Debug.Log("collider tag : " + col.GetComponent<Collider>().tag);
             timerStarted = true;
             target.GetComponent<Elevator>().SwitchState();
+            transform.position = new Vector3(transform.position.x, transform.position.y - 0.25f, transform.position.z);
         }
     }
 }

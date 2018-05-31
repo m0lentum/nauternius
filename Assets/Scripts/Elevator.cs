@@ -20,7 +20,7 @@ public class Elevator : MonoBehaviour {
             if (col.gameObject.tag == "Player")
             {
                 Debug.Log("collider tag : " + col.GetComponent<Collider>().tag); 
-                colRB.AddRelativeForce(0f, 500f, 0f, ForceMode.Impulse);
+                colRB.AddRelativeForce(0f, 500f, 0f, ForceMode.Force);
             }
         }
     }
